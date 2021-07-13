@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Hash;
 
 
 class AuthController extends Controller
+
+
 {
+
     public function register(Request $request)
     {
 
@@ -71,6 +74,12 @@ class AuthController extends Controller
         ];
 
         return response($response, 201);
+    }
+
+
+    public function user(Request $request)
+    {
+        return $request->user();
     }
 
     public function logout(Request $request)

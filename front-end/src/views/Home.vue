@@ -1,15 +1,17 @@
 <template>
-  <Form />
+  <Nav />
+  <Hero />
 </template>
 
 <script>
 // @ is an alias to /src
-import Form from "@/components/form.vue";
-
+import Nav from "@/components/navbar.vue";
+import Hero from "@/components/hero.vue";
 export default {
   name: "Home",
   components: {
-    Form,
+    Nav,
+    Hero,
   },
 };
 </script>

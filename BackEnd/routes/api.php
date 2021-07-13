@@ -23,10 +23,9 @@ use App\Http\Controllers\CommentController;
 
 // Route::resource('posts', PostController::class);
 
-Route::post('/register', [AuthController::class, 'register']);
+Route::post('/signup', [AuthController::class, 'register']);
 
 Route::post('/login', [AuthController::class, 'login']);
-
 
 Route::get('/post', [PostController::class, 'index']);
 
@@ -43,6 +42,7 @@ Route::get('/search/{title}', [PostController::class, 'search']);
 
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
+
 
     //** Post Api */
 
@@ -66,9 +66,11 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::put('/comment/{id}', [CommentController::class, 'update']);
 
     Route::delete('/comment/{id}', [CommentController::class, 'destroy']);
+
+    Route::get('/user', [AuthController::class, 'user']);
 });
 
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
