@@ -1,20 +1,24 @@
-.header{
+.header {
 
    transition: all 300ms ease;
    display: flex;
    justify-content: space-around;
    align-items: center;
-   font-family:$pop;
-   position: fixed; /* Set the navbar to fixed position */
-   top: 0; /* Position the navbar at the top of the page */
-   width: 100%; /* Full width */
-  ul{
-     list-style: none;
-     display: flex;
-     align-items: center;
+   font-family: $pop;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   z-index: 100000;
+   
+
+   ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
       gap: 2em;
-    .nav{
-       display: flex;
+
+      .nav {
+         display: flex;
          gap: 20px;
          font-size: 1rem;
 
@@ -27,100 +31,105 @@
             padding: 3px 0;
             font-weight: 500;
             text-decoration: none;
-            
+
             &:hover {
-              color: $mid-grey;
-               
-              &::after,
-              &::before {
-                width: 100%;
-                left: 0;
-              }
-              
+               color: $mid-grey;
+
+               &::after,
+               &::before {
+                  width: 100%;
+                  left: 0;
+               }
+
             }
-            
+
             &::after,
             &::before {
-              content: ''; 
-              position: absolute;
-              top: calc(100%);
-              width: 0;
-              right: 0;
-              height: 3px;
+               content: '';
+               position: absolute;
+               top: calc(100%);
+               width: 0;
+               right: 0;
+               height: 3px;
             }
-            
+
             &::before {
-              transition: width .4s cubic-bezier(0.51, 0.18, 0, 0.88) .1s;
-              background: $orange;
+               transition: width .4s cubic-bezier(0.51, 0.18, 0, 0.88) .1s;
+               background: $orange;
             }
-            
+
             &::after {
-              transition: width .2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
-              background: $blue-yc;
+               transition: width .2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
+               background: $blue-yc;
             }
-          
-          
-          
-          
-       
-             
-          } 
-      }
 
- 
-   .conn{
-      align-items: center;
-      .login{
-         background-color:white;
-      }
-      a{
-         background-color:$light-grey;
-         color: $dark-grey;
-         font-weight: 600;
-         text-decoration: none;
-         font-size: 1rem;
-         transition: all 300ms ease-out;
 
-         &:hover{
-            background: $blue-yc;
-            color: $light-grey;
-            transition: all 300ms ease-in;
-            
+
+
+
+
          }
-         i{
+      }
+
+
+      .conn {
+         align-items: center;
+
+         .login {
+            background-color: white;
+         }
+
+         a {
+            background-color: $light-grey;
             color: $dark-grey;
-            background-color: rgb(255, 255, 255);
-            padding: 9px 13px;
-            transition: all 300ms ease;
-            &:hover{
-               background-color: $dark-grey;
-               color: white;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 300ms ease-out;
+
+            &:hover {
+               background: $blue-yc;
+               color: $light-grey;
+               transition: all 300ms ease-in;
+
+            }
+
+            i {
+               color: $dark-grey;
+               background-color: rgb(255, 255, 255);
+               padding: 9px 13px;
                transition: all 300ms ease;
+
+               &:hover {
+                  background-color: $dark-grey;
+                  color: white;
+                  transition: all 300ms ease;
+               }
             }
          }
+
+         display: flex;
+         padding: 0.4em 1em;
+         border-radius: 5px;
+         color: white;
+         letter-spacing: 1px;
+         gap: 4px;
+
       }
-      display: flex;   
-      padding: 0.4em 1em;
-      border-radius: 5px;
-      color: white;
-      letter-spacing: 1px;
-      gap: 4px;
-     
-   }
-  }
-     
    }
 
+}
 
-   .menu {
-      transition: all 300ms ease;
-   
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    
-    .mnav{
+
+.menu {
+   transition: all 300ms ease;
+   z-index: 10000;
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   right: 0;
+
+   .mnav {
       margin: 0;
       padding: 0;
       display: flex;
@@ -129,52 +138,54 @@
       width: 100%;
       height: 95%;
       background-color: beige;
-     
-    
-      ul{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1em;
-            list-style: none;
-            padding: 0;
-            width: inherit;
-            margin: 0 3.5rem;
-            border-right-width: calc(1px * 1);
-            border-left-width: calc(1px * calc(1 - 0));
-            li{
-              
-               i{
-                  font-size: 1rem;
-                  color: black;
-                  font-size: 1.6rem;
-                  font-weight: 600;
-                  letter-spacing: 1px;
-                  padding: 0 15px;
-                  
 
-               }
-               .logo{
-                  position: relative;
-                  bottom: 25px;
-                  background-color: green;
-                  padding: 15px;
-                  border-radius: 100%;
-                  font-size: 2rem;
-               }
+
+      ul {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         gap: 1em;
+         list-style: none;
+         padding: 0;
+         width: inherit;
+         margin: 0 3.5rem;
+         border-right-width: calc(1px * 1);
+         border-left-width: calc(1px * calc(1 - 0));
+
+         li {
+
+            i {
+               font-size: 1rem;
+               color: black;
+               font-size: 1.6rem;
+               font-weight: 600;
+               letter-spacing: 1px;
+               padding: 0 15px;
+
 
             }
 
-            
-           
-         
+            .logo {
+               position: relative;
+               bottom: 25px;
+               background-color: green;
+               padding: 15px;
+               border-radius: 100%;
+               font-size: 2rem;
+            }
+
+         }
+
+
+
+
       }
-   
 
 
-    }  
-     
+
    }
+
+}
 
 
 
@@ -188,10 +199,10 @@
 
 // media query desktop mobile
 
-   @media (max-width:801px){
-      .header{
-         transition: all 300ms ease;
-               display: none;
-            }
-   
+@media (max-width:801px) {
+   .header {
+      transition: all 300ms ease;
+      display: none;
    }
+
+}

@@ -21,7 +21,7 @@
       </ul>
     </div>
   </div>
-  <Whitespace />
+ 
 
   <!-- mobile menu -->
   <div class="menu">
@@ -47,13 +47,13 @@
 </template>
 
 <script>
-import Whitespace from "@/components/Misc/whitespace.vue";
+
 
 import { mapGetters } from "vuex";
 
 export default {
   components: {
-    Whitespace,
+  
   },
   computed: {
     ...mapGetters({

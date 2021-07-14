@@ -82,7 +82,7 @@
           </p>
           <button @click.prevent="move" class="btn transparent">Sign up</button>
         </div>
-        <img src="../assets/Saly-1.svg" class="image" alt="dfghdfgh" />
+        <img src="../assets/Saly-1.svg" class="image" alt="img" />
       </div>
       <div class="panel right-panel">
         <div class="content">
@@ -93,7 +93,7 @@
           </p>
           <button @click.prevent="move" class="btn transparent">Sign in</button>
         </div>
-        <img src="../assets/Saly-1.svg" class="image" alt="gfhdfgh" />
+        <img src="../assets/Saly-1.svg" class="image" alt="img" />
       </div>
     </div>
   </div>
