@@ -29,9 +29,9 @@
           <div class="input-field">
             <i class="fas fa-user"></i>
             <input
-              v-model="userData.fullName"
+              v-model="userData.username"
               type="text"
-              placeholder="fullName"
+              placeholder="Username"
             />
           </div>
 
@@ -97,8 +97,6 @@
       </div>
     </div>
   </div>
-
-  gsdfgsdfg {{ user }}
 </template>
 <script>
 import { useStore } from "vuex";
@@ -108,7 +106,7 @@ export default {
   setup() {
     const store = useStore();
     const userData = ref({
-      fullName: "",
+      username: "",
       email: "",
       password: "",
       password_confirmation: "",

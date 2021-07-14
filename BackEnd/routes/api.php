@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -27,11 +28,16 @@ Route::post('/signup', [AuthController::class, 'register']);
 
 Route::post('/login', [AuthController::class, 'login']);
 
-Route::get('/post', [PostController::class, 'index']);
 
 Route::get('/post/{id}', [PostController::class, 'show']);
 
 Route::get('/search/{title}', [PostController::class, 'search']);
+
+Route::post('/admin/signup', [AdminController::class, 'register']);
+
+Route::group(['middleware' => ['auth:user']], function () {
+    Route::get('/post', [PostController::class, 'index']);
+});
 
 
 

@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Admin;
+use Illuminate\Support\Facades\App;
+
 return [
 
     /*
@@ -46,6 +49,14 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+        'user' => [
+            'driver' => 'sanctum',
+            'provider' => 'users',
+        ],
+        'admin' => [
+            'driver' => 'sanctum',
+            'provider' => 'admins',
+        ],
     ],
 
     /*
@@ -70,6 +81,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => Admin::class,
+        ]
 
         // 'users' => [
         //     'driver' => 'database',

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Admin;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -21,18 +21,18 @@ class AuthController extends Controller
     {
 
         $fields = $request->validate([
-            'fullName' => 'required|string',
+            'username' => 'required|string',
             'email' => 'required|string|unique:users,email',
             'password' => 'required|string|confirmed'
         ]);
 
         $user = User::create([
-            'fullName' => $fields['fullName'],
+            'username' => $fields['username'],
             'email' => $fields['email'],
             'password' => bcrypt($fields['password']),
         ]);
 
-
+        
         $token = $user->createToken('mytoken')->plainTextToken;
 
         $response = [
@@ -55,6 +55,7 @@ class AuthController extends Controller
         // check email
 
         $user = User::where('email', $fields['email'])->first();
+        $admin = Admin::where('email', $fields['email'])->first();
 
         // check  Password
 
