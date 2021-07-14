@@ -31,7 +31,9 @@ export default {
         commit("SET_ERROR", null);
 
         const res = await axios.post("/api/login", credentials);
-
+        commit("SET_USER", res.data.user);
+        console.log(res.data.token);
+        commit("SET_TOKEN", res.data.token);
         // window.location.replace("/");
       } catch (err) {
         commit("SET_ERROR", err.response.data.errors);
@@ -39,14 +41,28 @@ export default {
       }
     },
 
+    async attempt({ commit, state }, token) {
+      try {
+        if (token) commit("SET_TOKEN", token);
+        if (!state.token) return;
+        const res = await axios.get("/api/user");
+
+        commit("SET_USER", res.data);
+      } catch (err) {
+        console.log(err);
+        commit("SET_ERROR", err.message);
+        commit("SET_TOKEN", null);
+        commit("SET_USER", null);
+      }
+    },
+
     async signup({ commit, dispatch }, credentials) {
       try {
         commit("SET_ERROR", null);
-
         const res = await axios.post("api/signup", credentials);
 
-        return dispatch("attempt", res.data.data.token);
-        window.location.replace("/login");
+        // return dispatch("attempt", res.data.data.token);
+        // window.location.replace("/login");
       } catch (err) {
         commit("SET_ERROR", err.response.data.errors);
       }
@@ -86,8 +102,6 @@ export default {
   },
   modules: {},
 };
-
-
 
 // import axios from "axios";
 

@@ -2,73 +2,11 @@
   <div class="container" :class="slide ? 'sign-in-mode' : 'sign-up-mode'">
     <div class="forms-container">
       <div class="signin-signup">
-        <form @submit.prevent="login" action="#" class="sign-in-form">
-          <h2 class="title">Sign in</h2>
-          <div class="input-field">
-            <i class="fas fa-user"></i>
-            <input v-model="loginform.email" type="email" placeholder="Email" />
-          </div>
-          <div class="error">{{ error?.email[0] }}</div>
-          <div class="input-field">
-            <i class="fas fa-lock"></i>
-            <input
-              v-model="loginform.password"
-              type="password"
-              placeholder="Password"
-            />
-          </div>
-          <div class="error">{{ error?.password[0] }}</div>
-          <h1>sdfsdf {{ authenticated }}</h1>
-          <input type="submit" value="Login" class="btn solid" />
-        </form>
+        <Login />
 
         <!-- sign up form  -->
 
-        <form @submit.prevent="signup" action="#" class="sign-up-form">
-          <h2 class="title">Sign up</h2>
-          <div class="input-field">
-            <i class="fas fa-user"></i>
-            <input
-              v-model="userData.username"
-              type="text"
-              placeholder="Username"
-            />
-          </div>
-
-          <div class="input-field">
-            <i class="fas fa-envelope"></i>
-            <input v-model="userData.email" type="email" placeholder="Email" />
-          </div>
-          <div v-if="error?.email" class="error">{{ error.email[0] }}</div>
-
-          <!-- password email -->
-
-          <div class="input-field">
-            <i class="fas fa-lock"></i>
-            <input
-              v-model="userData.password"
-              type="password"
-              placeholder="Password"
-              required
-            />
-          </div>
-          <div v-if="error?.password" class="error">
-            {{ error?.password[0] }}
-          </div>
-
-          <!--  password consfirmation -->
-
-          <div class="input-field">
-            <i class="fas fa-lock"></i>
-            <input
-              v-model="userData.password_confirmation"
-              type="password"
-              placeholder="Cornfirm Password"
-              required
-            />
-          </div>
-          <input type="submit" class="btn" value="Sign up" />
-        </form>
+        <Register />
       </div>
     </div>
 
@@ -100,47 +38,26 @@
 </template>
 <script>
 import { useStore } from "vuex";
-import { ref, computed } from "vue";
-
+import { ref } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import Register from "./register.vue";
+import Login from "./login.vue";
 export default {
+  components: {
+    Register,
+    Login,
+  },
   setup() {
+    const route = useRoute();
     const store = useStore();
-    const userData = ref({
-      username: "",
-      email: "",
-      password: "",
-      password_confirmation: "",
-    });
-
     const slide = ref(true);
-
-    const loginform = ref({ email: "", password: "" });
-    // const user = computed(() => store.getters["auth/user"]);
-    const error = computed(() => store.state.auth.error);
-    // const user = computed(() => store.state.auth.user);
-    const user = computed(() => store.state.auth.user?.fullName);
-
-    const login = () => {
-      store.dispatch("auth/login", loginform.value);
-    };
-    const signup = () => {
-      store.dispatch("auth/signup", userData.value);
-    };
-
     const move = () => {
       slide.value = !slide.value;
       store.dispatch("auth/clearErr");
     };
-
     return {
-      loginform,
-      error,
-      user,
-      userData,
       slide,
       move,
-      signup,
-      login,
     };
   },
 };

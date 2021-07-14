@@ -3,7 +3,7 @@
   <div>
     <div class="header">
       <div>
-        <a href="#" class="logo">user {{ user }}</a>
+        <a href="#" class="logo">Logo</a>
       </div>
       <div>
         <ul>
@@ -13,9 +13,16 @@
             <li><a href="#">Dashboard</a></li>
           </div>
           <div class="conn">
-            <li><router-link class="conn" to="/login">Log in</router-link></li>
             <li>
-              <a class="" href="#"><i class="fas fa-sign-out-alt conn"></i></a>
+              <router-link class="conn" to="/login">Log in</router-link>
+            </li>
+            <li>
+              <a class="" href="#"
+                ><i
+                  class="fas fa-sign-out-alt conn"
+                  @click.prevent="logout()"
+                ></i
+              ></a>
             </li>
           </div>
         </ul>
@@ -46,15 +53,31 @@
         </ul>
       </div>
     </div>
+    <h1>username {{ users }}</h1>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { useStore } from "vuex";
+import { ref, computed } from "vue";
 
 export default {
+  setup() {
+    const store = useStore();
 
-  
+    const logout = () => {
+      store.dispatch("auth/logout");
+      console.log("dasda");
+    };
+
+    const users = computed(() => store.state.auth.user?.username);
+
+    return {
+      users,
+      store,
+      logout,
+    };
+  },
 };
 </script>
 <style lang="scss">
