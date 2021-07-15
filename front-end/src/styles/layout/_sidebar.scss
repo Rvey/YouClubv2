@@ -1,0 +1,236 @@
+.sidebar {
+  position: fixed;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  background-color: rgb(34, 34, 34);
+  z-index: 99999999;
+  transition: all 0.5s ease;
+
+  &.not-active {
+    width: 4.4em;
+    transition: all 0.5s ease;
+    .logo {
+      i {
+        display: none;
+      }
+    }
+    .nav_list{
+       width: auto;
+       li {
+          a {
+             width: auto;
+          }
+       }
+    }
+    .logo_name {
+      display: none;
+    }
+    .links_name {
+      display: none;
+    }
+    .search {
+      display: none;
+    }
+    .bx-search {
+      &:hover {
+        background-color: white;
+      }
+    
+    }
+
+    li {
+      &:hover {
+        transition: all 0.5% ease;
+        .tooltip {
+          
+          opacity: 1;
+          transition: all 0.6s ease;
+        }
+      }
+    }
+    .profile {
+      display: none;
+   }
+  }
+  &.active {
+    width: 22em;
+    .search-btn {
+      display: none;
+    }
+   
+    
+  }
+
+  .logo_content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    .logo {
+      color: white;
+      height: 50px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      i {
+        font-size: 30px;
+        margin-right: 5px;
+        color: white;
+      }
+      .logo_name {
+        font-size: 25px;
+        font-weight: 400;
+      }
+    }
+  }
+  #btn {
+    color: white;
+    left: 90%;
+    top: 22em;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+    font-size: 2rem;
+    padding-left: 40px;
+  }
+
+  .nav_list {
+    margin-top: 20px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    width: 100%;
+    li {
+      display: flex;
+      height: 50px;
+      width: 100%;
+      margin: 0 5px;
+      list-style: none;
+      border-radius: 5px;
+      
+      a {
+        color: white;
+        text-decoration: none;
+        border-radius: 12px;
+        font-size: 1.2em;
+         width: 100%;
+         transition: all 300ms ease;
+        &:hover {
+          background: white;
+          color: black;
+          transition: all 300ms ease;
+          i {
+            
+            color: black;
+          }
+        }
+        i {
+          color: white;
+          height: 50px;
+          min-width: 50px;
+          border-radius: 12px;
+          line-height: 50px;
+          text-align: center;
+        }
+      }
+
+      .tooltip {
+        position: absolute;
+        left: 122px;
+        
+        transform: translateX(-45%);
+        height: 35px;
+        width: 122px;
+        margin: 0 5px;
+        list-style: none;
+        line-height: 35px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        color: black;
+        pointer-events: none;
+        opacity: 0;
+        transition:all 0.5s ease;
+      }
+      .search {
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        border-radius: 12px;
+        outline: none;
+        border: none;
+        padding-left: 40px;
+        background: rgb(34, 34, 34);
+        color: white;
+        font-family: $pop;
+        font-size: 1.1rem;
+        &::placeholder {
+          color: blanchedalmond;
+          font-family: $pop;
+          font-weight: 500;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+
+  .profile_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    background: rgb(32, 32, 32);
+    width: 100%;
+    height: 4rem;
+    .profile {
+      padding: 10px 6px;
+      height: 60px;
+      .profile_details {
+        display: flex;
+        align-items: center;
+        .profile_img {
+          height: 45px;
+          width: 45px;
+          object-fit: cover;
+          border-radius: 12px;
+        }
+        .user_info {
+          margin-left: 10px;
+
+          .name {
+            font-size: 1.2rem;
+            line-height: 25px;
+          }
+          .email {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+    .logout {
+      i {
+        color: white;
+        font-size: 1.8rem;
+        cursor: pointer;
+        padding: 0 20px;
+        transition:all 300ms ease;
+        &:hover {
+           color: rgb(255, 29, 29);
+           transition:all 300ms ease;
+        }
+      }
+    }
+  }
+}

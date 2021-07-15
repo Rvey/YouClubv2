@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 // 1. Configuration and helpers
 @import
   'abstracts/variables',
@@ -22,7 +21,9 @@
   'layout/header',
   'layout/footer',
   'layout/form',
-  'layout/hero';
+  'layout/hero',
+  'layout/cbody',
+  'layout/sidebar';
 
 // 5. Components
 @import
