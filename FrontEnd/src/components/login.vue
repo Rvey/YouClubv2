@@ -1,23 +1,15 @@
 <template>
-  <form @submit.prevent="signup" action="#" class="sign-up-form">
-    <h2 class="title">Sign up</h2>
+  <form @submit.prevent="login" action="#" class="sign-in-form">
+    <h2 class="title">Sign in</h2>
     <div class="input-field">
       <i class="fas fa-user"></i>
-      <input v-model="userData.username" type="text" placeholder="Username" />
-    </div>
-
-    <div class="input-field">
-      <i class="fas fa-envelope"></i>
-      <input v-model="userData.email" type="email" placeholder="Email" />
+      <input v-model="loginform.email" type="text" placeholder="Email" required/>
     </div>
     <div v-if="error?.email" class="error">{{ error?.email[0] }}</div>
-
-    <!-- password email -->
-
     <div class="input-field">
       <i class="fas fa-lock"></i>
       <input
-        v-model="userData.password"
+        v-model="loginform.password"
         type="password"
         placeholder="Password"
         required
@@ -26,19 +18,7 @@
     <div v-if="error?.password" class="error">
       {{ error?.password[0] }}
     </div>
-
-    <!--  password consfirmation -->
-
-    <div class="input-field">
-      <i class="fas fa-lock"></i>
-      <input
-        v-model="userData.password_confirmation"
-        type="password"
-        placeholder="Cornfirm Password"
-        required
-      />
-    </div>
-    <input type="submit" class="btn" value="Sign up" />
+    <input type="submit" value="Login" class="btn solid" />
   </form>
 </template>
 <script>
@@ -57,18 +37,23 @@ export default {
       password_confirmation: "",
     });
 
+    const loginform = ref({ email: "", password: "" });
+
     const error = computed(() => store.getters["auth/error"]);
-    const signup = () => {
-      if (store.dispatch("auth/signup", userData.value)) {
-        return router.push({ path: "/login" });
+
+    const login = async () => {
+      await store.dispatch("auth/login", loginform.value);
+      if (store.getters["auth/authenticated"]) {
+        return router.push({ path: "/" });
       }
-      console.log("wrong");
     };
 
     return {
+      loginform,
       error,
+      // user,
       userData,
-      signup,
+      login,
     };
   },
 };

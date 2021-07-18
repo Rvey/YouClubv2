@@ -20,10 +20,10 @@
         <span class="tooltip">Search</span>
       </li>
       <li>
-        <a href="#">
+        <router-link to="/">
           <i class="bx bx-home-alt"></i>
           <span class="links_name">Home</span>
-        </a>
+        </router-link>
         <span class="tooltip">Home</span>
       </li>
       <li>
@@ -49,30 +49,46 @@
           <img class="profile_img" src="./../assets/bg.jpg" alt="" />
 
           <div class="user_info">
-            <div class="name">RedOne</div>
-            <div class="email">redone@gmail.com</div>
+            <div class="name">{{ user }}</div>
+            <div class="email">{{ email }}</div>
           </div>
         </div>
       </div>
       <div class="logout">
-        <i class="bx bx-log-in-circle"></i>
+        <i class="bx bx-log-in-circle" @click.prevent="logout"></i>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
+import { useStore } from "vuex";
+import { useRouter } from "vue-router";
+import { ref, computed } from "vue";
 export default {
   setup() {
+    const router = useRouter();
+    const store = useStore();
+
     const toggle = ref(false);
 
+    const logout = () => {
+      if (store.dispatch("auth/logout")) {
+        return router.push({ path: "Login" });
+      }
+    };
+
+    const user = computed(() => store.state.auth.user?.username);
+    const email = computed(() => store.state.auth.user?.email);
     const e = () => {
       toggle.value = !toggle.value;
     };
     return {
       e,
+      user,
+      logout,
       toggle,
+      email,
     };
   },
 };

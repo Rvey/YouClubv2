@@ -13,5 +13,6 @@ export default {
     Nav,
     Hero,
   },
+
 };
 </script>

@@ -21,7 +21,7 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -30,13 +30,12 @@ class PostController extends Controller
             'title' => 'required',
             'body' => 'required'
         ]);
-        $post =  Post::create([
+        $post = Post::create([
             'title' => $request->title,
             'body' => $request->body,
-            'user_id'  => $request->user_id,
+            'user_id' => $request->user_id,
             'likes' => $request->likes,
             'tags' => $request->tags,
-
 
 
         ]);
@@ -58,7 +57,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -69,8 +68,8 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -98,13 +97,14 @@ class PostController extends Controller
 
         return $response;
     }
+
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         // check autorization
         if (
@@ -113,7 +113,6 @@ class PostController extends Controller
 
         )
             return response(["error" => 'Unaithorized'], 401);
-
 
 
         $delete = Post::where(['id' => $id])->delete();
@@ -129,14 +128,13 @@ class PostController extends Controller
             ], 422);
 
 
-
         return $response;
     }
 
     /**
      * Search the specified resource from storage.
      *
-     * @param  str $title
+     * @param str $title
      * @return \Illuminate\Http\Response
      */
     public function search($title)

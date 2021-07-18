@@ -1,6 +1,6 @@
 .sidebar {
   position: fixed;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,56 +12,73 @@
   &.not-active {
     width: 4.4em;
     transition: all 0.5s ease;
+
     .logo {
       i {
         display: none;
       }
     }
-    .nav_list{
-       width: auto;
-       li {
-          a {
-             width: auto;
-          }
-       }
+
+    .nav_list {
+      width: auto;
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      li {
+        a {
+          width: auto;
+        }
+      }
     }
+
     .logo_name {
       display: none;
     }
+
     .links_name {
       display: none;
     }
+
     .search {
       display: none;
     }
+
     .bx-search {
       &:hover {
         background-color: white;
       }
-    
+
     }
 
     li {
       &:hover {
-        transition: all 0.5% ease;
+        transition: all 0.5s ease;
+
         .tooltip {
-          
+
           opacity: 1;
           transition: all 0.6s ease;
         }
       }
     }
+
     .profile {
       display: none;
-   }
+    }
   }
+
   &.active {
-    width: 22em;
+    width: 18em;
+
     .search-btn {
       display: none;
     }
-   
-    
+
+
   }
 
   .logo_content {
@@ -69,23 +86,27 @@
     align-items: center;
     justify-content: flex-end;
     width: 100%;
+
     .logo {
       color: white;
       height: 50px;
       width: 100%;
       display: flex;
       align-items: center;
+
       i {
         font-size: 30px;
         margin-right: 5px;
         color: white;
       }
+
       .logo_name {
         font-size: 25px;
         font-weight: 400;
       }
     }
   }
+
   #btn {
     color: white;
     left: 90%;
@@ -108,6 +129,7 @@
     flex-direction: column;
     gap: 34px;
     width: 100%;
+
     li {
       display: flex;
       height: 50px;
@@ -115,23 +137,26 @@
       margin: 0 5px;
       list-style: none;
       border-radius: 5px;
-      
+
       a {
         color: white;
         text-decoration: none;
         border-radius: 12px;
         font-size: 1.2em;
-         width: 100%;
-         transition: all 300ms ease;
+        width: 100%;
+        transition: all 300ms ease;
+
         &:hover {
           background: white;
           color: black;
           transition: all 300ms ease;
+
           i {
-            
+
             color: black;
           }
         }
+
         i {
           color: white;
           height: 50px;
@@ -145,7 +170,7 @@
       .tooltip {
         position: absolute;
         left: 122px;
-        
+
         transform: translateX(-45%);
         height: 35px;
         width: 122px;
@@ -159,8 +184,9 @@
         color: black;
         pointer-events: none;
         opacity: 0;
-        transition:all 0.5s ease;
+        transition: all 0.5s ease;
       }
+
       .search {
         height: 100%;
         width: 100%;
@@ -174,6 +200,7 @@
         color: white;
         font-family: $pop;
         font-size: 1.1rem;
+
         &::placeholder {
           color: blanchedalmond;
           font-family: $pop;
@@ -194,18 +221,22 @@
     background: rgb(32, 32, 32);
     width: 100%;
     height: 4rem;
+
     .profile {
       padding: 10px 6px;
       height: 60px;
+
       .profile_details {
         display: flex;
         align-items: center;
+
         .profile_img {
           height: 45px;
           width: 45px;
           object-fit: cover;
           border-radius: 12px;
         }
+
         .user_info {
           margin-left: 10px;
 
@@ -213,22 +244,25 @@
             font-size: 1.2rem;
             line-height: 25px;
           }
+
           .email {
             font-size: 0.8rem;
           }
         }
       }
     }
+
     .logout {
       i {
         color: white;
         font-size: 1.8rem;
         cursor: pointer;
         padding: 0 20px;
-        transition:all 300ms ease;
+        transition: all 300ms ease;
+
         &:hover {
-           color: rgb(255, 29, 29);
-           transition:all 300ms ease;
+          color: rgb(255, 29, 29);
+          transition: all 300ms ease;
         }
       }
     }

@@ -53,7 +53,6 @@
         </ul>
       </div>
     </div>
-    <h1>username {{ users }}</h1>
   </div>
 </template>
 
