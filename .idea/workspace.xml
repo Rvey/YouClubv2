@@ -2,79 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2428bc3-9d62-4239-a25b-7a09c5b5810c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/components/cbody.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/components/form.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_cbody.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/YouClubv2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/YouClubv2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/config/sanctum.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/config/sanctum.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/.browserslistrc" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/.browserslistrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/babel.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/assets/Saly-1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/assets/Saly-1.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/assets/Saly-23.svg" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/assets/Saly-23.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/assets/bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/assets/bg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/assets/hero.svg" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/assets/hero.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/assets/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/assets/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/assets/moon.png" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/assets/moon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/assets/road.png" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/assets/road.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/bootstap.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/bootstap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/Misc/whitespace.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/Misc/whitespace.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/cbody.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/form.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/hero.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/hero.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/navbar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/sidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/sidebar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/store/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/store/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/store/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/store/post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/store/subscriber.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/store/subscriber.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/_nav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/_nav.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/abstracts/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/abstracts/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/abstracts/_functions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/abstracts/_functions.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/abstracts/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/abstracts/_mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/abstracts/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/abstracts/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/base/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/base/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/base/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/base/_base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/base/_fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/base/_fonts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/base/_helpers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/base/_helpers.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/base/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/base/_typography.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/components/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/components/_button.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/layout/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/layout/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/layout/_cbody.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/layout/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/layout/_form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_form.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/layout/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/layout/_hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_hero.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/layout/_sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/pages/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/pages/_home.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/themes/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/themes/_default.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/vendors/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/vendors/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles/vendors/_normalize.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/vendors/_normalize.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/views/Community.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/views/Community.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/views/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/views/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/form.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,6 +145,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -245,6 +175,7 @@
       <workItem from="1626576936895" duration="636000" />
       <workItem from="1626577760856" duration="315000" />
       <workItem from="1626578135399" duration="4155000" />
+      <workItem from="1626615956871" duration="1903000" />
     </task>
     <servers />
   </component>
@@ -261,5 +192,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
