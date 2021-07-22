@@ -1,7 +1,9 @@
 <template>
+<div>
+<Modal :class="!post ? 'hidden' : 'block'" @click="toggle"  />
   <div class="body">
+     
     <h2>Top trending</h2>
-
     <!-- card -->
     <div class="post-card">
       <div>
@@ -35,27 +37,44 @@
                 class="bx bx-bookmark-alt-minus red"></i>
             </div>
             <div class="like">
-              <div class="like"><i @click="like" :class="isLiked ? 'bx-like' : 'bxs-like '" class="bx " ></i></div>
+              <div class="like"><i @click="like" :class="isLiked ? 'bx-like' : 'bxs-like '" class="bx "></i></div>
             </div>
             <div class="likes-counter">{{ count }}</div>
           </div>
         </div>
       </div>
     </div>
+
+    <!--    post model -->
+
+    <button class="addpost" @click.prevent="toggle">
+      <i class='bx bx-plus-circle'></i>
+    </button>
+
+    
   </div>
+</div>
 </template>
 <script>
+import Modal from '@/components/Modals/Modal.vue';
 import {ref} from "vue";
 
 export default {
+  components : {
+    Modal
+  },
   setup() {
     const add = ref(true);
     const count = ref(0);
     const isLiked = ref(true);
+    const post = ref(false);
     const bonk = () => {
       add.value = !add.value;
     };
-
+    const toggle = () => {
+      post.value = !post.value
+      console.log(post.value);
+    };
     const like = () => {
       if (count.value === 0) {
         count.value++
@@ -69,9 +88,11 @@ export default {
       count,
       isLiked,
       add,
+      post,
       like,
       bonk,
-
+      toggle,
+      post
     }
   }
 };

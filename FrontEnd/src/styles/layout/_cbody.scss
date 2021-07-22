@@ -1,95 +1,148 @@
 .body {
   margin-left: 7em;
   padding-top: 1.5rem;
-  h2 {
-    margin: 0;
-    color: black;
-  }
-  h5 {
-    margin: 0;
-  }
-  .post-card {
-    display: flex;
-    width: 60em;
-    height: 16em;
-    background-color: rgb(255, 255, 255);
-    border-radius: 5px;
-    filter: drop-shadow(0 0 0.2rem rgb(226, 226, 226));
-    gap: 1.8em;
-    padding: 12px;
-    .img {
-      width: 17em;
-      height: 100%;
-      background-color: yellow;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-    .card_content {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 6px;
-      .info {
-        display: flex;
-        gap: 2em;
-        
-      }
-      .card_body {
-        padding: 2px 0;
-      }
-      .socialize {
-        display: flex;
-        justify-content: space-between;
-        .btns {
-          display: flex;
-          align-items: center;
-          gap: 1.2em;
-          width: 7em;
-          cursor: pointer;
+}
 
-          .plus {
-            display: none;
-          }
-          .red{
-            color: #ff4646;
-          }
-          .green {
-            color: #35c735;
-          }
-          .minus {
-            display: none;
-          }
-          .bxs-like , .bx-like {
+h2 {
+  margin: 0;
+  color: black;
+}
+
+h5 {
+  margin: 0;
+}
+
+.post-card {
+  display: flex;
+  max-width: 60rem;
+  height: 16em;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  filter: drop-shadow(0 0 0.2rem rgb(226, 226, 226));
+  gap: 1.8em;
+  padding: 12px;
+
+  .img {
+    width: 17em;
+    height: 100%;
+    background-color: yellow;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .card_content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 6px;
+    gap: 1em;
+
+    .info {
+      display: flex;
+      gap: 2em;
+
+    }
+
+    .card_body {
+      padding: 2px 0;
+
+      p {
+        font-size: .8em;
+      }
+    }
+
+    .socialize {
+      display: flex;
+      justify-content: space-between;
+
+      .btns {
+        display: flex;
+        align-items: center;
+        gap: 1.2em;
+        width: 7em;
+        cursor: pointer;
+
+        .plus {
+          display: none;
+        }
+
+        .red {
+          color: #ff4646;
+        }
+
+        .green {
+          color: #35c735;
+        }
+
+        .minus {
+          display: none;
+        }
+
+        .bxs-like, .bx-like {
+          color: #4d84e2;
+        }
+
+        i {
+          font-size: 1.6em;
+          transition: all 300ms ease;
+
+          &:hover {
+            transition: all 300ms ease;
             color: #4d84e2;
           }
-
-          i {
-            font-size: 1.6em;
-            transition: all 300ms ease;
-            &:hover{
-              transition: all 300ms ease;
-              color: #4d84e2;
-            }
-          }
         }
-        .More {
-           
-          a {
-            padding: 10px;
-            background-color: rgb(93, 132, 252);
-            color: white;
-            border-radius: 5px;
-            letter-spacing: 1px;
-            cursor: pointer;
-            text-decoration: none;
-            
-            &:hover {
-              background-color: $dark_grey;
-            }
+      }
+
+      .More {
+
+        a {
+          padding: 10px;
+          background-color: rgb(93, 132, 252);
+          color: white;
+          border-radius: 5px;
+          letter-spacing: 1px;
+          cursor: pointer;
+          text-decoration: none;
+
+          &:hover {
+            background-color: $dark_grey;
           }
         }
       }
     }
   }
+}
+.addpost {
+  position: fixed;
+  top: 93%;
+  left: 93%;
+  z-index: 100000000;
+  font-size: 2rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: all 300ms ease;
+
+  color: $blue-yc;
+  &:hover {
+    transition: all 300ms ease;
+    color: $dark-grey;
+    transform: scale(1.5);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .post-card {
+    flex-direction: column;
+    max-width: 20em;
+    height: 28em;
+    gap: 0.3em;
+    align-items: center;
+
+    .img {
+
+    }
+  }
+
 }

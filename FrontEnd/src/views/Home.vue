@@ -1,6 +1,8 @@
 <template>
+
   <Nav />
   <Hero />
+  
 </template>
 
 <script>

@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2428bc3-9d62-4239-a25b-7a09c5b5810c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/FrontEnd/src/components/Modals/PostModal.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/form.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/cbody.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/cbody.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/styles/base/_helpers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/base/_helpers.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/styles/base/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/base/_typography.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_cbody.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_cbody.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/styles/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/main.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +18,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/BackEnd/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -147,11 +159,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="ReaderModeSettings">
-    <option name="showLigatures" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -176,6 +185,11 @@
       <workItem from="1626577760856" duration="315000" />
       <workItem from="1626578135399" duration="4155000" />
       <workItem from="1626615956871" duration="1903000" />
+      <workItem from="1626634600875" duration="3000" />
+      <workItem from="1626718923744" duration="6088000" />
+      <workItem from="1626879236786" duration="100000" />
+      <workItem from="1626879349976" duration="96000" />
+      <workItem from="1626879471509" duration="258000" />
     </task>
     <servers />
   </component>
