@@ -4,19 +4,22 @@
     <h1>Dashoard</h1>
 
     <div class="dashboard">
-    <Stats />
+     <Panel />
     <Profile />
+   
     </div>
 
 </div>
 </template>
 <script>
-import Stats from '@/components/Cards/statsCard.vue';
+import Panel from '@/components/panelControl.vue';
 import Profile from '@/components/profile.vue';
+
 export default {
     components:{
-        Stats, 
-        Profile
+        Panel, 
+        Profile,
+       
     },
     setup() {
         

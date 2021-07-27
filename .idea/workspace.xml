@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2428bc3-9d62-4239-a25b-7a09c5b5810c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/database/migrations/2021_07_10_190347_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/database/migrations/2021_07_10_190347_create_posts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/Modals/Modal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/Modals/Modal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/ModalsContent/postModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/ModalsContent/postModal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/cbody.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/cbody.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/store/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/store/post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/styles/abstracts/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/abstracts/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_form.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_modal.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_modal.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_postModal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_postModal.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/assets/wordpress-5.8.zip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,6 +191,7 @@
       <workItem from="1627065028307" duration="1083000" />
       <workItem from="1627067014821" duration="1250000" />
       <workItem from="1627082380933" duration="619000" />
+      <workItem from="1627418971041" duration="18000" />
     </task>
     <servers />
   </component>
