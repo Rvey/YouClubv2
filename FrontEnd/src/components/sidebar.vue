@@ -27,10 +27,10 @@
         <span class="tooltip">Home</span>
       </li>
       <li>
-        <a href="#">
+        <router-link to="/Community">
           <i class="bx bx-group"></i>
           <span class="links_name">Community</span>
-        </a>
+        </router-link>
         <span class="tooltip">Community</span>
       </li>
 

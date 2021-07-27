@@ -3,7 +3,7 @@
    <Modal v-if="modalOpen" :modalContent="modalContent" @close="handleClose()" />
     <div ref="modal"
     class="form-wrapper">
-      <form @click.prevent="submit" class="post-form" action="#" >
+      <form  class="post-form" action="#" >
         <div class="upload-wrapper">
           <div class="image">
             <input type="file" id="file" accept="images" />
@@ -18,14 +18,13 @@
         <div class="c">
           <label for="Post title">Post content</label>
        <textarea v-model="post.content" id="content" name="content" rows="10" cols="50">
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus cumque assumenda vitae, reprehenderit provident beatae officia? Quam, doloremque? Et sit rem ea impedit accusamus a velit temporibus aut voluptatum voluptatibus?
   </textarea>
         </div>
 
         <!--        submit-->
 
         <div class="submit-btns">
-          <button  class="submit" type="submit">Submit</button>
+          <button @click.prevent="submit" class="submit" type="submit">Submit</button>
           <button @click.prevent="close" class="cancel">cancel</button>
         </div>
       </form>
@@ -49,14 +48,11 @@ export default {
 
     const submit = async () => {
     await store.dispatch("post/submitPost" , post.value)
-    
     }
-
-
 
     const close = () => {
       return emit("close");
-      console.log('cacel');
+
     };
     return {
       close,

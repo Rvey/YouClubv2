@@ -1,7 +1,7 @@
 <template>
   <div class="overlay">
     <div class="modal">
-      <component :is="modalContent" @close="$emit('close')">
+      <component :is="modalContent" :data="data" @close="$emit('close')">
       </component>
     </div>
   </div>
@@ -11,12 +11,13 @@
 <script>
 import { onMounted, onUnmounted } from "@vue/runtime-core";
 import SubmitPostModal from "@/components/ModalsContent/postModal.vue";
-
+import editPostModal from "@/components/ModalsContent/editModal.vue";
 export default {
   name: "Modal",
-  props: ["modalContent"],
+  props: ["modalContent", "data"],
   components: {
-SubmitPostModal
+SubmitPostModal,
+editPostModal
   },
   setup() {
     onMounted(() => {

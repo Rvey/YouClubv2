@@ -1,16 +1,14 @@
 <template>
-  <Sidebar />
-  <Cbody />
+      <Sidebar />
+      <Dashbody />
 </template>
 <script>
 import Sidebar from "@/components/sidebar.vue";
-import Cbody from "@/components/cbody.vue";
+import Dashbody from "@/components/dashbody.vue";
 export default {
   components: {
     Sidebar,
-    Cbody,
+    Dashbody
   },
 };
 </script>
-<style>
-</style>

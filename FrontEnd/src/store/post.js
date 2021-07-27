@@ -44,20 +44,10 @@ export default {
         commit("SET_ERROR_NEWPOST", err.message);
       }
     },
-
-    // async submitComment({ commit }, commentData) {
-    //   try {
-    //     await axios.post("/api/comment", commentData);
-    //     return true;
-    //   } catch (err) {
-    //     console.log(err);
-    //   }
-    // },
-
-    async editPost(_, post) {
+    async editPost({commit}, post) {
       try {
-        await axios.post(`/api/post/${post.id}`, post);
-        return true;
+        await axios.put(`/api/post/${post.id}` , post);
+        return commit("SET_LOADING_NEWPOST", false);
       } catch (err) {
         console.log(err);
       }
@@ -72,6 +62,16 @@ export default {
         console.log(err);
       }
     },
+    // async submitComment({ commit }, commentData) {
+    //   try {
+    //     await axios.post("/api/comment", commentData);
+    //     return true;
+    //   } catch (err) {
+    //     console.log(err);
+    //   }
+    // },
+
+   
   },
   mutations: {
     GET_POSTS(state, payload) {

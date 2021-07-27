@@ -55,6 +55,7 @@ export default {
       email: "",
       password: "",
       password_confirmation: "",
+
     });
 
     const error = computed(() => store.getters["auth/error"]);
