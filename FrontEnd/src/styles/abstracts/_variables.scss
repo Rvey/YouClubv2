@@ -32,7 +32,8 @@ $light-grey: rgb(237, 237, 237) !default;
 
 /// Medium grey
 /// @type Color
-$dark-grey: #22181C;
+
+$dark-grey: #161616;
 
 /// Dark grey
 /// @type Color
@@ -45,8 +46,17 @@ $orange:#FB4D3D;
 
 $blue-yc :#2196f3;
 
-$dark-blue : rgb(16, 16, 189);
+$dark-blue : #1010bd;
 
+$red : rgb(255, 28, 28);
+
+
+
+
+
+$fade-blue :#2195f33a ;
+
+$fade-red :#ff3d3d9f ;
 
 /// Container's maximum width
 /// @type Length

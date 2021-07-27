@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use App\Models\Post;
@@ -16,6 +17,8 @@ class PostController extends Controller
     {
 
         return Post::all();
+
+
     }
 
     /**
@@ -28,18 +31,16 @@ class PostController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'body' => 'required'
+            'content' => 'required'
         ]);
-        $post = Post::create([
+
+        $post = $request->user()->posts()->create([
             'title' => $request->title,
-            'body' => $request->body,
-            'user_id' => $request->user_id,
-            'likes' => $request->likes,
-            'tags' => $request->tags,
-
-
+            'content' => $request->content,
+            // 'user_id' => $request->user_id,
+            // 'likes' => $request->likes,
+            // 'tags' => $request->tags,
         ]);
-
 
         $response = (bool)$post
             ? response([
@@ -53,7 +54,6 @@ class PostController extends Controller
 
         return $response;
     }
-
     /**
      * Display the specified resource.
      *
@@ -78,12 +78,13 @@ class PostController extends Controller
 
         $request->validate([
             "title" => ['max:255'],
-            "constent" => ["max:2000"],
+            "content" => ["max:2000"],
         ]);
 
 
         $post = Post::find($id);
         $post->update($request->all());
+        return $post;
 
         $response = (bool)$post
             ? response([
@@ -108,11 +109,11 @@ class PostController extends Controller
     {
         // check autorization
         if (
-            !$request->user()->is_admin() ||
-            !$request->user()->posts->where(["id" => $id])->first()
+            //     !$request->user()->is_admin() ||
+            $request->user()->posts->where(["id" => $id])->first()
 
         )
-            return response(["error" => 'Unaithorized'], 401);
+            return response(["error" => 'Unauthorized'], 401);
 
 
         $delete = Post::where(['id' => $id])->delete();

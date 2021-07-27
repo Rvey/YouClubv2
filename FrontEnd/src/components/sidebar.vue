@@ -35,10 +35,10 @@
       </li>
 
       <li>
-        <a href="#">
+        <router-link to="/Dashboard">
           <i class="bx bx-category"></i>
           <span class="links_name">Dashboard</span>
-        </a>
+        </router-link>
         <span class="tooltip">Dashboard</span>
       </li>
     </ul>

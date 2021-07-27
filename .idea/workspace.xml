@@ -2,13 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2428bc3-9d62-4239-a25b-7a09c5b5810c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/components/Modals/PostModal.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/app/Http/Controllers/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/app/Models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/database/migrations/2021_07_10_190347_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/database/migrations/2021_07_10_190347_create_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/Modals/Modal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/Modals/Modal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/ModalsContent/postModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/ModalsContent/postModal.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/cbody.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/cbody.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/styles/base/_helpers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/base/_helpers.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/styles/base/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/base/_typography.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_cbody.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_cbody.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/styles/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/store/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/store/post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/styles/abstracts/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/abstracts/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_form.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_modal.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_modal.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_postModal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_postModal.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,12 +161,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -190,6 +199,11 @@
       <workItem from="1626879236786" duration="100000" />
       <workItem from="1626879349976" duration="96000" />
       <workItem from="1626879471509" duration="258000" />
+      <workItem from="1627000907913" duration="5114000" />
+      <workItem from="1627064903134" duration="94000" />
+      <workItem from="1627065028307" duration="1083000" />
+      <workItem from="1627067014821" duration="1250000" />
+      <workItem from="1627082380933" duration="619000" />
     </task>
     <servers />
   </component>

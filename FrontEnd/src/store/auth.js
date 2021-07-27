@@ -24,6 +24,9 @@ export default {
     userId(state) {
       return state.user?.id;
     },
+    userName(state) {
+      return state.user?.username;
+    }
   },
   actions: {
     async login({ commit, dispatch }, credentials) {

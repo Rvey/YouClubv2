@@ -19,48 +19,23 @@ use App\Http\Controllers\CommentController;
 */
 
 
-
-//* Public Routes
-
-// Route::resource('posts', PostController::class);
-
-Route::post('/signup', [AuthController::class, 'register']);
-
-Route::post('/login', [AuthController::class, 'login']);
-
-
-Route::get('/post/{id}', [PostController::class, 'show']);
-
-Route::get('/search/{title}', [PostController::class, 'search']);
-
-Route::post('/admin/signup', [AdminController::class, 'register']);
-
-Route::group(['middleware' => ['auth:user']], function () {
-    Route::get('/post', [PostController::class, 'index']);
-});
-
-
-
-
-
 //* Protected Routes
-
-
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
 
+    //** Posts Api */
 
-    //** Post Api */
+    Route::get('/post/{id}', [PostController::class, 'show']);
 
-    Route::post('/posts', [PostController::class, 'store']);
+    Route::post('/post', [PostController::class, 'store']);
 
     Route::put('/post/{id}', [PostController::class, 'update']);
 
     Route::delete('/post/{id}', [PostController::class, 'destroy']);
 
-    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::get('/posts', [PostController::class, 'index']);
 
-
+    
     //** Comments Api */
 
     Route::get('/comment/user/{id}', [CommentController::class, 'userComments']);
@@ -76,6 +51,35 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/user', [AuthController::class, 'user']);
 });
 
+//* Public Routes A
+
+
+    Route::post('/signup', [AuthController::class, 'register']);
+
+    Route::post('/login', [AuthController::class, 'login']);
+
+    Route::post('/logout', [AuthController::class, 'logout']);
+
+    Route::post('/admin/signup', [AdminController::class, 'register']);
+
+
+//** Post Api */
+
+    Route::get('/search/{title}', [PostController::class, 'search']);
+
+
+
+
+
+
+
+
+
+
+// Route::resource('posts', PostController::class);
+
+// Route::group(['middleware' => ['auth:user']], function () {
+// });
 
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();

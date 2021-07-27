@@ -1,5 +1,5 @@
 .overlay {
-    background: rgba($color: #000, $alpha: 0.5);
+    background: rgba($color: rgb(26, 26, 26), $alpha: 0.7);
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -7,12 +7,12 @@
     place-items: center;
   
     .modal {
-      
-      max-height: 95vh;
-      max-width: 600px;
       width: 100%;
      padding: 2em;
       border-radius: 4px;
       overflow-y: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
