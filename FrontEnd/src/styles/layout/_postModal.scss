@@ -57,6 +57,8 @@
       border-radius: 8px;
       outline: none;
       font-size: 1.4em;
+      max-width: 100%; 
+    
       &:focus {
         border-radius: 8px;
         border: 2px $fade-blue solid;
