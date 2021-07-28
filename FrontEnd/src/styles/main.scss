@@ -5,10 +5,6 @@
   'abstracts/functions',
   'abstracts/mixins';
 
-// 2. Vendors
-@import
-  'vendors/normalize';
-
 // 3. Base stuff
 @import
   'base/base',
@@ -29,6 +25,7 @@
   'layout/dashbody',
   'layout/profile',
   'layout/table',
+  'layout/blogBody',
   'layout/sidebar';
 
 

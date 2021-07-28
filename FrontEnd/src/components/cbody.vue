@@ -1,4 +1,5 @@
 <template>
+
   <div>
     <Modal
       v-if="modalOpen"
@@ -6,7 +7,8 @@
       @close="handleClose()"
     />
     <div class="body">
-      <h2>Top trending</h2>
+
+      <div class="ds-title">Top trending</div>
       <!-- card -->
       <div>
         <PostCard v-for="post in posts" :post="post" :key="post.id" />

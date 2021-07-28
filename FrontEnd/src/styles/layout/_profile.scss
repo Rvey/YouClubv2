@@ -1,4 +1,108 @@
-.profile-wrapper {
-    background-color: aqua;
-    flex-grow: 1;
+.f {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+
+  .profile-wrapper {
+    width: 20em;
+    background-color: #e6ebff4f;
+    border-radius: 10px;
+    .ehe {
+      text-align: center;
+      color: $mid-grey;
+      padding-top: 2em;
+    }
+    .profile-settings {
+      border-radius: 20px;
+      height: 21em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      border-radius: 10px 10px 0 0;
+
+      .profile-pic {
+        width: 10em;
+        height: 10em;
+        background-color: rgb(205, 205, 255);
+        border-radius: 100%;
+        border: 6px solid white;
+      }
+
+      .user {
+        display: flex;
+        flex-direction: column;
+        gap: 1.3em;
+        padding-left: 2em;
+        width: 100%;
+      }
+    }
+  }
+
+  .pspace {
+    width: 20em;
+    background-color: #e6ebff4f;
+    border-radius: 10px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    padding: 20px;
+    .bookmarks{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .ii{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1em;
+        }
+        .btn-da {
+            background-color: $fade-blue;
+            padding:3px 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            &:hover{
+                filter: drop-shadow(0 0 0.3rem $blue-yc);
+                background-color: rgba(152, 167, 255, 0.364);
+            }
+
+        }
+
+        
+    }
+
+  }
+}
+
+@media screen and (max-width : 1300px) {
+  .f {
+    width: 80%;
+    .profile-wrapper {
+        width: 100%;
+       .profile-settings{
+           flex-direction: row;
+           height: 9em;
+
+       }
+        
+    }
+    .pspace{
+        width: 100%;
+    }
+  }
+
+}
+@media screen and (max-width : 600px) {
+    .f {
+        width: 100%;
+    }
 }

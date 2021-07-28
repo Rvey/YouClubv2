@@ -3,6 +3,7 @@ import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Community from "../views/Community.vue";
 import Dashboard from "../views/Dashboard.vue";
+import BlogPage from "../views/BlogPage.vue";
 const routes = [
   {
     path: "/",
@@ -23,6 +24,11 @@ const routes = [
     path: "/Dashboard",
     name: "Dashboard",
     component: Dashboard,
+  },
+  {
+    path: "/BlogPage",
+    name: "BlogPage",
+    component: BlogPage,
   },
 ];
 

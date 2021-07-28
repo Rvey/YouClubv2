@@ -1,60 +1,102 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  td,
+  th {
+    padding: 16px 15px;
+    width: 15em;
+    text-align: center;
+    font-size: 16px;
+  }
+  thead {
+    border-radius: 23px;
+  }
+  th {
+    background-color: #f2f2f2;
+    color: black;
+    &:nth-child(1) {
+      border-radius: 10px 0 0 10px;
+    }
+    &:nth-child(4) {
+      border-radius: 0 10px 10px 0;
+    }
+  }
 
-// .table{
-// 	width: 100%;
-// 	border-collapse: collapse;
-//     collapse {
-//         border-radius: 32px;
-//     }
-// }
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.1em;
+    i {
+      font-size: 1.4em;
+      cursor: pointer;
+    }
+    .delete {
+      color: $red;
+      transition: all 300ms ease;
+      &:hover {
+        color: $mid-grey;
+        transition: all 400ms ease;
+      }
+    }
+    .edit {
+      color: $blue-yc;
+      transition: all 300ms ease;
+      &:hover {
+        color: $mid-grey;
+        transition: all 400ms ease;
+      }
+    }
+  }
 
-// .table td,.table th{
-//   padding:12px 15px;
-//   border:1px solid #ddd;
-//   text-align: center;
-//   font-size:16px;
+  tbody {
+    tr:nth-child(even) {
+      background-color: #f5f5f580;
+    }
+  }
+}
+
+/*responsive*/
+
+@media (max-width: 600px) {
+  .table {
+    thead {
+      display: none;
+    }
+    tr {
+      margin-bottom: 15px;
+      display: block;
+      width: 100%;
+    }
+
+    td {
+      text-align: right;
+      padding-left: 50%;
+      text-align: right;
+      position: relative;
+      display: block;
+      width: 100%;
+    }
+    td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 50%;
+      padding-left: 15px;
+      font-size: 15px;
+      font-weight: bold;
+      text-align: left;
+    }
   
-// }
-// .table thead {
-//     border-radius: 23px;
-// }
-// .table th{
-// 	background-color: darkblue;
-// 	color:#ffffff;
-    
-// }
+    .actions {
+      justify-content: flex-end;
+    }
+  }
 
-// .table tbody tr:nth-child(even){
-// 	background-color: #f5f5f5;
-// }
-
-// /*responsive*/
-
-// @media(max-width: 500px){
-// 	.table thead{
-// 		display: none;
-// 	}
-
-// 	.table, .table tbody, .table tr, .table td{
-// 		display: block;
-// 		width: 100%;
-// 	}
-// 	.table tr{
-// 		margin-bottom:15px;
-// 	}
-// 	.table td{
-// 		text-align: right;
-// 		padding-left: 50%;
-// 		text-align: right;
-// 		position: relative;
-// 	}
-// 	.table td::before{
-// 		content: attr(data-label);
-// 		position: absolute;
-// 		left:0;
-// 		width: 50%;
-// 		padding-left:15px;
-// 		font-size:15px;
-// 		font-weight: bold;
-// 		text-align: left;
-// 	}
-// }
+  //   .table,
+  //   .table tbody,
+  //   .table tr,
+  //   .table td {
+  //     display: block;
+  //     width: 100%;
+  //   }
+}

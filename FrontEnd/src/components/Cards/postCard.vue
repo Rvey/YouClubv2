@@ -30,7 +30,7 @@
         </div>
         <div class="socialize">
           <div class="More">
-            <a href="">Read More</a>
+            <router-link  to="/BlogPage">Read More</router-link>
           </div>
 
           <div class="btns">

@@ -1,6 +1,5 @@
 .body {
-  margin-left: 7em;
-  padding-top: 1.5rem;
+  margin-left: 5em;
 }
 
 h2 {
@@ -41,14 +40,13 @@ h5 {
     .info {
       display: flex;
       gap: 2em;
-
     }
 
     .card_body {
       padding: 2px 0;
 
       p {
-        font-size: .8em;
+        font-size: 0.8em;
       }
     }
 
@@ -79,7 +77,8 @@ h5 {
           display: none;
         }
 
-        .bxs-like, .bx-like {
+        .bxs-like,
+        .bx-like {
           color: #4d84e2;
         }
 
@@ -95,7 +94,6 @@ h5 {
       }
 
       .More {
-
         a {
           padding: 10px;
           background-color: rgb(93, 132, 252);
@@ -141,8 +139,6 @@ h5 {
     align-items: center;
 
     .img {
-
     }
   }
-
 }

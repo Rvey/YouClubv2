@@ -1,7 +1,62 @@
 .dashboard {
-    margin: 2em;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6em;
-    
+  display: flex;
+  flex-wrap: wrap-reverse;
+  gap: 2em;
+  justify-content: space-around;
+  
 }
+.da-panel {
+  display: flex;
+  gap: 3em;
+  flex-direction: column;
+}
+.s-title {
+  margin-left: 3em;
+}
+.ds-title{
+    margin:0 1.4em;
+    font-weight: bold;
+    font-size: 2em;
+    padding: 1em 0;
+   
+}
+@media screen and (max-width: 1300px) {
+    .ds-title{
+        text-align: center;
+    }
+    .f{
+     width: 100%;
+     .profile-wrapper {
+         width: 90%;
+         margin: auto;
+        .profile-settings {
+            flex-direction: row;
+            height: 8em;
+            padding-left: 1em;
+            .cover {
+                .profile-pic{
+                    height: 6em;
+                    width: 6em;
+                }
+            }
+        }
+     }
+    
+     .ehe{
+         display: none;
+     }
+
+   
+     
+ }
+ .da-panel{
+    margin: 0 6em;
+}
+
+  }
+  @media screen and (max-width : 600px){
+    .da-panel {
+        margin: 0 0.3em;
+      }
+    
+  }
