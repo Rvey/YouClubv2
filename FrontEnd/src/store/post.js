@@ -31,6 +31,17 @@ export default {
       }
     },
 
+
+    async single ({commit } ,id){
+      try {
+        const res = await axios.get(`/api/post/${id}` );
+        console.log(res.data);
+        return commit("SET_LOADING_NEWPOST" , false);
+      }catch (err){
+        commit("SET_ERROR_NEWPOST" , err.message);
+      }
+    },
+
     async submitPost({ commit, dispatch }, postData) {
       try {
         commit("SET_LOADING_NEWPOST", true);
@@ -81,6 +92,7 @@ export default {
     //   index = state.post.findIndex(post => post.id == id)
     //   state.post.splice(index , 1)
     // },
+   
     SET_ERROR(state, value) {
       state.error_newpost = value;
     },

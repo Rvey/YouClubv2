@@ -19,6 +19,7 @@ const routes = [
     path: "/Community",
     name: "Community",
     component: Community,
+    props: true 
   },
   {
     path: "/Dashboard",
@@ -29,6 +30,7 @@ const routes = [
     path: "/BlogPage",
     name: "BlogPage",
     component: BlogPage,
+    props: true 
   },
 ];
 

@@ -29,32 +29,29 @@
             </div>
 
             <div class="blog-article">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Accusamus voluptas quas libero maiores non aperiam ut velit
-        
+              
             </div>
           </div>
         </div>
       </div>
-       <Scomment  />
+      <Scomment />
     </div>
-     
   </div>
-
 </template>
 <script>
 import Like from "@/components/Misc/comment.vue";
 import Comment from "@/components/Misc/like.vue";
 import Scomment from "@/components/commentSection.vue";
+
 export default {
+  name: "editPostModal",
+  props: ["data"],
   components: {
     Like,
     Comment,
-    Scomment
+    Scomment,
   },
   setup() {},
 };
 </script>
-<style>
-
-</style>
+<style></style>

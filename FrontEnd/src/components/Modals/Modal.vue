@@ -5,31 +5,30 @@
       </component>
     </div>
   </div>
-
 </template>
 
 <script>
 import { onMounted, onUnmounted } from "@vue/runtime-core";
 import SubmitPostModal from "@/components/ModalsContent/postModal.vue";
 import editPostModal from "@/components/ModalsContent/editModal.vue";
+
 export default {
   name: "Modal",
   props: ["modalContent", "data"],
   components: {
-SubmitPostModal,
-editPostModal
+    SubmitPostModal,
+    editPostModal,
   },
   setup() {
     onMounted(() => {
       document.body.classList.add("no-scroll");
-      
     });
 
     onUnmounted(() => {
       document.body.classList.remove("no-scroll");
     });
 
-    return {  };
+    return {};
   },
 };
 </script>

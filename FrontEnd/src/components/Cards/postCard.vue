@@ -1,5 +1,5 @@
 <template>
-<div>
+  <div>
     <Modal
       v-if="modalOpen"
       :modalContent="modalContent"
@@ -7,7 +7,6 @@
       @close="handleClose()"
     />
     <div class="post-card">
-
       <div>
         <img class="img" src="../../assets/bg.jpg" alt="" />
       </div>
@@ -30,7 +29,7 @@
         </div>
         <div class="socialize">
           <div class="More">
-            <router-link  to="/BlogPage">Read More</router-link>
+            <button  @click="single(post)">Read More</button>
           </div>
 
           <div class="btns">
@@ -53,10 +52,10 @@
                 <i @click="deletePost(post)" class="bx bxs-trash-alt"></i>
               </div>
             </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -66,10 +65,10 @@ import Modal from "@/components/Modals/Modal.vue";
 import { computed, ref } from "vue";
 import { useStore } from "vuex";
 export default {
-    components: {
+  components: {
     Modal,
   },
-    props: ["post"],
+  props: ["post"],
   setup(props) {
     const store = useStore();
     const add = ref(true);
@@ -92,13 +91,20 @@ export default {
     };
 
     const time = (date) => {
-    //   return moment(date).format("MMM Do YY, h:mm:ss a");
-      return moment(date).startOf('hour').fromNow();
+      //   return moment(date).format("MMM Do YY, h:mm:ss a");
+      return moment(date)
+        .startOf("hour")
+        .fromNow();
     };
 
     const openModal = (modal) => {
       modalContent.value = modal;
       modalOpen.value = true;
+    };
+
+    const single =  ({ id }) => {
+       store.dispatch("post/single" , id);
+      // console.log(id.value);
     };
 
     const handleClose = () => {
@@ -110,7 +116,7 @@ export default {
       count,
       add,
       posts,
-      // like,
+      single,
       // editPost,
       userName,
       bonk,

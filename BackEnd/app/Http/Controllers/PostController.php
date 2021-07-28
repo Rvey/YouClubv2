@@ -53,16 +53,17 @@ class PostController extends Controller
             ]);
 
         return $response;
-    }
+        }
     /**
      * Display the specified resource.
      *
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request , $id)
     {
-        return Post::find($id);
+     $post = Post::where('id' , $id)->get(['id' , 'title' , 'content' , 'user_id']);
+     return $post;
     }
 
     /**

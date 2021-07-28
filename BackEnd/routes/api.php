@@ -25,7 +25,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     //** Posts Api */
 
-    Route::get('/post/{id}', [PostController::class, 'show']);
+
 
     Route::post('/post', [PostController::class, 'store']);
 
@@ -35,7 +35,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::get('/posts', [PostController::class, 'index']);
 
-    
+
     //** Comments Api */
 
     Route::get('/comment/user/{id}', [CommentController::class, 'userComments']);
@@ -67,7 +67,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::get('/search/{title}', [PostController::class, 'search']);
 
-
+    Route::get('/post/{id}', [PostController::class, 'show']);
 
 
 
