@@ -19,7 +19,6 @@ const routes = [
     path: "/Community",
     name: "Community",
     component: Community,
-    props: true 
   },
   {
     path: "/Dashboard",
@@ -27,11 +26,12 @@ const routes = [
     component: Dashboard,
   },
   {
-    path: "/BlogPage",
+    path: "/BlogPage/:id",
     name: "BlogPage",
     component: BlogPage,
-    props: true 
   },
+
+
 ];
 
 const router = createRouter({

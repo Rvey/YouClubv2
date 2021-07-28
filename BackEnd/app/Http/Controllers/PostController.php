@@ -62,7 +62,7 @@ class PostController extends Controller
      */
     public function show(Request $request , $id)
     {
-     $post = Post::where('id' , $id)->get(['id' , 'title' , 'content' , 'user_id']);
+     $post = Post::where('id' , $id)->get();
      return $post;
     }
 

@@ -1,10 +1,12 @@
 <template>
   <div class="body">
     <div>
+      
       <div class="socials">
         <Comment />
         <Like />
       </div>
+     
       <div class="blog-wrapper">
         <div class="blog">
           <div class="blog-category">
@@ -44,14 +46,13 @@ import Comment from "@/components/Misc/like.vue";
 import Scomment from "@/components/commentSection.vue";
 
 export default {
-  name: "editPostModal",
-  props: ["data"],
+
+
   components: {
     Like,
     Comment,
     Scomment,
   },
-  setup() {},
 };
 </script>
 <style></style>
