@@ -37,21 +37,25 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
 
     //** Comments Api */
-
-    Route::get('/comment/user/{id}', [CommentController::class, 'userComments']);
-
-    Route::get('/comment/post/{id}', [CommentController::class, 'postComments']);
-
     Route::post('/comment', [CommentController::class, 'store']);
 
-    Route::put('/comment/{id}', [CommentController::class, 'update']);
-
-    Route::delete('/comment/{id}', [CommentController::class, 'destroy']);
-
-    Route::get('/user', [AuthController::class, 'user']);
 });
 
+// Route::get('/comment/user/{id}', [CommentController::class, 'userComments']);
+
+Route::get('/comments', [CommentController::class, 'index']);
+
+
+
+Route::put('/comment/{id}', [CommentController::class, 'update']);
+
+Route::delete('/comment/{id}', [CommentController::class, 'destroy']);
+
+Route::get('/user', [AuthController::class, 'user']);
+
 //* Public Routes A
+
+
 
 
     Route::post('/signup', [AuthController::class, 'register']);

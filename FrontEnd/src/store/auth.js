@@ -63,7 +63,7 @@ export default {
       try {
         commit("SET_ERROR", null);
         const res = await axios.post("api/signup", credentials);
-
+        
         // return dispatch("attempt", res.data.data.token);
         // window.location.replace("/login");
       } catch (err) {

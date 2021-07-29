@@ -19,13 +19,24 @@ export default {
     },
   },
 
-  actions : {
-      async getComments ({ commit }) {
-          try {
-              commit("SET_ERROR", null);
-              const res = await axios.get(`api/comments`);
-              commit("GET_COMMENTS" , res.data);
-          }
+  actions: {
+    async getComments({ commit }) {
+      try {
+        commit("SET_ERROR", null);
+        const res = await axios.get(`api/comments`);
+        commit("GET_COMMENTS", res.data);
+      } catch (err) {
+        console.log(err);
       }
-  }
+    },
+
+    async submitComment({ commit }, commentData) {
+      try {
+        await axios.post("/api/comment", commentData);
+        return true;
+      } catch (err) {
+        console.log(err);
+      }
+    },
+  },
 };

@@ -2,59 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\Comment;
-use App\Models\User;
-use Dotenv\Store\File\Reader;
 use Illuminate\Http\Request;
 
-class CommentController extends Controller
+class commentController extends Controller
 {
-
-
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function UserComments(Request $request, $id)
-
+    public function index()
     {
-        return response([
-            "data" => User::where(["id" => $id])->comments()->get()->toArray(),
-            "error" => null
-        ], 200);
+        return  Comment::all();
     }
-
-
 
     /**
-     * Show the form for creating a new resource.
+     * Store a newly created resource in storage.
      *
-     * @param  \App\Models\Comment  $comment
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function postComments(Request $request, $id)
-    {
-        $comments = Comment::where(["post_id" => $id])->get();
-
-        return (bool)$comments
-            ? response([
-                "data" => $comments,
-                "error" => null
-            ], 201)
-            : response([
-                "data" => null,
-                "error" => "you cant comment "
-
-            ], 404);
-    }
-
     public function store(Request $request)
     {
         $request->validate([
-            "content" => ['required', 'max:800'],
+            "content" => ['required', 'max:1000'],
             "post_id" => ['required']
         ]);
+
+
+
+
 
         $comment = $request->user()->comments()->create([
             "content" => $request->content,
@@ -64,43 +43,42 @@ class CommentController extends Controller
         return (bool)$comment
             ? response([
                 "data" => $comment,
-                "error" => "success"
+                "error" => null
             ], 201)
             : response([
                 "data" => null,
-                "error" => "you cant comment "
-
+                "error" => "Could not post comment."
             ], 422);
     }
-
-
     /**
-     * Show the form for editing the specified resource.
+     * Display the specified resource.
      *
-     * @param  \App\Models\Comment  $comment
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comment $comment)
+    public function show($id)
     {
-        //
+        $comment = Comment::where(['id' => $id])->with('user')->first();
+        return $comment;
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Comment  $comment
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         $request->validate([
-            "content" => ['max:900']
+            "content" => ["max:2000"],
         ]);
 
-        $comment = $request->user()->comments()->where(["id" => $id]);
 
-        $comment->update(["content" => $request->content]);
+        $comment = Post::find($id);
+        $comment->update($request->all());
+        return $comment;
 
         $response = (bool)$comment
             ? response([
@@ -109,40 +87,37 @@ class CommentController extends Controller
             ], 201)
             : response([
                 "data" => null,
-                "error" => "Could not edit comment."
+                "error" => "Could not edit post."
             ], 422);
 
         return $response;
     }
 
+
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Comment  $comment
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, $id)
+    public function destroy(Request $request , $id)
     {
-        if (
-            $request->user()->id_Admin() ||
-            $request->user()->comments()->where(["id" => $id])->first()
-        )
-            return response(["error" => "Unathorized"], 401);
+        // if($request->user()->post->where(["id" => $id])->first())
+        //     return response(["error" => "Unauthorized"]);
 
+        $delete = Comment::where(['id' => $id])->delete();
 
-        $delete = Comment::where(["id" => $id])->delete();
-
-        return (bool)$delete
-            ? response([
-                "data" => $comment,
-                "error" => null
-            ], 201)
-            : response([
-                "data" => null,
-                "error" => "you cant comment "
-
-            ], 422);
+        $response = (bool)$delete
+        ? response([
+            "data" => "comment deleted" ,
+            "error" => null
+        ], 202)
+        : response([
+            "data" => null ,
+            "error" => "Could not delete comment"
+        ], 422);
 
         return $response;
+
     }
 }

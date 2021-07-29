@@ -35,7 +35,6 @@ class PostController extends Controller
         $post = $request->user()->posts()->create([
             'title' => $request->title,
             'content' => $request->content,
-            // 'user_id' => $request->user_id,
             // 'likes' => $request->likes,
             // 'tags' => $request->tags,
         ]);
@@ -109,9 +108,7 @@ class PostController extends Controller
         // check autorization
         if (
             //     !$request->user()->is_admin() ||
-            $request->user()->posts->where(["id" => $id])->first()
-
-        )
+            $request->user()->posts->where(["id" => $id])->first())
             return response(["error" => 'Unauthorized'], 401);
 
 
