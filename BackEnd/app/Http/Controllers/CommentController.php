@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\User;
 use Dotenv\Store\File\Reader;
 use Illuminate\Http\Request;
 
@@ -27,7 +28,7 @@ class CommentController extends Controller
 
 
     /**
-     * Display the specified resource.
+     * Show the form for creating a new resource.
      *
      * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
@@ -47,21 +48,7 @@ class CommentController extends Controller
 
             ], 404);
     }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $request->validate([

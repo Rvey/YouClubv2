@@ -4,7 +4,6 @@ export default {
   namespaced: true,
   state: {
     allPosts: [],
-    id : null,
     loading_newpost: false,
     error_newpost: null,
   },
@@ -18,6 +17,9 @@ export default {
     ERR_NEWPOST(state) {
       return state.error_newpost;
     },
+    CURRENT_POST(state) {
+      return state.current_post
+    }
   },
   actions: {
     async getPosts({ commit }) {
@@ -35,8 +37,9 @@ export default {
     async single ({commit } ,id){
       try {
         const res = await axios.get(`/api/post/${id}` );
-        console.log(res.data);
-        return commit("SET_LOADING_NEWPOST" , false);
+        commit("SET_LOADING_NEWPOST" , false);
+  
+        return commit ("SET_CURRENT_POST", res.data)
       }catch (err){
         commit("SET_ERROR_NEWPOST" , err.message);
       }
@@ -99,5 +102,8 @@ export default {
     SET_LOADING_NEWPOST(state, value) {
       state.loading_newpost = value;
     },
+    SET_CURRENT_POST(state, value) {
+      state.current_post = value;
+    }
   },
 };

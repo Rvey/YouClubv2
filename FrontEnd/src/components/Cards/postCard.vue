@@ -29,7 +29,7 @@
         </div>
         <div class="socialize">
           <div class="More">
-            <router-link :to="{ name:'BlogPage' , params:{id}}" ></router-link>
+            <router-link @click="single" :to="{ name:'BlogPage' , params:{id}}" >Read more</router-link>
           </div>
 
           <div class="btns">
@@ -64,15 +64,14 @@ import moment from "moment";
 import Modal from "@/components/Modals/Modal.vue";
 import { computed, ref } from "vue";
 import { useStore } from "vuex";
-
 import { useRoute } from 'vue-router';
 export default {
-
   components: {
     Modal,
   },
   props: ["post"],
   setup(props) {
+     const route = useRoute();
     const store = useStore();
     const add = ref(true);
     const post = props.post;
@@ -84,7 +83,7 @@ export default {
     };
 
 
-    const route = useRoute();
+   
     const userId = computed(() => store.getters["auth/userId"]);
     const posts = computed(() => store.getters["post/ALL_POSTS"]);
     const Admin = computed(() => store.getters["auth/Admin"]);
@@ -109,6 +108,7 @@ export default {
     const single =  ({ id }) => {
        store.dispatch("post/single" , id);
     };
+
 
     const handleClose = () => {
       modalOpen.value = false;

@@ -17,8 +17,6 @@ class PostController extends Controller
     {
 
         return Post::all();
-
-
     }
 
     /**
@@ -53,17 +51,17 @@ class PostController extends Controller
             ]);
 
         return $response;
-        }
+    }
     /**
      * Display the specified resource.
      *
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request , $id)
+    public function show(Request $request, $id)
     {
-     $post = Post::where('id' , $id)->get();
-     return $post;
+        $post = Post::where(['id' => $id])->with('user')->first();
+        return $post;
     }
 
     /**
