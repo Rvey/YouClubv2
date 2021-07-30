@@ -31,11 +31,13 @@
       .blog-article {
         gap: 5em;
         font-family: $openSans;
+        overflow-wrap: break-word;
       }
     }
     .blog-title {
       font-weight: bold;
-      font-size: 5vw;
+      font-size: 3vw;
+      overflow-wrap: break-word;
     }
     .blog-time {
       color: $mid-grey;

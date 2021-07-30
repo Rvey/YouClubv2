@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +39,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     //** Comments Api */
     Route::post('/comment', [CommentController::class, 'store']);
-
+    Route::post('/test', [TestController::class, 'test']);
 });
 
 // Route::get('/comment/user/{id}', [CommentController::class, 'userComments']);

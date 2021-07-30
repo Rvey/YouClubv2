@@ -28,19 +28,15 @@ class commentController extends Controller
     {
         $request->validate([
             "content" => ['required', 'max:1000'],
-            "post_id" => ['required']
+            // "post_id" => ['required']
         ]);
-
-
-
-
 
         $comment = $request->user()->comments()->create([
             "content" => $request->content,
-            "post_id" => $request->post_id
+            // "post_id" => $request->post_id
         ]);
 
-        return (bool)$comment
+        $response =  (bool)$comment
             ? response([
                 "data" => $comment,
                 "error" => null
@@ -49,6 +45,10 @@ class commentController extends Controller
                 "data" => null,
                 "error" => "Could not post comment."
             ], 422);
+
+            return $response;
+
+
     }
     /**
      * Display the specified resource.
