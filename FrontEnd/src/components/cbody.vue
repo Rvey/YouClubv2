@@ -1,5 +1,4 @@
 <template>
-
   <div>
     <Modal
       v-if="modalOpen"
@@ -7,7 +6,6 @@
       @close="handleClose()"
     />
     <div class="body">
-
       <div class="ds-title">Top trending</div>
       <!-- card -->
       <div>
@@ -49,7 +47,6 @@ export default {
     //  console.log('edit btn ');
     // }
 
-    // const delete =
     const userId = computed(() => store.getters["auth/userId"]);
     const posts = computed(() => store.getters["post/ALL_POSTS"]);
     const Admin = computed(() => store.getters["auth/Admin"]);

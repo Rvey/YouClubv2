@@ -1,21 +1,21 @@
 <template>
   <div>
-    <div class="form-wrapper">
-      <form @click.prevent="submit" class="post-form" action="#">
-        <div class="upload-wrapper">
-          <div class="image">
+    <div >
+      <form @click.prevent="submit" action="#">
+   
+          <div>
             <input type="file" id="file" accept="images" />
             <label for="file" class="label">
               <i class="bx bxs-image-add"></i> Upload Image edit
             </label>
           </div>
-        </div>
-        <div class="t">
+      
+        <div >
           <label for="Post title">Post title</label>
           <input v-model="post.title" type="text" />
         </div>
 
-        <div class="c">
+        <div>
           <label for="Post title">Post content</label>
           <textarea
             v-model="post.content"

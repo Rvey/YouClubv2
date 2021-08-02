@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 import auth from "./auth.js";
 import post from "./post.js";
 import comments from "./comments.js";
+import user from "./user.js";
 export default new Vuex.Store({
   state: {},
   mutations: {},
@@ -11,6 +12,7 @@ export default new Vuex.Store({
   modules: {
     auth,
     post,
-    comments
+    comments,
+    user
   },
 });

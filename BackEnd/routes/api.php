@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
-use App\Http\Controllers\TestController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,40 +39,42 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     //** Comments Api */
     Route::post('/comment', [CommentController::class, 'store']);
+
     Route::post('/test', [TestController::class, 'test']);
+
+    Route::get('/comments', [CommentController::class, 'index']);
+
+    Route::delete('/comment/{id}', [CommentController::class, 'destroy']);
+
+    Route::put('/comment/{id}', [CommentController::class, 'update']);
 });
 
 // Route::get('/comment/user/{id}', [CommentController::class, 'userComments']);
 
-Route::get('/comments', [CommentController::class, 'index']);
-
-
-
-Route::put('/comment/{id}', [CommentController::class, 'update']);
-
-Route::delete('/comment/{id}', [CommentController::class, 'destroy']);
-
 Route::get('/user', [AuthController::class, 'user']);
+
+Route::get('/users', [UserController::class, 'index']);
+
+Route::delete('/user/{id}', [UserController::class, 'destroy']);
+
+Route::put('/user/{id}' , [UserController::class, 'update']);
 
 //* Public Routes A
 
+Route::post('/signup', [AuthController::class, 'register']);
 
+Route::post('/login', [AuthController::class, 'login']);
 
+Route::post('/logout', [AuthController::class, 'logout']);
 
-    Route::post('/signup', [AuthController::class, 'register']);
-
-    Route::post('/login', [AuthController::class, 'login']);
-
-    Route::post('/logout', [AuthController::class, 'logout']);
-
-    Route::post('/admin/signup', [AdminController::class, 'register']);
+Route::post('/admin/signup', [AdminController::class, 'register']);
 
 
 //** Post Api */
 
-    Route::get('/search/{title}', [PostController::class, 'search']);
+Route::get('/search/{title}', [PostController::class, 'search']);
 
-    Route::get('/post/{id}', [PostController::class, 'show']);
+Route::get('/post/{id}', [PostController::class, 'show']);
 
 
 

@@ -15,7 +15,8 @@ class commentController extends Controller
      */
     public function index()
     {
-        return  Comment::all();
+        $comment = Comment::with('user')->get();
+        return $comment;
     }
 
     /**
@@ -28,12 +29,12 @@ class commentController extends Controller
     {
         $request->validate([
             "content" => ['required', 'max:1000'],
-            // "post_id" => ['required']
+            "post_id" => ['required' ,'exists:posts,id']
         ]);
 
         $comment = $request->user()->comments()->create([
             "content" => $request->content,
-            // "post_id" => $request->post_id
+            "post_id" => $request->post_id
         ]);
 
         $response =  (bool)$comment
@@ -76,7 +77,7 @@ class commentController extends Controller
         ]);
 
 
-        $comment = Post::find($id);
+        $comment = Comment::find($id);
         $comment->update($request->all());
         return $comment;
 
@@ -105,13 +106,16 @@ class commentController extends Controller
         // if($request->user()->post->where(["id" => $id])->first())
         //     return response(["error" => "Unauthorized"]);
 
-        $delete = Comment::where(['id' => $id])->delete();
+        // $delete = Comment::where(['id' => $id])->delete();
 
-        $response = (bool)$delete
+        $request->user()->comments()->where(['id' => $id])->delete();
+
+
+        $response = (bool)$request
         ? response([
             "data" => "comment deleted" ,
             "error" => null
-        ], 202)
+        ], 201)
         : response([
             "data" => null ,
             "error" => "Could not delete comment"

@@ -1,30 +1,43 @@
 <template>
-<div>
-   <Modal v-if="modalOpen" :modalContent="modalContent" @close="handleClose()" />
-    <div ref="modal"
-    class="form-wrapper">
-      <form  class="post-form" action="#" >
-        <div class="upload-wrapper">
+  <div>
+    <Modal
+      v-if="modalOpen"
+      :modalContent="modalContent"
+      @close="handleClose()"
+    />
+    <div ref="modal">
+      <form>
+        <div>
           <div class="image">
             <input type="file" id="file" accept="images" />
-            <label for="file" class="label"> <i class='bx bxs-image-add' ></i> Upload Image</label>
+            <label for="file" class="label">
+              <i class="bx bxs-image-add"></i> Upload Image</label
+            >
           </div>
         </div>
-        <div class="t">
+        <div>
           <label for="Post title">Post title</label>
-          <input v-model="post.title" type="text"  />
+          <input v-model="post.title" type="text" />
         </div>
 
-        <div class="c">
+        <div>
           <label for="Post title">Post content</label>
-       <textarea v-model="post.content" id="content" name="content" rows="10" cols="50">
-  </textarea>
+          <textarea
+            v-model="post.content"
+            id="content"
+            name="content"
+            rows="10"
+            cols="50"
+          >
+          </textarea>
         </div>
 
         <!--        submit-->
 
-        <div class="submit-btns">
-          <button @click.prevent="submit" class="submit" type="submit">Submit</button>
+        <div>
+          <button @click.prevent="submit" class="submit" type="submit">
+            Submit
+          </button>
           <button @click.prevent="close" class="cancel">cancel</button>
         </div>
       </form>
@@ -41,23 +54,21 @@ export default {
   setup(props, { emit }) {
     const store = useStore();
     const post = ref({
-      title: "" ,
-      content: ""
-      
+      title: "",
+      content: "",
     });
 
     const submit = async () => {
-    await store.dispatch("post/submitPost" , post.value)
-    }
+      await store.dispatch("post/submitPost", post.value);
+    };
 
     const close = () => {
       return emit("close");
-
     };
     return {
       close,
       submit,
-      post
+      post,
     };
   },
 };

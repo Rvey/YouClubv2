@@ -49,7 +49,7 @@ export default {
         if (token) commit("SET_TOKEN", token);
         if (!state.token) return;
         const res = await axios.get("/api/user");
-
+        console.log(res.data);
         commit("SET_USER", res.data);
       } catch (err) {
         console.log(err);

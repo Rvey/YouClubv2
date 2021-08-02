@@ -2,21 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2428bc3-9d62-4239-a25b-7a09c5b5810c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/FrontEnd/src/assets/dash.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackEnd/app/Http/Controllers/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/app/Http/Controllers/CommentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/app/Http/Controllers/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/app/Http/Controllers/TodoController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/BackEnd/app/Models/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/app/Models/Comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/database/migrations/2021_07_11_054522_create_comments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/database/migrations/2021_07_11_054522_create_comments_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackEnd/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/Posts/Form/commentForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/Posts/Form/commentForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/blogPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/blogPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/cbody.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/cbody.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/commentSection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/commentSection.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/table.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/table.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/store/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/store/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd/src/store/comments.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/store/comments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/store/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_blogBody.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_blogBody.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_form.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,6 +218,8 @@
       <workItem from="1627551492953" duration="303000" />
       <workItem from="1627680807691" duration="137000" />
       <workItem from="1627680955501" duration="10000" />
+      <workItem from="1627869567367" duration="22000" />
+      <workItem from="1627898673570" duration="174000" />
     </task>
     <servers />
   </component>

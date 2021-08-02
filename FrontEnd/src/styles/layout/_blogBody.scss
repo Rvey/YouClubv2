@@ -14,7 +14,6 @@
 
   .blog {
     width: 60%;
-
     display: flex;
     flex-direction: column;
     .a-i {
@@ -125,6 +124,7 @@
     display: flex;
     align-items: flex-start;
     gap: 1em;
+    flex-direction:column;
     .user-avatar {
       img {
         width: 3em;
@@ -135,7 +135,7 @@
 
     .com-wrapper {
       display: flex;
-      flex-direction: column;
+     gap: 12px;
 
       .user-com {
         display: flex;
@@ -149,6 +149,10 @@
           font-size: 0.6em;
           color: $mid-grey;
         }
+      }
+      .delete {
+        background-color: red ;
+        
       }
     }
     .com{

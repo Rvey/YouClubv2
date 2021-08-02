@@ -11,7 +11,7 @@ class Comment extends Model
 
 
     protected $fillable = [
-        // 'post_id',
+        'post_id',
         'content'
 
     ];
@@ -20,8 +20,8 @@ class Comment extends Model
     {
         return $this->belongsTo(User::class);
     }
-    public function post()
-    {
-        return $this->belongsTo(Post::class);
-    }
+    // public function post()
+    // {
+    //     return $this->belongsTo(Post::class);
+    // }
 }

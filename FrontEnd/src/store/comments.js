@@ -5,17 +5,17 @@ export default {
   state: {
     allComments: [],
     loading_newcomment: false,
-    error_newpost: null,
+    error_newcomment: null,
   },
   getters: {
-    ALL_COMMENTS(stats) {
+    ALL_COMMENTS(state) {
       return state.allComments;
     },
-    LOADING_NEWPOST(state) {
-      return state.loading_newpost;
+    LOADING_NEWCOMMENT(state) {
+      return state.loading_newcomment;
     },
-    ERR_NEWPOST(state) {
-      return state.error_newpost;
+    ERR_NEWCOMMENT(state) {
+      return state.error_newcomment;
     },
   },
   actions: {
@@ -24,6 +24,7 @@ export default {
         commit("SET_ERROR", null);
         const res = await axios.get(`api/comments`);
         commit("GET_COMMENTS", res.data);
+        return res.data;
       } catch (err) {
         console.log(err);
       }
@@ -34,14 +35,35 @@ export default {
         const res = await axios.post("/api/comment", commentData);
         console.log(res);
         return commit("SET_LOADING_NEWCOMMENT(", false);
-     
       } catch (err) {
-        console.log( 'sdfsdfsf' ,err);
+        console.log("sdfsdfsf", err);
+      }
+    },
+
+    async EditComment({commit , dispatch } , comment) {
+      try {
+        await axios.put(`/api/comment/${comment.id}`, comment);
+        return commit("SET_LOADING_NEWCOMMENT", false);
+      } catch (err) {
+        console.log(err);
+      }
+    },
+
+    async DeleteComment({ commit }, id) {
+      try {
+        const res = await axios.delete(`/api/comment/${id}`);
+        console.log(res);
+      } catch (err) {
+        console.log(err);
       }
     },
   },
 
   mutations: {
+    GET_COMMENTS(state, payload) {
+      state.allComments = payload;
+    },
+
     SET_ERROR(state, value) {
       state.error_newcomment = value;
     },
@@ -50,7 +72,7 @@ export default {
       state.loading_newcomment = value;
     },
 
-    SET_CURRENT_POST(state, value) {
+    SET_CURRENT_COMMENT(state, value) {
       state.current_comment = value;
     },
   },

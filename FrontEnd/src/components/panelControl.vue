@@ -1,7 +1,7 @@
 <template>
   <div class="da-panel">
     <Stats />
-    <Table />
+    <Table  />
   </div>
 </template>
 <script>

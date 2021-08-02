@@ -106,9 +106,8 @@ class PostController extends Controller
     public function destroy(Request $request, $id)
     {
         // check autorization
-        if (
-            //     !$request->user()->is_admin() ||
-            $request->user()->posts->where(["id" => $id])->first())
+        if ( //     !$request->user()->is_admin() ||
+             $request->user()->posts->where(["id" => $id])->first())
             return response(["error" => 'Unauthorized'], 401);
 
 

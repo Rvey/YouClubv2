@@ -1,20 +1,33 @@
 .overlay {
   background: rgba($color: rgb(26, 26, 26), $alpha: 0.7);
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   position: fixed;
   z-index: 1000;
   place-items: center;
   top: 0;
   right: 0;
+  transition: all 250ms ease-out;
+  display: grid;
+  grid-template-columns: 64px calc(100vw - 64px);
 
   .modal {
-    width: 100%;
-    padding: 2em;
+
+
     border-radius: 4px;
     overflow-y: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    // padding: 0 1rem;
+    grid-column: 2;
+    margin: 0 3rem;
+    background-color: white;
+    // max-width: 1280px;
+    // width: 100% ;
+  
+  }
+  .editModal {
+  
   }
 }
