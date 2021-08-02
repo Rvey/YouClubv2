@@ -12,7 +12,7 @@
       </div>
       <div class="card_content">
         <div class="info">
-          <h5>{{post.id}}</h5>
+          <h5>{{ post.id }}</h5>
           <h5>{{ time(post.created_at) }}</h5>
           <h5>category</h5>
         </div>
@@ -29,7 +29,11 @@
         </div>
         <div class="socialize">
           <div class="More">
-            <router-link @click="single" :to="{ name:'BlogPage' , params:{id}}" >Read more</router-link>
+            <router-link
+              @click="single"
+              :to="{ name: 'BlogPage', params: { id } }"
+              >Read more</router-link
+            >
           </div>
 
           <div class="btns">
@@ -64,14 +68,14 @@ import moment from "moment";
 import Modal from "@/components/Modals/Modal.vue";
 import { computed, ref } from "vue";
 import { useStore } from "vuex";
-import { useRoute } from 'vue-router';
+import { useRoute } from "vue-router";
 export default {
   components: {
     Modal,
   },
   props: ["post"],
   setup(props) {
-     const route = useRoute();
+    const route = useRoute();
     const store = useStore();
     const add = ref(true);
     const post = props.post;
@@ -82,8 +86,6 @@ export default {
       add.value = !add.value;
     };
 
-
-   
     const userId = computed(() => store.getters["auth/userId"]);
     const posts = computed(() => store.getters["post/ALL_POSTS"]);
     const Admin = computed(() => store.getters["auth/Admin"]);
@@ -105,10 +107,9 @@ export default {
       modalOpen.value = true;
     };
 
-    const single =  ({ id }) => {
-       store.dispatch("post/single" , id);
+    const single = ({ id }) => {
+      store.dispatch("post/single", id);
     };
-
 
     const handleClose = () => {
       modalOpen.value = false;

@@ -2,18 +2,18 @@
   <div class="body">
     <div class="ds-title">Dashboard</div>
     <div class="dashboard">
-      <Panel />
+      <Table />
       <Profile />
     </div>
   </div>
 </template>
 <script>
-import Panel from "@/components/panelControl.vue";
+import Table from "@/components/userTable.vue";
 import Profile from "@/components/profile.vue";
 
 export default {
   components: {
-    Panel,
+    Table,
     Profile,
   },
   setup() {},

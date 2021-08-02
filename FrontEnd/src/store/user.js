@@ -39,9 +39,10 @@ export default {
         console.log(err);
       }
     },
-    async editUser({ commit } , user ){
+    async editUser({ commit } , userData ){
       try{
-        await axios.put(`/api/post/${user.id}` , user)
+       const res =  await axios.put(`/api/user/${userData.id}` , userData)
+       console.log(res);
       }catch(err){
         console.log(err);
       }

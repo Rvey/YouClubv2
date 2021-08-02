@@ -1,18 +1,17 @@
 <template>
   <div>
-    <Modal
+    <!-- <Modal
       v-if="modalOpen"
       :modalContent="modalContent"
       @close="handleClose()"
-    />
+    /> -->
     <div ref="modal">
       <form>
         <div>
           <div class="image">
             <input type="file" id="file" accept="images" />
             <label for="file" class="label">
-              <i class="bx bxs-image-add"></i> Upload Image</label
-            >
+              <i class="bx bxs-image-add"></i> Upload Image</label>
           </div>
         </div>
         <div>
