@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AssetController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -47,15 +48,17 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::delete('/comment/{id}', [CommentController::class, 'destroy']);
 
     Route::put('/comment/{id}', [CommentController::class, 'update']);
+    Route::get('/user', [AuthController::class, 'user']);
+    Route::delete('/user/{id}', [UserController::class, 'destroy']);
 });
 
 // Route::get('/comment/user/{id}', [CommentController::class, 'userComments']);
 
-Route::get('/user', [AuthController::class, 'user']);
 
 Route::get('/users', [UserController::class, 'index']);
 
-Route::delete('/user/{id}', [UserController::class, 'destroy']);
+Route::get('/post/image/{image_name}', [AssetController::class, 'postImage']);
+
 
 Route::put('/user/{id}' , [UserController::class, 'update']);
 

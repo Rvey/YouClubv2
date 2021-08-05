@@ -1,4 +1,5 @@
 <template>
+
   <div>
     <Modal
       v-if="modalOpen"
@@ -6,9 +7,17 @@
       @close="handleClose()"
     />
     <div class="body">
-      <div class="ds-title">Top trending</div>
+
+         <div class="ds-title">Trending</div>
+
+      <div class="ds-title">Categories</div>
+
+      <catCards />
+
+
+      <div class="ds-title">Blogs</div>
       <!-- card -->
-      <div>
+      <div class="post-container">
         <PostCard v-for="post in posts" :post="post" :key="post.id" />
       </div>
       <!--    post model -->
@@ -22,6 +31,7 @@
 import Modal from "@/components/Modals/Modal.vue";
 
 import PostCard from "@/components/Cards/postCard.vue";
+import catCards from "@/components/Cards/statsCard.vue";
 import { computed, ref } from "vue";
 import { useStore } from "vuex";
 import { onMounted } from "vue";
@@ -29,11 +39,12 @@ export default {
   components: {
     Modal,
     PostCard,
+    catCards
   },
   setup(_, { emit }) {
     const store = useStore();
     const modalOpen = ref(false);
-    const modalContent = ref("");
+    const modalContent = ref("submitPostModal");
 
     onMounted(() => {
       store.dispatch("post/getPosts");

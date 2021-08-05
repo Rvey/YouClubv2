@@ -29,7 +29,7 @@ class commentController extends Controller
     {
         $request->validate([
             "content" => ['required', 'max:1000'],
-            "post_id" => ['required' ,'exists:posts,id']
+            "post_id" => ['required', 'exists:posts,id']
         ]);
 
         $comment = $request->user()->comments()->create([
@@ -47,9 +47,7 @@ class commentController extends Controller
                 "error" => "Could not post comment."
             ], 422);
 
-            return $response;
-
-
+        return $response;
     }
     /**
      * Display the specified resource.
@@ -101,27 +99,28 @@ class commentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request , $id)
+    public function destroy(Request $request, $id)
     {
-        // if($request->user()->post->where(["id" => $id])->first())
-        //     return response(["error" => "Unauthorized"]);
+        if (
 
-        // $delete = Comment::where(['id' => $id])->delete();
+            !$request->user()->comments()->where(["id" => $id])->first()
 
-        $request->user()->comments()->where(['id' => $id])->delete();
+        )
+            return response(["error" => "Unauthorized"], 401);
 
 
-        $response = (bool)$request
-        ? response([
-            "data" => "comment deleted" ,
-            "error" => null
-        ], 201)
-        : response([
-            "data" => null ,
-            "error" => "Could not delete comment"
-        ], 422);
+        $delete = Comment::where(['id' => $id])->delete();
+
+        $response = (bool)$delete
+            ? response([
+                "data" => "comment deleted",
+                "error" => null
+            ], 201)
+            : response([
+                "data" => null,
+                "error" => "Could not delete comment"
+            ], 422);
 
         return $response;
-
     }
 }

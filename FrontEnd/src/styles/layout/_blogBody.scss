@@ -74,11 +74,11 @@
 .t {
   display: flex;
   flex-direction: column;
-  margin: 2em;
+  width: 100%;
   gap: 1em;
   textarea {
     height: 50px;
-    max-width: 100%;
+    width: 100%;
     min-height: 10em;
     padding: 10px;
     border-radius: 5px;

@@ -46,11 +46,17 @@ export default {
 
     async attempt({ commit, state }, token) {
       try {
+
         if (token) commit("SET_TOKEN", token);
+
         if (!state.token) return;
+
         const res = await axios.get("/api/user");
+
         console.log(res.data);
+
         commit("SET_USER", res.data);
+        commit("SET_LOADING", false);
       } catch (err) {
         console.log(err);
         commit("SET_ERROR", err.message);
@@ -74,7 +80,7 @@ export default {
     async logout({ commit }) {
       try {
         await axios.post("/api/logout");
-
+window.location.replace("/");
         commit("SET_USER", null);
         commit("SET_TOKEN", null);
       } catch (err) {

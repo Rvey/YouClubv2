@@ -48,6 +48,15 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // !$this->check_perm($request->user()) ||
+        if (
+            $this->check_perm($request->user())
+            )
+
+            return response(["error" => 'Unauthorized'], 401);
+
+
+
         $request->validate([
             "username" => ['max:255'],
             "email" => ['max:255']
@@ -78,6 +87,12 @@ class UserController extends Controller
      */
     public function destroy(Request $request, $id)
     {
+
+        if (!$request->user()->is_admin())
+
+        return response(["error" => 'Unauthorized'], 401);
+
+
         $delete = User::where(['id' => $id])->delete();
 
         $response = (bool)$delete

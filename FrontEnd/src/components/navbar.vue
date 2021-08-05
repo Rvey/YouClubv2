@@ -2,8 +2,8 @@
   <!-- dektop nav -->
   <div>
     <div class="header">
-      <div>
-        <a href="#" class="logo">Logo</a>
+      <div class="logo">
+        <h1>YouClub</h1>
       </div>
       <div>
         <ul>
@@ -66,7 +66,7 @@ export default {
 
     const logout = () => {
       store.dispatch("auth/logout");
-      console.log("dasda");
+     
     };
 
     const users = computed(() => store.state.auth.user?.username);

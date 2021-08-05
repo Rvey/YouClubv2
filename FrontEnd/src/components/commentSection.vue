@@ -71,6 +71,7 @@ export default {
   components: {},
   props: ["comment"],
   setup(props) {
+
     const store = useStore();
     const route = useRoute();
     const id = computed(() => route.params.id);
@@ -99,11 +100,13 @@ export default {
 
     const DeleteComment = (index) => {
       store.dispatch("comments/DeleteComment", index);
+       store.dispatch("comments/getComments");
       console.log(index);
     };
 
     const EditComment = (commentData) => {
       store.dispatch("comments/EditComment", commentData);
+       store.dispatch("comments/getComments");
       show.value = !show.value;
     };
 
@@ -114,6 +117,7 @@ export default {
 
     const SendComment = async () => {
       await store.dispatch("comments/submitComment", Comment.value);
+     store.dispatch("comments/getComments");
     };
 
     return {
@@ -128,6 +132,7 @@ export default {
       commentID,
       DeleteComment,
       show,
+     
     };
   },
 };

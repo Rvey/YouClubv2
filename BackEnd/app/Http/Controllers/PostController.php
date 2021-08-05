@@ -29,12 +29,20 @@ class PostController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'content' => 'required'
+            'content' => 'required',
+            'image' => 'required|image'
+
         ]);
+
+
+        $imageFullName = uniqid('p_img_', false);
+        $path = "public/images/post_image";
+        $request->file('image')->storeAs($path, $imageFullName);
 
         $post = $request->user()->posts()->create([
             'title' => $request->title,
             'content' => $request->content,
+            'image' => $imageFullName,
             // 'likes' => $request->likes,
             // 'tags' => $request->tags,
         ]);
@@ -73,6 +81,14 @@ class PostController extends Controller
     public function update(Request $request, $id)
 
     {
+          // check autorization
+          if (
+            !$request->user()->is_Admin() &&
+            // !$this->check_perm($request->user()) ||
+            !$request->user()->posts()->where(["id" => $id])->first()
+            )
+           return response(["error" => 'Unauthorized'], 401);
+
 
         $request->validate([
             "title" => ['max:255'],
@@ -106,10 +122,12 @@ class PostController extends Controller
     public function destroy(Request $request, $id)
     {
         // check autorization
-        if ( //     !$request->user()->is_admin() ||
-             $request->user()->posts->where(["id" => $id])->first())
-            return response(["error" => 'Unauthorized'], 401);
+        if (
 
+            !$request->user()->is_Admin() &&
+            !$request->user()->posts()->where(["id" => $id])->first()
+        )
+            return response(["error" => "Unauthorized"], 401);
 
         $delete = Post::where(['id' => $id])->delete();
 

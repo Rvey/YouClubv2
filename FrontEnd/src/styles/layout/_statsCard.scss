@@ -5,32 +5,35 @@
 .stats-wrapper {
   display: flex;
   gap: 3em;
-  justify-content: space;
+  justify-content: center;
   flex-grow: 1;
   flex-wrap: wrap-reverse;
+
   .da-card {
     background-color: #b6d3ff85;
-    width: 10em;
-    height: 10em;
+    width: 5em;
+    height: 5em;
     padding: 5px 10px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    cursor: pointer;
+    transition: all 300ms ease;
     // filter: drop-shadow(0 0 1rem rgba(156, 156, 156, 0.564));
-    .card-title {
-      font-size: 2rem;
-      font-weight: 700;
+    .card-title {  
+      margin: auto;
+      transition: all 300ms ease;
+      font-weight: 600;
+      
+    
+      
     }
-    .card-stats {
-      .stats {
-        font-size: 2rem;
-        font-weight: 700;
-      }
-      .total {
-        font-size: 1.8rem;
-        font-weight: 600;
-      }
+    &:hover {
+      transition: all 300ms ease;
+      background-color:#8ab8fc ;
+      filter: drop-shadow(0 0 0.5rem #8ab8fc);
     }
+    
   }
-}
+  }

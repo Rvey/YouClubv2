@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Admin;
+// use App\Models\Admin;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -55,7 +55,7 @@ class AuthController extends Controller
         // check email
 
         $user = User::where('email', $fields['email'])->first();
-        $admin = Admin::where('email', $fields['email'])->first();
+        // $admin = Admin::where('email', $fields['email'])->first();
 
         // check  Password
 
@@ -86,8 +86,10 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         $request->user()->tokens()->delete();
-        return [
-            'message' => 'logged out'
-        ];
+      return response( 'log out' , 200);
     }
+
+
+
+
 }

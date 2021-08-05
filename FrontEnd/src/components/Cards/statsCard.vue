@@ -1,52 +1,43 @@
 <template>
 
-<div>
-  <div class="da-title">
-    Platforme updates
-  </div>
+
 <div class="stats-wrapper">
 
 
   <div class="da-card">
     <div class="card-title">
-      <div>title</div>
-    </div>
-
-    <div class="card-stats">
-      <div class="stats">stats</div>
-      <div class="total">342</div>
+     tech
     </div>
   </div>
-    <div class="da-card">
+
+  
+  <div class="da-card">
     <div class="card-title">
-      <div>title</div>
-    </div>
-
-    <div class="card-stats">
-      <div class="stats">stats</div>
-      <div class="total">342</div>
+     life
     </div>
   </div>
-    <div class="da-card">
+
+  
+  <div class="da-card">
     <div class="card-title">
-      <div>title</div>
-    </div>
-
-    <div class="card-stats">
-      <div class="stats">stats</div>
-      <div class="total">342</div>
+     tech
     </div>
   </div>
-    <div class="da-card">
+
+
+  
+  <div class="da-card">
     <div class="card-title">
-      <div>title</div>
+     tech
     </div>
+  </div>
 
-    <div class="card-stats">
-      <div class="stats">stats</div>
-      <div class="total">342</div>
+  
+  <div class="da-card">
+    <div class="card-title">
+     tech
     </div>
   </div>
   </div>
-  </div>
+
 </template>

@@ -10,6 +10,7 @@
           <div class="blog-category"></div>
           <div class="blog-title">
             {{ post?.title }}
+
           </div>
           <div class="blog-p">
             <div class="blog-author">by {{ post?.user?.username }}</div>
@@ -20,32 +21,18 @@
 
           <div class="a-i">
             <div class="blog-image">
-              <img src="../assets/bg.jpg" alt="" />
+              <img :src="`http://127.0.0.1:8000/api/post/image/${post?.image}`"  alt="" />
             </div>
 
             <div class="blog-article">
               {{ post?.content }}
             </div>
           </div>
+           <h3>Leave a comment</h3>
+           <Scomment :id="id" />
         </div>
+       
       </div>
-      <!-- <div class="t">
-           <form action="">
-        <textarea
-          name=""
-          id=""
-          cols="30"
-          rows="10"
-          v-model="Comment.content"
-        ></textarea>
-        <div class="c-btn">
-          <button @click.prevent="SendComment" class="comment">COMMENT</button>
-          <button class="cancel"></button>
-        </div>
-      </form>
-      </div> -->
-
-      <Scomment :id="id" />
     </div>
   </div>
 </template>
@@ -73,7 +60,7 @@ export default {
     const id = computed(() => route.params.id);
     onMounted(() => {
       store.dispatch("post/single", id.value);
-      console.log("userid", userId);
+      // console.log("userid", image);
     });
 
     // comment
@@ -82,10 +69,12 @@ export default {
     //   post_id: id.value
 
     // });
+    // const image = ref(null);
+
 
     const SendComment = async () => {
       await store.dispatch("comments/submitComment", Comment.value);
-      console.log(typeof [id.value]);
+       
     };
 
     return {
@@ -94,6 +83,7 @@ export default {
       SendComment,
       store,
       userId,
+      // image
     };
   },
 };

@@ -12,8 +12,6 @@
   grid-template-columns: 64px calc(100vw - 64px);
 
   .modal {
-
-
     border-radius: 4px;
     overflow-y: auto;
     display: flex;
@@ -22,12 +20,140 @@
     // padding: 0 1rem;
     grid-column: 2;
     margin: 0 3rem;
-    background-color: white;
+    // background-color: white;
     // max-width: 1280px;
     // width: 100% ;
+div {
+  
+  min-width: 1200px;
+  .form {
+    background-color: #eeeeee;
+    padding: 23px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.733);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5.0px );
+    -webkit-backdrop-filter: blur( 5.0px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+  .field  {
+    display: flex;
+    flex-direction: column;
+    
+    label{
+      font-weight: 600;
+    }
+    input , textarea {
+      padding: 10px;
+      border: 2px solid #80808057;
+      outline: none;
+      border-radius: 5px;
+      background-color: rgba(221, 221, 221, 0.445);
+      
+      
+      &:focus {
+        border: 2px solid #5252ff75;
+      }
+    }
+    textarea{
+      padding: 10px;
+      border: 2px solid #80808057;
+      outline: none;
+      border-radius: 5px;
+   }
+
+    
+  }
+
+    .btns{
+    
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      
+     .submit , .cancel {
+       border: none;
+       padding: 8px;
+       transition: all 300ms ease;
+       font-family: $pop;
+      font-weight: 600;
+       letter-spacing: 1px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .submit {
+        color: white;
+        background-color: #3acc4d;
+        &:hover {
+          background-color: green;
+          transition: all 300ms ease;
+        }
+      }
+      .cancel {
+        background-color: #ff4d4d;
+        color: white;
+        &:hover{
+          background-color: #b91515;
+          transition: all 300ms ease;
+        }
+      }
+
+    }
+    .imagePreview{
+      width: 12rem;
+      height: 6rem;
+      object-fit: fill;
+     
+    }
+    .file {
+      padding: 3em 2em;
+      border: 2px dashed rgba(0, 0, 0, 0.33);
+      border-radius: 5px;
+    }
+  }
+}
   
   }
   .editModal {
   
   }
 }
+@media (max-width: 1300px){
+.overlay{
+  .modal {
+    div {
+      min-width: 1000px;
+    }
+  }
+}
+}
+@media (max-width: 1100px){
+  .overlay{
+    .modal {
+      div {
+        min-width: 900px;
+      }
+    }
+  }
+}
+@media (max-width: 770px){
+  .overlay{
+    .modal {
+      div {
+        min-width: 600px;
+      }
+    }
+  }
+}
+@media (max-width: 500px){
+  .overlay{
+    .modal {
+      div {
+        min-width: 300px;
+      }
+    }
+  }
+}
+

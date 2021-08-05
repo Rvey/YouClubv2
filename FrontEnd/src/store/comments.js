@@ -34,9 +34,9 @@ export default {
       try {
         const res = await axios.post("/api/comment", commentData);
         console.log(res);
+        store.dispatch("comments/getComments");
         return commit("SET_LOADING_NEWCOMMENT(", false);
       } catch (err) {
-        console.log("sdfsdfsf", err);
       }
     },
 

@@ -1,19 +1,16 @@
 <template>
   <div>
-    <form @click.prevent="submit" action="#">
+    <form class="form" @click.prevent="submit" action="#">
       <div>
         <input type="file" id="file" accept="images" />
-        <label for="file" class="label">
-          <i class="bx bxs-image-add"></i> Upload Image edit
-        </label>
       </div>
 
-      <div>
+      <div class="field" >
         <label for="Post title">Post title</label>
         <input v-model="post.title" type="text" />
       </div>
 
-      <div>
+      <div class="field">
         <label for="Post title">Post content</label>
         <textarea
           v-model="post.content"
@@ -27,8 +24,8 @@
 
       <!--        submit-->
 
-      <div class="submit-btns">
-        <button class="submit" @click="editPost(post)" type="submit">
+      <div class="btns">
+        <button class="submit" @click.prevent="editPost(post)" type="submit">
           Submit
         </button>
         <button @click.prevent="close" class="cancel">cancel</button>
@@ -56,7 +53,9 @@ export default {
 
     const editPost = async () => {
       await store.dispatch("post/editPost", post.value);
-      console.log(post.value);
+      emit('close')
+        store.dispatch("post/getPosts")
+
     };
 
     const close = () => {
