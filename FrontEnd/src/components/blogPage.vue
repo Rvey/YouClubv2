@@ -24,9 +24,9 @@
               <img :src="`http://127.0.0.1:8000/api/post/image/${post?.image}`"  alt="" />
             </div>
 
-            <div class="blog-article">
-              {{ post?.content }}
+            <div v-html="post?.content" class="blog-article">
             </div>
+
           </div>
            <h3>Leave a comment</h3>
            <Scomment :id="id" />
@@ -46,11 +46,13 @@ import Scomment from "@/components/commentSection.vue";
 
 import { computed, onMounted, ref } from "@vue/runtime-core";
 
+
 export default {
   components: {
     Like,
     Comment,
     Scomment,
+    
   },
   setup() {
     const store = useStore();

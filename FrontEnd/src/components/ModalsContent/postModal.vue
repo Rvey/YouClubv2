@@ -17,18 +17,19 @@
 
       <div class="field">
         <label for="Post title">Post content</label>
-        <textarea
+        <!-- <textarea
           v-model="post.content"
           id="content"
           name="content"
           rows="10"
           cols="50"
         >
-        </textarea>
+        </textarea> -->
+<Tiptap v-model="post.content" />
       </div>
 
-      <!--        submit-->
 
+      <!--        submit-->
       <div class="btns">
         <button @click.prevent="submit()" class="submit" type="submit">
           Submit
@@ -43,10 +44,13 @@
 import { useStore } from "vuex";
 import { ref, watch } from "vue";
 import { file_blob } from "@/util";
+import Tiptap from '@/components/tiptap.vue'
 // import { useImageUpload } from "@/components/consomable/useImageUpload.js";
 export default {
   name: "SubmitPostModal",
-
+  components:{
+    Tiptap
+  },
   setup(props, { emit }) {
     const store = useStore();
 

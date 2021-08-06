@@ -27,7 +27,7 @@
           , {{ post.title.substring(0, 8) + "..." }}
         </h4>
         <p class="article-desc" v-if="post.content.length < 100">
-          {{ post.content }}
+         {{ post?.content }}
         </p>
         <p class="article-desc" v-if="post.content.length >= 100">
           {{ post.content.substring(0, 100) + "..." }}

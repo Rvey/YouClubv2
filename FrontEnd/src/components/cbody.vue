@@ -20,7 +20,7 @@
 
       <!-- <div class="ds-title">Trending</div> -->
 
-      <div class="ds-title">Categories</div>
+      <div class="ds-title">Top Article</div>
 
       <catCards />
 

@@ -68,6 +68,14 @@
       }
     }
 
+    div {
+      .ProseMirro{
+        background-color: red;
+        p{
+          background-color: red;
+        }
+    }
+    }
     .submit-btns {
       border-top: 1px solid rgba(0, 0, 0, 0.185);
       padding: 20px;
@@ -85,6 +93,7 @@
         letter-spacing: 0.3px;
         cursor: pointer;
       }
+   
       .submit {
         background-color: $fade-blue;
         transition: all 300ms ease;
