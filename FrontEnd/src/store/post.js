@@ -61,11 +61,12 @@ export default {
     },
     async editPost({ commit  }, post) {
       try {
-        const res = await axios.put(`/api/post/${post.id}`, post);
+        if (await axios.put(`/api/post/${post.id}`, post)){
+          await store.dispatch("posts/getPosts");
+        }
+       
 
-        dispatch('getPosts');
-
-        return commit("SET_LOADING_NEWPOST", false);
+        // return commit("SET_LOADING_NEWPOST", false);
 
       } catch (err) {
         console.log(err);

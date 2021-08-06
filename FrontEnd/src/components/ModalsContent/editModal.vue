@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form class="form" @click.prevent="submit" action="#">
+    <form class="form"  action="#">
       <div>
         <input type="file" id="file" accept="images" />
       </div>
@@ -47,15 +47,15 @@ export default {
       id: data.id,
       title: data.title,
       content: data.content,
-      // title:"" ,
-      // content: ""
     });
 
-    const editPost = async () => {
-      await store.dispatch("post/editPost", post.value);
-      emit('close')
-        store.dispatch("post/getPosts")
 
+    const editPost =  () => {
+       store.dispatch("post/editPost", post.value);
+       store.dispatch("post/getPosts");
+    
+      emit('close')
+       
     };
 
     const close = () => {

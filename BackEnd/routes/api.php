@@ -27,18 +27,17 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     //** Posts Api */
 
-
-
     Route::post('/post', [PostController::class, 'store']);
 
     Route::put('/post/{id}', [PostController::class, 'update']);
 
     Route::delete('/post/{id}', [PostController::class, 'destroy']);
 
-    Route::get('/posts', [PostController::class, 'index']);
+
 
 
     //** Comments Api */
+
     Route::post('/comment', [CommentController::class, 'store']);
 
     Route::post('/test', [TestController::class, 'test']);
@@ -48,8 +47,15 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::delete('/comment/{id}', [CommentController::class, 'destroy']);
 
     Route::put('/comment/{id}', [CommentController::class, 'update']);
+
+    // user api for perms
+
     Route::get('/user', [AuthController::class, 'user']);
+
     Route::delete('/user/{id}', [UserController::class, 'destroy']);
+
+    Route::put('/user/{id}', [UserController::class, 'update']);
+
 });
 
 // Route::get('/comment/user/{id}', [CommentController::class, 'userComments']);
@@ -59,10 +65,9 @@ Route::get('/users', [UserController::class, 'index']);
 
 Route::get('/post/image/{image_name}', [AssetController::class, 'postImage']);
 
+Route::get('/posts', [PostController::class, 'index']);
 
-Route::put('/user/{id}' , [UserController::class, 'update']);
-
-//* Public Routes A
+//* Public Routes Auth
 
 Route::post('/signup', [AuthController::class, 'register']);
 
@@ -73,7 +78,7 @@ Route::post('/logout', [AuthController::class, 'logout']);
 Route::post('/admin/signup', [AdminController::class, 'register']);
 
 
-//** Post Api */
+//** Public Post Api */
 
 Route::get('/search/{title}', [PostController::class, 'search']);
 

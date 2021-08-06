@@ -49,7 +49,7 @@
             />
           </div>
          
-          <button class="delete" @click="DeleteComment(comment.id)">
+          <button v-if=" comment.user_id == userId ||  Admin" class="delete" @click="DeleteComment(comment.id)">
             Delete
           </button>
           <button class="delete" @click="EditComment(comment)">Edit</button>
@@ -91,6 +91,8 @@ export default {
       // console.log(idC.id);
     });
     const userId = computed(() => store.getters["auth/userId"]);
+     const Admin = computed(() => store.getters["auth/Admin"]);
+        const userName = computed(() => store.getters["auth/userName"]);
     const time = (date) => {
       //   return moment(date).format("MMM Do YY, h:mm:ss a");
       return moment(date)
@@ -132,6 +134,9 @@ export default {
       commentID,
       DeleteComment,
       show,
+     Admin
+     ,
+      userName
      
     };
   },

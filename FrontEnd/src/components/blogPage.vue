@@ -57,6 +57,8 @@ export default {
     const route = useRoute();
     const post = computed(() => store.getters["post/CURRENT_POST"]);
     const userId = computed(() => store.getters["auth/userId"]);
+     const Admin = computed(() => store.getters["auth/Admin"]);
+     
     const id = computed(() => route.params.id);
     onMounted(() => {
       store.dispatch("post/single", id.value);
@@ -83,6 +85,7 @@ export default {
       SendComment,
       store,
       userId,
+      Admin
       // image
     };
   },

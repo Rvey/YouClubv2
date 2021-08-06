@@ -135,26 +135,47 @@
 
     .com-wrapper {
       display: flex;
-     gap: 12px;
+       gap: 12px;
+       .comment-content{
 
-      .user-com {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        .user-name {
-          font-size: 1em;
-          font-weight: 600;
-        }
-        .time {
-          font-size: 0.6em;
-          color: $mid-grey;
+         .user-com {
+           display: flex;
+           align-items: center;
+           gap: 10px;
+           .user-name {
+             font-size: 1em;
+             font-weight: 600;
+           }
+           .time {
+             font-size: 0.6em;
+             color: $mid-grey;
+           }
+         }
         }
       }
       .delete {
-        background-color: red ;
-        
+        background-color: rgb(255, 82, 82) ;
+
+      border: none;
+      color: white;
+      font-family: $pop;
+      border-radius: 5px;
+      padding: 5px;
+      transition: all 300ms ease;
+      cursor: pointer;
+        &:hover {
+          background-color: red;
+          transition: all 300ms ease;
+        }
       }
-    }
+      .edite {
+        background-color: $fade-blue;
+        border: none;
+        color: white;
+        font-family: $pop;
+        border-radius: 5px;
+        padding: 5px;
+      }
     .com{
       background-color: $fade-blue;
       padding: 10px;

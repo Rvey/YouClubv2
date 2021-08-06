@@ -34,7 +34,7 @@
         <span class="tooltip">Community</span>
       </li>
 
-      <li>
+      <li  v-if=" Admin ">
         <router-link to="/Dashboard">
           <i class="bx bx-category"></i>
           <span class="links_name">Dashboard</span>
@@ -43,7 +43,7 @@
       </li>
     </ul>
 
-    <div class="profile_content">
+    <div v-if="Auth" class="profile_content">
       <div class="profile">
         <div class="profile_details">
           <img class="profile_img" src="./../assets/bg.jpg" alt="" />
@@ -78,8 +78,11 @@ export default {
       }
     };
 
+    const Auth = computed(() => store.getters["auth/authenticated"]);
+    const Admin = computed(() => store.getters["auth/Admin"]);
     const user = computed(() => store.state.auth.user?.username);
     const email = computed(() => store.state.auth.user?.email);
+    const userId = computed(() => store.getters["auth/userId"]);
     const e = () => {
       toggle.value = !toggle.value;
     };
@@ -89,6 +92,9 @@ export default {
       logout,
       toggle,
       email,
+      Admin,
+      userId,
+      Auth
     };
   },
 };

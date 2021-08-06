@@ -16,7 +16,8 @@ class PostController extends Controller
     public function index()
     {
 
-        return Post::all();
+        $post = Post::with('user')->get();
+        return $post;
     }
 
     /**
@@ -92,7 +93,7 @@ class PostController extends Controller
 
         $request->validate([
             "title" => ['max:255'],
-            "content" => ["max:2000"],
+            "content" => ["max:200000000"],
         ]);
 
 

@@ -10,19 +10,14 @@
           <div class="nav">
             <li><a href="#" class="active">Home</a></li>
             <li><router-link to="/Community">Community</router-link></li>
-            <li><a href="#">Dashboard</a></li>
+            <li v-if="Admin"><router-link to="/Dashboard">Dashboard</router-link></li>
           </div>
-          <div class="conn">
-            <li>
+          <div v-if="Auth" class="conn">
+            <li >
               <router-link class="conn" to="/login">Log in</router-link>
             </li>
-            <li>
-              <a class="" href="#"
-                ><i
-                  class="fas fa-sign-out-alt conn"
-                  @click.prevent="logout()"
-                ></i
-              ></a>
+            <li >
+              <i class="fas fa-sign-out-alt conn" @click.prevent="logout()"></i>
             </li>
           </div>
         </ul>
@@ -68,13 +63,16 @@ export default {
       store.dispatch("auth/logout");
      
     };
-
+    const Auth = computed(() => store.getters["auth/authenticated"]);
+    const Admin = computed(() => store.getters["auth/Admin"]);
     const users = computed(() => store.state.auth.user?.username);
 
     return {
       users,
       store,
       logout,
+      Admin,
+      Auth
     };
   },
 };

@@ -1,84 +1,80 @@
 <template>
-  <div class="c">
+  <div>
     <Modal
       v-if="modalOpen"
       :modalContent="modalContent"
       :data="post"
       @close="handleClose()"
     />
-    <div class="big">
-      <article class="article">
-        <div class="article-box">
-          <img :src="`http://127.0.0.1:8000/api/post/image/${post.image}`" width="1500" height="1368" alt="" />
-        </div>
-        <div class="article-content">
-          <p class="article-tags">
-            <span class="article-tag">{{ post.user_id }}</span>
-            <span class="article-tag">{{ time(post.created_at) }} </span>
-            <span class="article-tag">category </span>
-          </p>
 
-          <!-- title -->
-
-          <h2 class="article-title" v-if="post.title.length < 8">
-            {{ post.title }}
-          </h2>
-          <h2 class="article-title" v-if="post.title.length >= 8">
-            , {{ post.title.substring(0, 8) + "..." }}
-          </h2>
-
-          <!-- content -->
-
-          <p class="article-metadata">
-            <span class="article-votes">(12 votes)</span>
-          </p>
-
-          <p class="article-desc" v-if="post.content.length < 100">
-            {{ post.content }}
-          </p>
-          <p class="article-desc" v-if="post.content.length >= 100">
-            {{ post.content.substring(0, 100) + "..." }}
-          </p>
-
-          <div class="socialize">
-            <div class="More">
-              <router-link
-                @click="single"
-                :to="{ name: 'BlogPage', params: { id } }"
-                >Read more</router-link
-              >
-            </div>
-
-            <div class="btns">
-              <div class="add" @click="bonk" :class="add ? 'plus' : 'minos '">
-                <i class="bx bx-bookmark-alt-plus green"></i>
-              </div>
-              <div
-                class="remove"
-                @click="bonk"
-                :class="add ? 'minos ' : 'plus'"
-              >
-                <i class="bx bx-bookmark-alt-minus red"></i>
-              </div>
-              <div class="like">
-                <div class="like">
-                  <i
-                    @click="openModal('editPostModal')"
-                    class="bx bxs-edit-alt"
-                  ></i>
-                </div>
-              </div>
-              <div class="Delete">
-                <div class="Delete">
-                  <i @click.prevent="deletePost(post)" class="bx bxs-trash-alt"></i>
-                </div>
-              </div>
-            </div>
+    <div class="card">
+      <div class="card-header">
+        <img
+          :src="`http://127.0.0.1:8000/api/post/image/${post.image}`"
+          width="1500"
+          height="1368"
+          alt=""
+        />
+      </div>
+      <div class="card-body">
+        <span class="tag tag-teal">
+          Technology
+        </span>
+        <h4 v-if="post.title.length < 8">
+          {{ post.title.substring(0, 8) + "..." }}
+        </h4>
+        <h4 class="article-title" v-if="post.title.length >= 8">
+          , {{ post.title.substring(0, 8) + "..." }}
+        </h4>
+        <p class="article-desc" v-if="post.content.length < 100">
+          {{ post.content }}
+        </p>
+        <p class="article-desc" v-if="post.content.length >= 100">
+          {{ post.content.substring(0, 100) + "..." }}
+        </p>
+      </div>
+      <div class="end">
+        <div class="user">
+          <img
+            src="https://randomuser.me/api/portraits/men/33.jpg"
+            alt="user"
+          />
+          <div class="user-info">
+            <h5>{{ post?.user.username }}</h5>
+            <small>{{ time(post.created_at) }}</small>
           </div>
         </div>
-      </article>
+        <div class="btns">
+          <div class="add" @click="bonk" :class="add ? 'plus' : 'minos '">
+            <i class="bx bx-bookmark-alt-plus green"></i>
+          </div>
+          <div class="remove" @click="bonk" :class="add ? 'minos ' : 'plus'">
+            <i class="bx bx-bookmark-alt-minus red"></i>
+          </div>
+
+          <div v-if="post.user_id == userId || Admin" class="like">
+            <i @click="openModal('editPostModal')" class="bx bxs-edit-alt"></i>
+          </div>
+
+          <div v-if="post.user_id == userId || Admin" class="Delete">
+            <div class="Delete">
+              <i @click.prevent="deletePost(post)" class="bx bxs-trash-alt"></i>
+            </div>
+          </div>
+
+          <div class="like">
+            <router-link
+              @click="single"
+              :to="{ name: 'BlogPage', params: { id } }"
+            >
+              <i class="bx bxs-right-arrow-alt more"></i
+            ></router-link>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+ 
 </template>
 
 <script>
@@ -111,8 +107,8 @@ export default {
     const userName = computed(() => store.getters["auth/userName"]);
 
     const deletePost = async ({ id }) => {
-     await store.dispatch("post/deletePost", id);
-     store.dispatch("post/getPosts")
+      await store.dispatch("post/deletePost", id);
+      store.dispatch("post/getPosts");
     };
 
     const image = ref(null);

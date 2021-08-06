@@ -261,5 +261,33 @@
         }
       }
     }
+ 
   }
+
+.profile_content-login{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  color: #fff;
+  bottom: 0;
+  background: rgb(32, 32, 32);
+  width: 100%;
+  height: 4rem;
+  .login{
+
+    i {
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
+      padding: 0 20px;
+      transition: all 300ms ease;
+
+      &:hover {
+        color: $blue-yc ;
+        transition: all 300ms ease;
+      }
+    }
+  }
+}
 }
