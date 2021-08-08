@@ -20,6 +20,19 @@
     padding: 1em 0;
    
 }
+
+.all-tags{
+  color: red;
+  display: flex;
+  flex-direction: column;
+  .input {
+      display: flex;
+      flex-direction: row;
+  }
+  .bt {
+   
+  }
+}
 @media screen and (max-width: 1300px) {
     .ds-title{
         text-align: center;

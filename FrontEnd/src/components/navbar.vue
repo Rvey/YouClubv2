@@ -12,12 +12,12 @@
             <li><router-link to="/Community">Community</router-link></li>
             <li v-if="Admin"><router-link to="/Dashboard">Dashboard</router-link></li>
           </div>
-          <div v-if="Auth" class="conn">
-            <li >
+          <div  class="conn">
+            <li v-if="!Auth" >
               <router-link class="conn" to="/login">Log in</router-link>
             </li>
-            <li >
-              <i class="fas fa-sign-out-alt conn" @click.prevent="logout()"></i>
+            <li  v-if="Auth" >
+              <i  class="fas fa-sign-out-alt conn" @click.prevent="logout()"></i>
             </li>
           </div>
         </ul>
@@ -30,20 +30,20 @@
       <div class="mnav">
         <ul>
           <li>
-            <a href="#" class="active"
+            <router-link to="/Community" class="active"
               ><i class="fab fa-phoenix-squadron"></i
-            ></a>
+            ></router-link>
           </li>
           <li>
-            <a href="#"><i class="fas fa-satellite-dish"></i></a>
+            <router-link to="/Dashboard"><i class="fas fa-satellite-dish"></i></router-link>
           </li>
           <li><i class="fab fa-phoenix-squadron logo"></i></li>
           <li>
-            <a href="#"><i class="fas fa-user"></i></a>
+            <router-link to="/Login"><i class="fas fa-user"></i></router-link>
           </li>
 
           <li>
-            <a class="" href="#"><i class="fas fa-sign-out-alt"></i></a>
+            <i class="fas fa-sign-out-alt" @click.prevent="logout()"></i>
           </li>
         </ul>
       </div>

@@ -1,6 +1,6 @@
 <template>
   <div>
-  <div class="like-s " @click="like" :class="isLiked ? 'red' : 'dim'">
+  <div class="like-s dim" @click="postLike(likes)" >
     <svg
       class="w-6 h-6"
       fill="none"
@@ -29,10 +29,15 @@
 </template>
 <script>
 import { ref } from "@vue/reactivity";
-
+import { useStore } from "vuex";
 export default {
+
   setup() {
+    const store = useStore();
     const count = ref(0);
+    const likes = ref({
+      likes : count
+    })
     const isLiked = ref(true);
     const like = () => {
       if (count.value === 0) {
@@ -42,10 +47,20 @@ export default {
       }
       isLiked.value = !isLiked.value;
     };
+
+    const postLike = async (likeCount) => {
+     await store.dispatch("likes/submitLikes" , likeCount);
+     like()
+     console.log(likes.value);
+     
+      console.log('tt ' , likeCount);
+    }
     return {
       count,
       isLiked,
       like,
+      postLike,
+      likes
     };
   },
 };

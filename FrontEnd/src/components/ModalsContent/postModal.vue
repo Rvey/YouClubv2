@@ -6,7 +6,11 @@
     /> -->
   <div ref="modal">
     <form class="form" enctype="multipart/form-data">
-      <img class="imagePreview" v-if="Boolean(thumbnailData)" :src="thumbnailData" />
+      <img
+        class="imagePreview"
+        v-if="Boolean(thumbnailData)"
+        :src="thumbnailData"
+      />
 
       <input type="file" class="file" accept="image/*" @change="onFileChange" />
 
@@ -25,9 +29,21 @@
           cols="50"
         >
         </textarea> -->
-<Tiptap v-model="post.content" />
-      </div>
+        <div v-for="tag in tags" :key="tag.id">
+          <input
+            type="checkbox"
+            v-bind:value="tag.tagName"
+            v-model="post.tags"
+            @click= "checkone"
+          />
+          <label for="{{ tag.tagName }}">{{ tag.tagName }}</label>
+        </div>
 
+        <br />
+        <span>Checked names: {{ post.tags }}</span>
+
+        <Tiptap v-model="post.content" />
+      </div>
 
       <!--        submit-->
       <div class="btns">
@@ -42,84 +58,61 @@
 </template>
 <script>
 import { useStore } from "vuex";
-import { ref, watch } from "vue";
+import { ref, watch, computed, onMounted } from "vue";
 import { file_blob } from "@/util";
-import Tiptap from '@/components/tiptap.vue'
-// import { useImageUpload } from "@/components/consomable/useImageUpload.js";
+import Tiptap from "@/components/tiptap.vue";
+
 export default {
   name: "SubmitPostModal",
-  components:{
-    Tiptap
+  components: {
+    Tiptap,
   },
   setup(props, { emit }) {
     const store = useStore();
 
-    // const imagefile = ref("");
-    // const imageUrl = ref("");
+    onMounted(() => {
+      store.dispatch("tags/getTags");
+      console.log(tag.tagName);
+    });
+
+    const checkedNames = ref([]);
+
+    const tag = ref({
+      tagName: "",
+    });
 
     const post = ref({
       title: "",
       content: "",
       image: null,
+      tags: ref([]),
     });
 
     const thumbnailData = ref(null);
 
+    const checkone = () => {
+      post.tags = []
+    }
+
+
+
     const submit = async () => {
       let formData = new FormData();
 
-      Object.keys(post.value).forEach(k => {
+      Object.keys(post.value).forEach((k) => {
         formData.append(`${k}`, post.value[`${k}`]);
-      })
+      });
       await store.dispatch("post/submitPost", formData);
-      emit('close');
+
+      emit("close");
     };
+
+    const tags = computed(() => store.getters["tags/ALL_TAGS"]);
 
     const onFileChange = async (e) => {
       thumbnailData.value = await file_blob(e.target.files[0]);
       post.value.image = e.target.files[0];
     };
-
-    // const image = {
-    //   file: "",
-    // };
-
-    // function imageHandler(event) {
-    //     //   const cc =  post.yep = e.target.files[0].name;
-    //     //  return cc ;
-    //     console.log(event);
-    // }
-
-    // const imageHandler = (e) => {
-    //   // if (e.target.files.lenght === 0) {
-    //   //   imagefile.value = "";
-    //   //   imageUrl.value = "";
-    //   //   return;
-    //   // }
-
-    //   var cc = (post.yep = e.target.files[0].name);
-
-    //   document.querySelector(".input").value = cc;
-    //   post.yep = cc;
-
-    //   console.log(post.yep);
-    // };
-
-    // show selected image
-
-    // watch(imagefile, (imagefile, e) => {
-    //   if (!(imagefile instanceof File)) {
-    //     return;
-    //   }
-
-    //   const fileReader = new FileReader();
-
-    //   fileReader.readAsDataURL(imagefile);
-
-    //   fileReader.addEventListener("load", () => {
-    //     imageUrl.value = fileReader.result;
-    //   });
-    // });
 
     const close = () => {
       return emit("close");
@@ -132,7 +125,11 @@ export default {
       // imageUrl,
       // imagefile,
       onFileChange,
-      thumbnailData
+      thumbnailData,
+      tags,
+      tag,
+      checkedNames,
+      checkone
     };
   },
 };

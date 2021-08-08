@@ -31,7 +31,8 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required',
             'content' => 'required',
-            'image' => 'required|image'
+            'image' => 'required|image',
+            'tags' => 'required'
 
         ]);
 
@@ -45,7 +46,7 @@ class PostController extends Controller
             'content' => $request->content,
             'image' => $imageFullName,
             // 'likes' => $request->likes,
-            // 'tags' => $request->tags,
+            'tags' => $request->tags,
         ]);
 
         $response = (bool)$post

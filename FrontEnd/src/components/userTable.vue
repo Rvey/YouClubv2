@@ -1,4 +1,5 @@
 <template>
+
   <div class="da-panel">
     <Modal
       v-if="modalOpen"
@@ -64,7 +65,9 @@
         </tbody>
       </table>
     </div>
+       <Tags />
   </div>
+ 
 </template>
 <script>
 import Stats from "@/components/Cards/statsCard.vue";
@@ -72,11 +75,13 @@ import Stats from "@/components/Cards/statsCard.vue";
 import { useStore } from "vuex";
 import moment from "moment";
 import Modal from "@/components/Modals/Modal.vue";
+import Tags from "@/components/Misc/tag.vue";
 import { computed, onMounted, ref } from "@vue/runtime-core";
 export default {
   components: {
     Stats,
     Modal,
+    Tags
   },
   setup() {
     const store = useStore();

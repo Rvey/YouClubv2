@@ -5,9 +5,12 @@ use App\Http\Controllers\AssetController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +51,26 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::put('/comment/{id}', [CommentController::class, 'update']);
 
+
+    /**
+     *
+     *     !  likes api
+     */
+
+    Route::post('/like', [LikeController::class, 'store']);
+
+    Route::get('/likes', [LikeController::class, 'index']);
+
+    // category api
+
+
+    Route::post('/tag', [CategoryController::class, 'store']);
+
+    Route::get('/tags', [CategoryController::class, 'index']);
+
+    Route::Delete('/tag/{id}', [CategoryController::class, 'destroy']);
+
+
     // user api for perms
 
     Route::get('/user', [AuthController::class, 'user']);
@@ -55,8 +78,8 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::delete('/user/{id}', [UserController::class, 'destroy']);
 
     Route::put('/user/{id}', [UserController::class, 'update']);
-
 });
+
 
 // Route::get('/comment/user/{id}', [CommentController::class, 'userComments']);
 

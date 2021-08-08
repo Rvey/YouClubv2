@@ -12,10 +12,10 @@ class Post extends Model
     protected $fillable = [
         'title',
         'content',
-        'image'
+        'image',
         // 'user_id' ,
         // 'likes',
-        // 'tags',
+        'tags'
 
 
     ];
@@ -29,5 +29,12 @@ class Post extends Model
     {
         return $this->belongsTo(User::class);
     }
-
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+    // public function tags()
+    // {
+    //     return $this->hasMany(Tag::class);
+    // }
 }

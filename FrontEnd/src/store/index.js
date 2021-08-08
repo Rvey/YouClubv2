@@ -4,6 +4,8 @@ import Vuex from 'vuex'
 import auth from "./auth.js";
 import post from "./post.js";
 import comments from "./comments.js";
+import likes from "./likes.js";
+import tags from "./tags.js";
 import user from "./user.js";
 export default new Vuex.Store({
   state: {},
@@ -13,6 +15,8 @@ export default new Vuex.Store({
     auth,
     post,
     comments,
-    user
+    user,
+    tags,
+    likes
   },
 });

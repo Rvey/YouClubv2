@@ -2,27 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2428bc3-9d62-4239-a25b-7a09c5b5810c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/assets/dash.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/entities/entities.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/entities/entities.dat.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/entities/entities.dat.values" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/entities/entities.dat.values.at" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/entities/entities.dat.values.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/entities/entities.dat_i" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/entities/entities.dat_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3/entities/entities.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3/entities/entities.dat.values" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3/entities/entities.dat.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3/entities/entities.dat.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3/entities/entities.dat.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3/entities/entities.dat.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3/entities/entities.dat.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3/entities/entities.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3/entities/entities.dat_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/entities/entities.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/entities/entities.dat.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/entities/entities.dat.values" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/entities/entities.dat.values.at" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/entities/entities.dat.values.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/entities/entities.dat_i" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/entities/entities.dat_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/app/Http/Controllers/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/app/Http/Controllers/CommentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackEnd/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/app/Http/Controllers/TodoController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/app/Models/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/app/Models/Comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/app/Models/CategoriesController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/app/Models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/app/Models/likesController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/database/migrations/2021_07_14_090426_create_categories_controllers_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/database/migrations/2021_07_14_090510_create_likes_controllers_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/database/migrations/2021_07_27_152020_create_todos_table.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/BackEnd/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/Posts/Form/commentForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/Posts/Form/commentForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/blogPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/blogPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/cbody.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/cbody.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/commentSection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/commentSection.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/table.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/table.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/store/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/store/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/store/comments.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/store/comments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_blogBody.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles/layout/_blogBody.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/Cards/postCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/Cards/postCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/Misc/like.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/Misc/like.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/dashbody.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/dashbody.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,11 +190,15 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1vSdA3KuINVW6nakvI8Eh6L16Sh" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -175,11 +206,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReaderModeSettings">
-    <option name="showLigatures" value="false" />
+    <option name="showLigatures" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -220,6 +251,14 @@
       <workItem from="1627680955501" duration="10000" />
       <workItem from="1627869567367" duration="22000" />
       <workItem from="1627898673570" duration="174000" />
+      <workItem from="1628371199516" duration="94000" />
+      <workItem from="1628371407179" duration="650000" />
+      <workItem from="1628376486544" duration="345000" />
+      <workItem from="1628376847267" duration="670000" />
+      <workItem from="1628377553481" duration="49000" />
+      <workItem from="1628377614673" duration="16000" />
+      <workItem from="1628377720955" duration="15000" />
+      <workItem from="1628381936145" duration="1000" />
     </task>
     <servers />
   </component>
@@ -237,5 +276,8 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

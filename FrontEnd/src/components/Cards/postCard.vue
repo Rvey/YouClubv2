@@ -1,5 +1,4 @@
 <template>
-  <div>
     <Modal
       v-if="modalOpen"
       :modalContent="modalContent"
@@ -18,20 +17,18 @@
       </div>
       <div class="card-body">
         <span class="tag tag-teal">
-          Technology
+          {{ post.tags }}
         </span>
-        <h4 v-if="post.title.length < 8">
-          {{ post.title.substring(0, 8) + "..." }}
+        <h4 >
+          {{ post.title }}
         </h4>
-        <h4 class="article-title" v-if="post.title.length >= 8">
-          , {{ post.title.substring(0, 8) + "..." }}
-        </h4>
-        <p class="article-desc" v-if="post.content.length < 100">
+     
+        <p class="article-desc">
          {{ post?.content }}
         </p>
-        <p class="article-desc" v-if="post.content.length >= 100">
-          {{ post.content.substring(0, 100) + "..." }}
-        </p>
+        <!-- <p class="article-desc" >
+         <Tiptap v-model="post.content" />
+        </p> -->
       </div>
       <div class="end">
         <div class="user">
@@ -73,8 +70,6 @@
         </div>
       </div>
     </div>
-  </div>
- 
 </template>
 
 <script>
@@ -106,10 +101,20 @@ export default {
     const Admin = computed(() => store.getters["auth/Admin"]);
     const userName = computed(() => store.getters["auth/userName"]);
 
+
+
+
+    
+
+
+
+
     const deletePost = async ({ id }) => {
       await store.dispatch("post/deletePost", id);
       store.dispatch("post/getPosts");
     };
+
+
 
     const image = ref(null);
 
@@ -120,6 +125,13 @@ export default {
         .fromNow();
     };
 
+
+ const  removeTags = (string) => {
+   string.replace(/(<([^>]+)>)/gi, "")
+              //  .replace(/\s{2,}/g, ' ')
+              //  .trim();
+}
+ 
     const openModal = (modal) => {
       modalContent.value = modal;
       modalOpen.value = true;
@@ -151,6 +163,7 @@ export default {
       Admin,
       image,
       id,
+      removeTags
     };
   },
 };
