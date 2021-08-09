@@ -21,9 +21,9 @@ class AuthController extends Controller
     {
 
         $fields = $request->validate([
-            'username' => 'required|string',
-            'email' => 'required|string|unique:users,email',
-            'password' => 'required|string|confirmed'
+            'username' => 'required|string|max:32|min:8|unique:users,username',
+            'email' => 'required|string|unique:users,email|email',
+            'password' => 'required|string|confirmed|min:8'
         ]);
 
         $user = User::create([
@@ -46,24 +46,27 @@ class AuthController extends Controller
     public function login(Request $request)
     {
 
-        $fields = $request->validate([
 
-            'email' => ['required', 'email', 'exists:users,email'],
-            'password' => 'required', 'password'
+
+        $request->validate([
+
+            'email' => ['required', 'email'],
+            'password' => ['required']
         ]);
+
+
 
         // check email
 
-        $user = User::where('email', $fields['email'])->first();
+        $user = User::where('email', $request->email)->first();
         // $admin = Admin::where('email', $fields['email'])->first();
 
         // check  Password
 
-        if (!$user && !Hash::check($fields['password'])) {
-
+        if (!$user || !Hash::check($request->password, $user->password)) {
             return response([
-                'message' => 'oops !!'
-            ] . 401);
+                'message' => 'Invalid Credentials.'
+            ], 401);
         }
 
 
@@ -86,10 +89,6 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         $request->user()->tokens()->delete();
-      return response( 'log out' , 200);
+        return response('log out', 200);
     }
-
-
-
-
 }

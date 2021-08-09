@@ -1,75 +1,120 @@
 <template>
-    <Modal
-      v-if="modalOpen"
-      :modalContent="modalContent"
-      :data="post"
-      @close="handleClose()"
-    />
-
-    <div class="card">
-      <div class="card-header">
-        <img
-          :src="`http://127.0.0.1:8000/api/post/image/${post.image}`"
-          width="1500"
-          height="1368"
-          alt=""
-        />
+  <Modal
+    v-if="modalOpen"
+    :modalContent="modalContent"
+    :data="post"
+    @close="handleClose()"
+  />
+  <div class="w-full md:mx-2 mb-4 md:mb-0">
+    <div class="bg-black rounded-lg">
+    <div
+      class="bg-white rounded-lg overflow-hidden shadow relative  z-1 transform hover:translate-y-2 hover:translate-x-2 transition-all"
+    >
+      <img
+        class="h-56 w-full object-cover object-center"
+        :src="`http://127.0.0.1:8000/api/post/image/${post.image}`"
+        alt=""
+      />
+      <div class="m-4">
+        <a
+          class="inline bg-gray-300 py-1 px-2 rounded-full text-xs lowercase text-gray-700"
+          href="#"
+          >#{{ post?.tags }}</a
+        >
       </div>
-      <div class="card-body">
-        <span class="tag tag-teal">
-          {{ post.tags }}
-        </span>
-        <h4 >
-          {{ post.title }}
-        </h4>
-     
-        <p class="article-desc">
-         {{ post?.content }}
-        </p>
-        <!-- <p class="article-desc" >
-         <Tiptap v-model="post.content" />
-        </p> -->
-      </div>
-      <div class="end">
-        <div class="user">
-          <img
-            src="https://randomuser.me/api/portraits/men/33.jpg"
-            alt="user"
-          />
-          <div class="user-info">
-            <h5>{{ post?.user.username }}</h5>
-            <small>{{ time(post.created_at) }}</small>
-          </div>
+      <div class="p-4 h-auto md:h-40 lg:h-48">
+        <a
+          href="#"
+          class="block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg"
+        >
+          {{post?.title}}
+        </a>
+        <div
+          class="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm break-all"
+        >
+          {{ post?.content }}
         </div>
-        <div class="btns">
-          <div class="add" @click="bonk" :class="add ? 'plus' : 'minos '">
-            <i class="bx bx-bookmark-alt-plus green"></i>
-          </div>
-          <div class="remove" @click="bonk" :class="add ? 'minos ' : 'plus'">
-            <i class="bx bx-bookmark-alt-minus red"></i>
-          </div>
-
-          <div v-if="post.user_id == userId || Admin" class="like">
-            <i @click="openModal('editPostModal')" class="bx bxs-edit-alt"></i>
-          </div>
-
-          <div v-if="post.user_id == userId || Admin" class="Delete">
-            <div class="Delete">
-              <i @click.prevent="deletePost(post)" class="bx bxs-trash-alt"></i>
+      </div>
+      <div class="flex align-bottom p-2  bg-blue-100">
+        <div class="flex justify-between w-full align-middle">
+          <div class="flex gap-4 align-middle  ">
+            <div>
+              <img
+                class="bg-red-300 w-10 h-10 rounded-full"
+                src="#"
+                alt="img"
+              />
+            </div>
+            <div class="flex flex-col  ">
+              <div class="font-bold text-lg uppercase">
+                {{ post.user?.username }}
+              </div>
+              <div class="font-semibold text-gray-400 text-sm">
+                {{ time(post?.created_at) }}
+              </div>
             </div>
           </div>
-
-          <div class="like">
-            <router-link
-              @click="single"
-              :to="{ name: 'BlogPage', params: { id } }"
+          <div class="flex align-middle gap-2">
+            <div
+              class="px-4 py-2 bg-blue-500 rounded-md text-white font-semibold cursor-pointer hover:bg-blue-600 "
             >
-              <i class="bx bxs-right-arrow-alt more"></i
-            ></router-link>
+              <router-link
+                @click="single"
+                :to="{ name: 'BlogPage', params: { id } }"
+              >
+                ReadMore
+              </router-link>
+            </div>
+
+            <!-- bookmark -->
+            <div class="relative">
+              <i
+                v-if="mark"
+                @click="removeSaved(post)"
+                class="bx bxs-bookmark text-2xl cursor-pointer "
+              ></i>
+
+              <i
+                v-if="!mark"
+                @click=" savepost(post)"
+                class="bx bx-bookmark text-2xl cursor-pointer "
+              ></i>
+            </div>
+
+            <div>
+              <i
+                class="bx bx-dots-vertical-rounded font-semibold text-2xl cursor-pointer hover:text-gray-600"
+                @click="show()"
+              ></i>
+            </div>
           </div>
         </div>
       </div>
     </div>
+</div>
+    <transition name="fade">
+      <div
+        v-if="!isOpen"
+        class="absolute  bg-gray-100 rounded-md font-semibold z-10 "
+      >
+        <div class="flex gap-6">
+          <div v-if="post.user_id == userId || Admin">
+            <i
+              @click.prevent="deletePost(post)"
+              class="bx bxs-trash-alt transition duration-500 ease-in-out hover:text-red-600  text-red-500 text-4xl ; cursor-pointer"
+            ></i>
+          </div>
+
+          <div v-if="post.user_id == userId || Admin" class="like">
+            <i
+              @click="openModal('editPostModal')"
+              class="bx bxs-edit-alt transition duration-500 ease-in-out hover:text-blue-600  text-gray-500 text-4xl ; cursor-pointer"
+            ></i>
+          </div>
+        </div>
+      </div>
+    </transition>
+  </div>
 </template>
 
 <script>
@@ -92,31 +137,14 @@ export default {
     const modalOpen = ref(false);
     const modalContent = ref("");
     const id = ref(post.id);
-    const bonk = () => {
-      add.value = !add.value;
-    };
+    const mark = ref(false);
+    const image = ref(null);
+    const isOpen = ref(true);
 
     const userId = computed(() => store.getters["auth/userId"]);
     const posts = computed(() => store.getters["post/ALL_POSTS"]);
     const Admin = computed(() => store.getters["auth/Admin"]);
     const userName = computed(() => store.getters["auth/userName"]);
-
-
-
-
-    
-
-
-
-
-    const deletePost = async ({ id }) => {
-      await store.dispatch("post/deletePost", id);
-      store.dispatch("post/getPosts");
-    };
-
-
-
-    const image = ref(null);
 
     const time = (date) => {
       //   return moment(date).format("MMM Do YY, h:mm:ss a");
@@ -125,13 +153,21 @@ export default {
         .fromNow();
     };
 
+    const show = () => {
+      isOpen.value = !isOpen.value;
+      console.log("wekrwke");
+    };
 
- const  removeTags = (string) => {
-   string.replace(/(<([^>]+)>)/gi, "")
-              //  .replace(/\s{2,}/g, ' ')
-              //  .trim();
-}
- 
+    const booktoggle = () => {
+      mark.value = !mark.value;
+    };
+
+    const removeTags = (string) => {
+      string.replace(/(<([^>]+)>)/gi, "");
+      //  .replace(/\s{2,}/g, ' ')
+      //  .trim();
+    };
+
     const openModal = (modal) => {
       modalContent.value = modal;
       modalOpen.value = true;
@@ -144,6 +180,26 @@ export default {
     const handleClose = () => {
       modalOpen.value = false;
     };
+
+
+
+  const removeSaved = async( {id } ) => {
+    store.dispatch("bookmark/deleteMarked" , id)
+    booktoggle()
+  }
+
+    const savepost = async(postData) => {
+     store.dispatch("bookmark/submitMarked" , postData)
+     booktoggle()
+    }
+
+    const deletePost = async ({ id }) => {
+      await store.dispatch("post/deletePost", id);
+      store.dispatch("post/getPosts");
+    };
+
+
+
     return {
       modalOpen,
       modalContent,
@@ -153,7 +209,6 @@ export default {
       route,
       // editPost,
       userName,
-      bonk,
       handleClose,
       openModal,
       post,
@@ -163,7 +218,13 @@ export default {
       Admin,
       image,
       id,
-      removeTags
+      removeTags,
+      isOpen,
+      show,
+      mark,
+      booktoggle,
+      savepost,
+      removeSaved
     };
   },
 };

@@ -73,7 +73,7 @@ class CategoryController extends Controller
             return response(["error" => "Unauthorized"], 401);
 
         $request->validate([
-            "tagName" => ['max:20'],
+            "tagName" => ['max:10'],
 
         ]);
         $tag = Tag::find($id);

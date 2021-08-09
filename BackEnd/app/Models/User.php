@@ -60,6 +60,7 @@ class User extends Authenticatable
         return $this->hasMany(Like::class);
     }
 
+
     public function is_Admin()
     {
         return $this->only('is_Admin')['is_Admin'];

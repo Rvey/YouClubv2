@@ -5,6 +5,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import scss from "./styles/main.scss";
+import "./tailwind.css";
 
 require("./store/subscriber");
 

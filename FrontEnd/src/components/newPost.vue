@@ -1,11 +1,7 @@
 <template>
-  <Modal
-      v-if="modalOpen"
-      :modalContent="modalContent"
-      @close="handleClose()"
-    />
-  <div ref="modal">
-    <form class="form" enctype="multipart/form-data">
+
+  <div class="slide-create ">
+    <form class="flex h-full flex-col gap-6 " enctype="multipart/form-data">
       <img
         class="imagePreview"
         v-if="Boolean(thumbnailData)"
@@ -14,43 +10,65 @@
 
       <input type="file" class="file" accept="image/*" @change="onFileChange" />
 
-      <div class="field">
-        <label for="Post title">Post title</label>
-        <input v-model="post.title" type="text" />
+      <div class="flex flex-col gap-3">
+        <label class="text-lg font-bold" for="Post title">Post title</label>
+        <input type='text' class="w-full mt-2 mb-6 px-6 py-3 border rounded-lg text-lg text-gray-700 focus:outline-none" v-model="post.title" />  
       </div>
 
-      <div class="field">
-        <label for="Post title">Post content</label>
-        <!-- <textarea
-          v-model="post.content"
-          id="content"
-          name="content"
-          rows="10"
-          cols="50"
-        >
-        </textarea> -->
-        <div v-for="tag in tags" :key="tag.id">
-          <input
+
+
+      
+        <div class="flex flex-col gap-6">
+          <label class="text-lg font-bold" for="Post title">Category</label>
+          <div class="flex gap-6">
+            <div v-for="tag in tags" :key="tag.id">
+              <!-- <input
             type="checkbox"
             v-bind:value="tag.tagName"
             v-model="post.tags"
             @click= "checkone"
-          />
-          <label for="{{ tag.tagName }}">{{ tag.tagName }}</label>
+          /> -->
+
+              <div class="flex items-center gap-8">
+                <label class="inline-flex items-center">
+                  <input
+                    type="radio"
+                    class="h-5 w-5 text-red-600"
+                    v-bind:value="tag.tagName"
+                    v-model="post.tags"
+                    @click="checkone"
+                  />
+                  <span class="ml-2 text-gray-700">
+                    <label for="{{ tag.tagName }}">{{ tag.tagName }}</label>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+          
+       
+
+
+
+        <div clas>
+          <Tiptap v-model="post.content"  />
         </div>
-
-        <br />
-        <span>Checked names: {{ post.tags }}</span>
-
-        <Tiptap v-model="post.content" />
       </div>
 
       <!--        submit-->
-      <div class="btns">
-        <button @click.prevent="submit()" class="submit" type="submit">
+      <div class="flex justify-end align-bottom gap-3">
+        <button
+          @click.prevent="submit()"
+          class="bg-green-500 hover:bg-green-600 px-6 py-2 text-gray-100 font-semibold rounded-md"
+          type="submit"
+        >
           Submit
         </button>
-        <button @click.prevent="close" class="cancel">cancel</button
+        <button
+          @click.prevent="close"
+          class="bg-red-400 hover:bg-red-500 text-white px-6 py-2 font-semibold whitespace-normal rounded-md"
+        >
+          cancel</button
         >{{ post.yep }}
       </div>
     </form>
@@ -91,10 +109,8 @@ export default {
     const thumbnailData = ref(null);
 
     const checkone = () => {
-      post.tags = []
-    }
-
-
+      post.tags = [];
+    };
 
     const submit = async () => {
       let formData = new FormData();
@@ -121,15 +137,12 @@ export default {
       close,
       submit,
       post,
-      // imageHandler,
-      // imageUrl,
-      // imagefile,
       onFileChange,
       thumbnailData,
       tags,
       tag,
       checkedNames,
-      checkone
+      checkone,
     };
   },
 };

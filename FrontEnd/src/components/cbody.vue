@@ -22,25 +22,27 @@
 
       <div class="ds-title">Top Article</div>
 
-      <catCards />
+      <!-- <catCards /> -->
 
       <div class="ds-title">Blogs</div>
       <!-- card -->
-      <div class="post-container">
-        <PostCard v-for="post in posts" :post="post" :key="post.id" />
-      </div>
-      <!--    post model -->
-      <button v-if="Auth" class="addpost" @click="openModal('submitPostModal')">
-        <i class="bx bx-plus-circle"></i>
-      </button>
+
+<div class="w-full h-full bg-red-400">
+<div class="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3  2xl:grid-cols-4 md:grid-cols-2 gap-5 p-5">
+        <PostCard  v-for="post in posts" :post="post" :key="post.id" />
+</div>
+</div>
     </div>
+ 
+  
   </div>
 </template>
 <script>
 import Modal from "@/components/Modals/Modal.vue";
 
 import PostCard from "@/components/Cards/postCard.vue";
-import catCards from "@/components/Cards/statsCard.vue";
+import catCards from "@/components/Cards/tags.vue";
+import NewPost from "@/components/newPost.vue";
 import { computed, ref } from "vue";
 import { useStore } from "vuex";
 import { onMounted } from "vue";
@@ -49,6 +51,7 @@ export default {
     Modal,
     PostCard,
     catCards,
+    NewPost
   },
   setup(_, { emit }) {
     const store = useStore();
@@ -78,6 +81,8 @@ export default {
       modalOpen.value = false;
     };
 
+ 
+
     return {
       modalOpen,
       modalContent,
@@ -87,7 +92,8 @@ export default {
       userId,
       Admin,
       userName,
-      Auth
+      Auth,
+     
     };
   },
 };

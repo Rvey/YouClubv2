@@ -8,17 +8,6 @@
       <i class="bx bx-menu" id="btn" @click.prevent="e"></i>
     </div>
     <ul class="nav_list">
-      <li class="search">
-        <input class="search" type="text" placeholder="Search..." />
-        <span class="tooltip">Search</span>
-      </li>
-      <li class="search-btn">
-        <a href="#">
-          <i class="bx bx-search"></i>
-          <span class="links_name">Home</span>
-        </a>
-        <span class="tooltip">Search</span>
-      </li>
       <li>
         <router-link to="/">
           <i class="bx bx-home-alt"></i>

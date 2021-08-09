@@ -70,7 +70,7 @@
  
 </template>
 <script>
-import Stats from "@/components/Cards/statsCard.vue";
+
 // import Table from "@/components/table.vue";
 import { useStore } from "vuex";
 import moment from "moment";
@@ -79,7 +79,7 @@ import Tags from "@/components/Misc/tag.vue";
 import { computed, onMounted, ref } from "@vue/runtime-core";
 export default {
   components: {
-    Stats,
+ 
     Modal,
     Tags
   },

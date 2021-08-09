@@ -1,7 +1,7 @@
 <template>
   
-    <div v-if="editor">
-      <button @click.prevent="editor.chain().focus().toggleBold().run()" :class="{ 'is-active': editor.isActive('bold') }">
+    <div class="buttons" v-if="editor">
+      <button class="bg-red-300" @click.prevent="editor.chain().focus().toggleBold().run()" :class="{ 'is-active': editor.isActive('bold') }">
         bold
       </button>
       <button @click.prevent="editor.chain().focus().toggleItalic().run()" :class="{ 'is-active': editor.isActive('italic') }">
@@ -66,7 +66,7 @@
       </button>
     </div>
     
-    <editor-content :editor="editor"   />
+    <editor-content :editor="editor"  />
  
 </template>
 
@@ -122,16 +122,16 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoop>
 /* Basic editor styles */
 .ProseMirror {
   > * + * {
-    margin-top: 0.75em;
+    margin-top: 0.75em !important;
   }
 
   ul,
   ol {
-    padding: 0 1rem;
+    padding: 0 1rem !important;
   }
 
   h1,
@@ -140,43 +140,44 @@ export default {
   h4,
   h5,
   h6 {
-    line-height: 1.1;
+    line-height: 1.1 !important;
   }
 
   code {
-    background-color: rgba(#616161, 0.1);
-    color: #616161;
+    background-color: rgba(#616161, 0.1) !important;
+    color: #616161 !important;
   }
 
   pre {
-    background: #0D0D0D;
-    color: #FFF;
-    font-family: 'JetBrainsMono', monospace;
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
+    background: #0D0D0D !important;
+    color: #FFF !important;
+    font-family: 'JetBrainsMono', monospace !important;
+    padding: 0.75rem 1rem !important;
+    border-radius: 0.5rem !important;
 
     code {
-      color: inherit;
-      padding: 0;
-      background: none;
-      font-size: 0.8rem;
+      color: inherit !important;
+      padding: 0 !important;
+      background: none !important;
+      font-size: 0.8rem !important;
     }
   }
 
   img {
-    max-width: 100%;
-    height: auto;
+    max-width: 100% !important;
+    height: auto !important;
   }
 
   blockquote {
-    padding-left: 1rem;
-    border-left: 2px solid rgba(#0D0D0D, 0.1);
+    padding-left: 1rem !important;
+    border-left: 2px solid rgba(#0D0D0D, 0.1) !important;
   }
 
   hr {
-    border: none;
-    border-top: 2px solid rgba(#0D0D0D, 0.1);
-    margin: 2rem 0;
+    border: none !important;
+    border-top: 2px solid rgba(#0D0D0D, 0.1) !important;
+    margin: 2rem 0 !important;
+
   }
 }
 </style>

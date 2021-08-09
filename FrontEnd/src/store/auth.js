@@ -68,7 +68,7 @@ export default {
     async signup({ commit, dispatch }, credentials) {
       try {
         commit("SET_ERROR", null);
-        const res = await axios.post("api/signup", credentials);
+         await axios.post("api/signup", credentials);
         
         // return dispatch("attempt", res.data.data.token);
         // window.location.replace("/login");

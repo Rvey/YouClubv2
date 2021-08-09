@@ -7,6 +7,7 @@ import comments from "./comments.js";
 import likes from "./likes.js";
 import tags from "./tags.js";
 import user from "./user.js";
+import bookmark from "./bookmark.js";
 export default new Vuex.Store({
   state: {},
   mutations: {},
@@ -17,6 +18,7 @@ export default new Vuex.Store({
     comments,
     user,
     tags,
-    likes
+    likes,
+    bookmark
   },
 });

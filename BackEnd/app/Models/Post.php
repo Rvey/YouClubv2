@@ -13,7 +13,6 @@ class Post extends Model
         'title',
         'content',
         'image',
-        // 'user_id' ,
         // 'likes',
         'tags'
 
@@ -33,6 +32,7 @@ class Post extends Model
     {
         return $this->hasMany(Like::class);
     }
+
     // public function tags()
     // {
     //     return $this->hasMany(Tag::class);

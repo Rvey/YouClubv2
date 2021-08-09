@@ -1,8 +1,8 @@
 <template>
-  <div class="container" :class="slide ? 'sign-in-mode' : 'sign-up-mode'">
+  <div class="containerr" :class="slide ? 'sign-in-mode' : 'sign-up-mode'">
     <div class="forms-container">
       <div class="signin-signup">
-        <Login/>
+        
 
         <!-- sign up form  -->
 
