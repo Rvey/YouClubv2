@@ -5,14 +5,14 @@
       :modalContent="modalContent"
       @close="handleClose()"
     />
-    <div class="body">
+    <div class="body m-0 md:ml-20">
       <div
-        class="flex align-middle justify-between flex-wrap p-4
+        class="flex align-middle justify-between flex-wrap p-4 
       "
       >
         <div class=" text-4xl font-bold ">Community</div>
 
-        <div class=" p-2 shadow flex">
+        <div class=" p-2 shadow flex my-6 md:my-0 ">
           <span class="w-auto flex justify-end items-center text-gray-500 p-2">
           </span>
           <input

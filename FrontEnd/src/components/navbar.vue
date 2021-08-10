@@ -1,10 +1,14 @@
 <template>
   <!-- dektop nav -->
   <div>
-    <div class="header">
-      <div class="logo">
-        <h1>YouClub</h1>
-      </div>
+    <div class="header bg-black bg-opacity-40">
+
+          <div class="flex align-middle items-center gap-2">
+          <img src="@/assets/logo.svg" class="w-10 h-10 " alt="" srcset="" />
+          <div class="font-bold text-3xl"> <span class="text-white">You</span><span class="text-blue-500">Club</span></div>
+        </div>
+     
+  
       <div>
         <ul>
           <div class="nav">
@@ -26,24 +30,28 @@
 
     <!-- mobile menu -->
 
-    <div class="menu">
-      <div class="mnav">
-        <ul>
-          <li>
-            <router-link to="/Community" class="active"
-              ><i class="fab fa-phoenix-squadron"></i
-            ></router-link>
+    <div class="fixed bottom-0 right-0 left-0  h-20 flex items-center bg-white md:hidden ">
+      <div class="flex  w-full justify-center">
+        <ul class="w-full flex justify-around items-center text-4xl list-none p-0 ">
+          <li class="">
+            <router-link to="/" class="active"><i class='bx bx-home shadow-xl' ></i></router-link>
           </li>
           <li>
-            <router-link to="/Dashboard"><i class="fas fa-satellite-dish"></i></router-link>
+            <router-link to="/Dashboard">
+            <i class='bx bxs-dashboard text-gray-700 '>
+              </i></router-link>
           </li>
-          <li><i class="fab fa-phoenix-squadron logo"></i></li>
+          <li class="p-4 bg-gray-400 rounded-full">
+            <router-link to="/Community">
+            <img src="@/assets/logo.svg" class="w-14 h-14  mb-20  " alt="" srcset="" />
+            </router-link>
+          </li>
           <li>
-            <router-link to="/Login"><i class="fas fa-user"></i></router-link>
+            <router-link to="/Login"><i class='bx bx-user-circle text-gray-700' ></i></router-link>
           </li>
 
           <li>
-            <i class="fas fa-sign-out-alt" @click.prevent="logout()"></i>
+            <i class='bx bx-log-in-circle text-gray-700 ' @click.prevent="logout()"></i>
           </li>
         </ul>
       </div>

@@ -1,10 +1,8 @@
 <template>
   <div class="slide-create ">
     <form
-      class="flex h-full flex-col gap-6 justify-between"
-      enctype="multipart/form-data"
-    >
-
+      class="flex h-full flex-col gap-6 w-96 md:w-full"
+      enctype="multipart/form-data" >
       <div>
       <div class="flex items-center justify-center w-full">
         <label
@@ -33,19 +31,6 @@
           />
         </label>
       </div>
-        <!-- <img
-          class="imagePreview"
-          v-if="Boolean(thumbnailData)"
-          :src="thumbnailData"
-        /> -->
-
-        <!-- <input
-          type="file"
-          class="file"
-          accept="image/*"
-          @change="onFileChange"
-        /> -->
-
         <div class="flex flex-col gap-3 ">
           <label class="text-lg font-bold" for="Post title">Post title</label>
           <input
@@ -59,13 +44,6 @@
           <label class="text-lg font-bold" for="Post title">Category</label>
           <div class="flex gap-6">
             <div v-for="tag in tags" :key="tag.id">
-              <!-- <input
-            type="checkbox"
-            v-bind:value="tag.tagName"
-            v-model="post.tags"
-            @click= "checkone"
-          /> -->
-
               <div class="flex items-center gap-8">
                 <label class="inline-flex items-center">
                   <input

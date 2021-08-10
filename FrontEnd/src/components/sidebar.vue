@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar" :class="toggle ? 'active' : 'not-active'">
+  <div class="sidebar hidden md:block" :class="toggle ? 'active' : 'not-active' ">
     <div class="logo_content">
       <div class="logo">
         <i class="bx bxl-c-plus-plus icon"></i>

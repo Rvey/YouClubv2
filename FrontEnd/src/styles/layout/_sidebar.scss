@@ -326,17 +326,17 @@
   //   background: #a0aec0;
   // }
   .ProseMirror {
-   border: 1px solid gray;
-    padding: 5px 25px;
-    // height: 23em;
-    width: 50em;
+    border: 1px solid gray;
+    padding: 7px 15px;
     overflow: break-word;
     border-radius: 5px;
     outline: none;
     background-color: rgba(216, 216, 216, 0.315);
+    width: 100%;
+    
     &:focus{
       border: 3px solid rgba(78, 119, 255, 0.253);
-      background-color: rgba(214, 214, 214, 0.315);
+      background-color: rgba(230, 230, 230, 0.315);
     }
   }
   // button,
@@ -351,9 +351,9 @@
     button {
       background-color: #ffffff;
       color: black;
-      font-weight: bold;
+      font-weight: semibold;
       border-radius: 3px;
-      padding: 6px;
+      padding: 4px;
       margin: 3px;
 
       &:hover {
