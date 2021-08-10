@@ -1,16 +1,15 @@
 <template>
-  <div class="body">
+  <div class="body m-0 md:ml-12">
     <div>
-      <div class="socials">
+      <!-- <div class="socials">
         <Comment />
         <Like />
-      </div>
-      <div class="blog-wrapper">
+      </div> -->
+      <div class="blog-wrapper  ">
         <div class="blog">
           <div class="blog-category"></div>
           <div class="blog-title">
             {{ post?.title }}
-
           </div>
           <div class="blog-p">
             <div class="blog-author">by {{ post?.user?.username }}</div>
@@ -21,17 +20,19 @@
 
           <div class="a-i">
             <div class="blog-image">
-              <img :src="`http://127.0.0.1:8000/api/post/image/${post?.image}`"  alt="" />
+              <img
+                :src="`http://127.0.0.1:8000/api/post/image/${post?.image}`"
+                alt=""
+              />
             </div>
 
-            <div v-html="post?.content" class="blog-article">
-            </div>
-
+            <div v-html="post?.content" class="blog-article"></div>
           </div>
-           <h3>Leave a comment</h3>
-           <Scomment :id="id" />
+          <div class=" mt-16 sm:mt-48 md:mt-64 lg:mt-80 bg-gray-100 p-2 md:p-6 rounded-lg ">
+            <h3 class="font-bold text-2xl">Leave a comment</h3>
+            <Scomment :id="id" class="bg-gray-200 p-6" />
+          </div>
         </div>
-       
       </div>
     </div>
   </div>
@@ -46,21 +47,19 @@ import Scomment from "@/components/commentSection.vue";
 
 import { computed, onMounted, ref } from "@vue/runtime-core";
 
-
 export default {
   components: {
     Like,
     Comment,
     Scomment,
-    
   },
   setup() {
     const store = useStore();
     const route = useRoute();
     const post = computed(() => store.getters["post/CURRENT_POST"]);
     const userId = computed(() => store.getters["auth/userId"]);
-     const Admin = computed(() => store.getters["auth/Admin"]);
-     
+    const Admin = computed(() => store.getters["auth/Admin"]);
+
     const id = computed(() => route.params.id);
     onMounted(() => {
       store.dispatch("post/single", id.value);
@@ -75,10 +74,8 @@ export default {
     // });
     // const image = ref(null);
 
-
     const SendComment = async () => {
       await store.dispatch("comments/submitComment", Comment.value);
-       
     };
 
     return {
@@ -87,7 +84,7 @@ export default {
       SendComment,
       store,
       userId,
-      Admin
+      Admin,
       // image
     };
   },

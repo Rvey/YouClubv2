@@ -1,5 +1,5 @@
 <template>
-  <div class="body">
+  <div class="body m-0 md:ml-20">
     <div class="ds-title">Dashboard</div>
     <div class="dashboard">
     <div class="left-side">
