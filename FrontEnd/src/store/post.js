@@ -85,6 +85,15 @@ export default {
         console.log(err);
       }
     },
+
+    async search({ commit } , searchData ) {
+      try {
+        const res = await axios.get(`/posts/search/` , searchData)
+        console.log(res);
+      }catch(err){
+        console.log(err);
+      }
+    }
   },
   mutations: {
     GET_POSTS(state, payload) {

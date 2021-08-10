@@ -1,9 +1,13 @@
 <template>
-  <div class="lg:overflow-hidden h-screen">
+<div class="login-back">
+  <div class="lg:overflow-hidden h-screen login-front">
     <div
       class="text-center flex align-middle justify-center h-16 pt-4 md:h-40 lg:h-56 font-bold text-4xl"
     >
-      You <span class="text-blue-500">Club</span>
+         <div class="flex align-middle gap-2">
+          <img src="@/assets/logo.svg" class="w-20 h-20 " alt="" srcset="" />
+          <div>You<span class="text-blue-500">Club</span></div>
+        </div>
     </div>
     <div class="w-screen block lg:flex   ">
       <div
@@ -99,6 +103,7 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 <script>
 import { useStore } from "vuex";
@@ -139,3 +144,16 @@ export default {
   },
 };
 </script>
+<style>
+.login-back {
+  background-image: url("./../assets/dots.svg");
+  
+}
+.login-front {
+background: rgba( 0, 0, 0, 0.10 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 2.5px );
+-webkit-backdrop-filter: blur( 2.5px );
+border-radius: 10px;
+}
+</style>

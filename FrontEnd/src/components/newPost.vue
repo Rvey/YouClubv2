@@ -1,23 +1,60 @@
 <template>
-
   <div class="slide-create ">
-    <form class="flex h-full flex-col gap-6 " enctype="multipart/form-data">
-      <img
-        class="imagePreview"
-        v-if="Boolean(thumbnailData)"
-        :src="thumbnailData"
-      />
+    <form
+      class="flex h-full flex-col gap-6 justify-between"
+      enctype="multipart/form-data"
+    >
 
-      <input type="file" class="file" accept="image/*" @change="onFileChange" />
-
-      <div class="flex flex-col gap-3">
-        <label class="text-lg font-bold" for="Post title">Post title</label>
-        <input type='text' class="w-full mt-2 mb-6 px-6 py-3 border rounded-lg text-lg text-gray-700 focus:outline-none" v-model="post.title" />  
+      <div>
+      <div class="flex items-center justify-center w-full">
+        <label
+          class="flex flex-col w-full h-33 border-2 border-gray-400 border-dashed hover:bg-gray-100 hover:border-gray-300"
+        >
+          <div class="relative flex flex-col items-center justify-center pt-7">
+            <img
+              id="preview"
+              v-if="Boolean(thumbnailData)"
+              :src="thumbnailData"
+              class="absolute inset-0 w-full h-32 object-cover"
+            />
+          <i class='bx bx-cloud-upload text-5xl'></i>
+            <p
+              class="pt-1 text-sm tracking-wider text-gray-700 group-hover:text-gray-600"
+            >
+              Select a photo
+            </p>
+          </div>
+          <input
+            type="file"
+            class="file invisible"
+            accept="image/*"
+            @change="onFileChange"
+            
+          />
+        </label>
       </div>
+        <!-- <img
+          class="imagePreview"
+          v-if="Boolean(thumbnailData)"
+          :src="thumbnailData"
+        /> -->
 
+        <!-- <input
+          type="file"
+          class="file"
+          accept="image/*"
+          @change="onFileChange"
+        /> -->
 
+        <div class="flex flex-col gap-3 ">
+          <label class="text-lg font-bold" for="Post title">Post title</label>
+          <input
+            type="text"
+            class="w-full mt-2 mb-6 px-6 py-3 border rounded-lg text-lg text-gray-700 focus:outline-none"
+            v-model="post.title"
+          />
+        </div>
 
-      
         <div class="flex flex-col gap-6">
           <label class="text-lg font-bold" for="Post title">Category</label>
           <div class="flex gap-6">
@@ -45,18 +82,14 @@
               </div>
             </div>
           </div>
-          
-       
 
-
-
-        <div clas>
-          <Tiptap v-model="post.content"  />
+          <div>
+            <Tiptap v-model="post.content" />
+          </div>
         </div>
       </div>
-
       <!--        submit-->
-      <div class="flex justify-end align-bottom gap-3">
+      <div class="flex  align-bottom gap-3  ">
         <button
           @click.prevent="submit()"
           class="bg-green-500 hover:bg-green-600 px-6 py-2 text-gray-100 font-semibold rounded-md"
@@ -65,11 +98,11 @@
           Submit
         </button>
         <button
-          @click.prevent="close"
-          class="bg-red-400 hover:bg-red-500 text-white px-6 py-2 font-semibold whitespace-normal rounded-md"
+          @click="close"
+          class="bg-red-400 hover:bg-red-500 text-white px-6 py-2 font-semibold whitespace-normal rounded-md opacity-0"
         >
-          cancel</button
-        >{{ post.yep }}
+          reset
+        </button>
       </div>
     </form>
   </div>
@@ -130,9 +163,6 @@ export default {
       post.value.image = e.target.files[0];
     };
 
-    const close = () => {
-      return emit("close");
-    };
     return {
       close,
       submit,

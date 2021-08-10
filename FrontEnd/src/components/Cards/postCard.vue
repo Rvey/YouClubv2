@@ -11,7 +11,7 @@
       class="bg-white rounded-lg overflow-hidden shadow relative  z-1 transform hover:translate-y-2 hover:translate-x-2 transition-all"
     >
       <img
-        class="h-56 w-full object-cover object-center"
+        class="h-32 w-full object-cover object-center"
         :src="`http://127.0.0.1:8000/api/post/image/${post.image}`"
         alt=""
       />
@@ -25,14 +25,14 @@
       <div class="p-4 h-auto md:h-40 lg:h-48">
         <a
           href="#"
-          class="block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg"
+          class="block text-gray-900  font-bold text-4xl mb-2  lg:text-lg"
         >
           {{post?.title}}
         </a>
         <div
           class="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm break-all"
         >
-          {{ post?.content }}
+          {{ trim(strip(post?.content)) }}
         </div>
       </div>
       <div class="flex align-bottom p-2  bg-blue-100">
@@ -46,17 +46,17 @@
               />
             </div>
             <div class="flex flex-col  ">
-              <div class="font-bold text-lg uppercase">
+              <div class="font-bold text-md uppercase">
                 {{ post.user?.username }}
               </div>
-              <div class="font-semibold text-gray-400 text-sm">
+              <div class="font-semibold text-gray-400 text-xs">
                 {{ time(post?.created_at) }}
               </div>
             </div>
           </div>
           <div class="flex align-middle gap-2">
             <div
-              class="px-4 py-2 bg-blue-500 rounded-md text-white font-semibold cursor-pointer hover:bg-blue-600 "
+              class="px-2 py-2 bg-blue-500 rounded-md text-white font-semibold text-sm cursor-pointer hover:bg-blue-600 "
             >
               <router-link
                 @click="single"
@@ -68,25 +68,36 @@
 
             <!-- bookmark -->
             <div class="relative">
-              <i
+                <!-- <i
                 v-if="mark"
                 @click="removeSaved(post)"
                 class="bx bxs-bookmark text-2xl cursor-pointer "
-              ></i>
+              ></i> -->
+          <div v-if="post.user_id == userId || Admin">
+            <i
+              @click.prevent="deletePost(post)"
+              class="bx bxs-trash-alt transition duration-500 ease-in-out hover:text-red-600  text-red-500 text-2xl ; cursor-pointer"
+            ></i>
+          </div>
 
-              <i
+              <!-- <i
                 v-if="!mark"
                 @click=" savepost(post)"
                 class="bx bx-bookmark text-2xl cursor-pointer "
-              ></i>
+              ></i> -->
             </div>
-
-            <div>
+    <div v-if="post.user_id == userId || Admin" class="like">
+            <i
+              @click="openModal('editPostModal')"
+              class="bx bxs-edit-alt transition duration-500 ease-in-out hover:text-blue-600  text-gray-500 text-2xl ; cursor-pointer"
+            ></i>
+          </div>
+            <!-- <div>
               <i
                 class="bx bx-dots-vertical-rounded font-semibold text-2xl cursor-pointer hover:text-gray-600"
                 @click="show()"
               ></i>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -153,6 +164,14 @@ export default {
         .fromNow();
     };
 
+    const strip = (data) => {
+      return (data.replace(/(<([^>]+)>)/gi, ""))
+    }
+
+    const trim = (text) => {
+      return (text.substring(0,290 ) +  "...")
+    }
+
     const show = () => {
       isOpen.value = !isOpen.value;
       console.log("wekrwke");
@@ -160,12 +179,6 @@ export default {
 
     const booktoggle = () => {
       mark.value = !mark.value;
-    };
-
-    const removeTags = (string) => {
-      string.replace(/(<([^>]+)>)/gi, "");
-      //  .replace(/\s{2,}/g, ' ')
-      //  .trim();
     };
 
     const openModal = (modal) => {
@@ -218,13 +231,14 @@ export default {
       Admin,
       image,
       id,
-      removeTags,
       isOpen,
       show,
       mark,
       booktoggle,
       savepost,
-      removeSaved
+      removeSaved,
+      strip,
+      trim
     };
   },
 };

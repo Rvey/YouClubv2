@@ -1,69 +1,48 @@
 <template>
 
   <div class="da-panel">
-    <Modal
-      v-if="modalOpen"
-      :modalContent="modalContent"
-      @close="handleClose()"
-    />
     <div>
       <div class="da-title">
         Members
       </div>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Joined at</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody v-for="user in users" :user="user" :key="user.id">
 
-
-          <tr :class="toggle ? 'block' : 'hidden'">
-
-            <td data-label="Username">  {{ user?.username }} </td>
-
-            <td data-label="Email"> {{ user?.email }} </td>
-
-            <td data-label="Joined at">{{ time(user?.created_at) }}</td>
-            <td data-label="Action">
-              <div class="actions">
-                <i
-                  class="bx bx-x-circle delete"
-                  @click="DeleteUser(user.id)"
-                ></i>
-                <i class="bx bx-edit edit" @click="EditUser(user)"></i>
-              </div>
+      <table class="border-collapse w-full rounded-xl">
+    <thead>
+        <tr>
+            <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Username</th>
+            <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Email</th>
+            <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">joined at</th>
+            <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Actions</th>
+        </tr>
+    </thead>
+    <tbody v-for="user in users" :user="user" :key="user.id">
+        <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+              <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Username</span>
+              <span v-if="!edit">{{ trim(user?.username) }}</span> 
+               <input v-if="edit" type="text" v-model="user.username" />
             </td>
-          </tr>
-
-
-
-          <tr  :class="toggle ? 'hidden' : 'block'">
-            <td data-label="Username">
-              <input type="text" v-model="user.username" />
+            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b  block lg:table-cell relative lg:static">
+                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Email</span>
+             <span v-if="!edit" > {{ trim(user?.email) }}</span> 
+             <input v-if="edit" type="text" v-model="user.email" />
             </td>
-
-            <td data-label="Email">
-              <input type="text" v-model="user.email" />
+          	<td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b  block lg:table-cell relative lg:static">
+                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Joined at</span>
+                <span class="rounded  py-1 px-3 text-xs ">{{ time(user?.created_at) }}</span>
+             
+          	</td>
+            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b  block lg:table-cell relative lg:static ">
+                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase"  >Actions</span>
+                <div  class="flex justify-center gap-2">
+                <div  class=" w-24 text-white rounded bg-blue-400 py-1 px-3 text-xs font-bold cursor-pointer" v-if="!edit" @click="show()">edit</div>
+                <div  class=" w-24 text-white rounded bg-blue-400 py-1 px-3 text-xs font-bold cursor-pointer" v-if="edit" @click="EditUser(user)">save edit</div>
+                <div  class="w-24 text-white rounded bg-red-400 py-1 px-3 text-xs font-bold cursor-pointer" @click="DeleteUser(user.id)">Remove</div>
+            </div>
             </td>
-            <td data-label="Joined at">{{ time(user?.created_at) }}</td>
-            <td data-label="Action">
-              <div class="actions">
-                <i
-                  class="bx bx-x-circle delete"
-                  @click="DeleteUser(user.id)"
-                ></i>
-                <i class="bx bx-edit edit" @click="show()"></i>
-                <i class='bx bx-save' @click="EditUser(user)" ></i>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </tr>
+    </tbody>
+</table>
     </div>
        <Tags />
   </div>
@@ -85,10 +64,7 @@ export default {
   },
   setup() {
     const store = useStore();
-    // const user = props.user;
-    const modalContent = ref("");
-    const modalOpen = ref(false);
-    const toggle = ref(true);
+    const edit = ref(false);
 
     onMounted(() => {
       store.dispatch("user/getUsers");
@@ -112,7 +88,7 @@ export default {
     };
 
     const show = () => {
-      toggle.value = !toggle.value;
+      edit.value = !edit.value;
     };
 
     const DeleteUser = (index) => {
@@ -120,21 +96,20 @@ export default {
     };
     const EditUser = (userData) => {
       store.dispatch("user/editUser", userData);
-      show();
+     show()
     };
+      const trim = (text) => {
+      return (text.substring(0,15 ) +  "...")
+    }
 
     return {
-      modalOpen,
       users,
       time,
       DeleteUser,
       EditUser,
-      openModal,
-      handleClose,
-      modalContent,
       show,
-      toggle,
-      // user,
+      edit,
+      trim
     };
   },
 };

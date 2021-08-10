@@ -104,7 +104,7 @@ Route::post('/admin/signup', [AdminController::class, 'register']);
 
 //** Public Post Api */
 
-Route::get('/search/{title}', [PostController::class, 'search']);
+Route::get('/posts/search/{name}', [PostController::class, 'search']);
 
 Route::get('/post/{id}', [PostController::class, 'show']);
 
