@@ -1,8 +1,10 @@
 <template>
 
   <div class="da-panel">
-    <div>
-      <div class="da-title">
+
+    <div> <span class="text-5xl font-bold">Hi , </span> <span class="text-2xl font-semibold" >{{ user }}</span></div>
+    <div class="space-y-5">
+      <div class="font-semibold ">
         Members
       </div>
 
@@ -71,15 +73,7 @@ export default {
     });
 
     const users = computed(() => store.getters["user/ALL_USERS"]);
-
-    const openModal = (modal) => {
-      modalContent.value = modal;
-      modalOpen.value = true;
-    };
-
-    const handleClose = () => {
-      modalOpen.value = false;
-    };
+    const user = computed(() => store.state.auth.user?.username)
 
     const time = (date) => {
       return moment(date)
@@ -109,7 +103,8 @@ export default {
       EditUser,
       show,
       edit,
-      trim
+      trim,
+      user
     };
   },
 };

@@ -83,13 +83,13 @@ class PostController extends Controller
     public function update(Request $request, $id)
 
     {
-          // check autorization
-          if (
+        // check autorization
+        if (
             !$request->user()->is_Admin() &&
             // !$this->check_perm($request->user()) ||
             !$request->user()->posts()->where(["id" => $id])->first()
-            )
-           return response(["error" => 'Unauthorized'], 401);
+        )
+            return response(["error" => 'Unauthorized'], 401);
 
 
         $request->validate([
@@ -153,8 +153,11 @@ class PostController extends Controller
      * @param str $title
      * @return \Illuminate\Http\Response
      */
-    public function search($title)
+    public function search(Request $request , $title )
     {
-        return Post::where('title', 'like', '%' . $title . '%')->get();
+        $result =  Post::where('title', 'LIKE', '%' . $title . '%')->get();
+
+        return $result;
+
     }
 }

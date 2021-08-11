@@ -21,14 +21,6 @@
 
       <div class="field">
         <label for="Post title">Post content</label>
-        <!-- <textarea
-          v-model="post.content"
-          id="content"
-          name="content"
-          rows="10"
-          cols="50"
-        >
-        </textarea> -->
         <div v-for="tag in tags" :key="tag.id">
           <input
             type="checkbox"

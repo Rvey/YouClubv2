@@ -25,8 +25,7 @@ export default {
 props:['user'],
   setup(props ) {
       const store = useStore();
-    //   const zab = user;
-    //  console.log(zab);
+  
 
     // const user = ref({
     //     email: data.email,
@@ -34,7 +33,7 @@ props:['user'],
     // });
     const editUser =  () => {
     //   await store.dispatch("post/editUser", userData.value);
-      console.log('yep cock' , props.users);
+      console.log('yep ' , props.users);
     };
     // const openModal = (modal) => {
     //   modalContent.value = modal;

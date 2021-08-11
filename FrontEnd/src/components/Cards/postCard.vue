@@ -169,7 +169,7 @@ export default {
     }
 
     const trim = (text) => {
-      return (text.substring(0,290 ) +  "...")
+      return (text.substring(0,200 ) +  "...")
     }
 
     const show = () => {

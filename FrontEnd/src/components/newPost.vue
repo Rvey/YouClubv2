@@ -76,8 +76,8 @@
           Submit
         </button>
         <button
-          @click="close"
-          class="bg-red-400 hover:bg-red-500 text-white px-6 py-2 font-semibold whitespace-normal rounded-md opacity-0"
+          @click.prevent="resetinput()"
+          class="bg-red-400 hover:bg-red-500 text-white px-6 py-2 font-semibold whitespace-normal rounded-md "
         >
           reset
         </button>
@@ -117,6 +117,12 @@ export default {
       tags: ref([]),
     });
 
+      const resetinput = () => {
+
+      post.value = [];
+      console.log(post.value);
+      }
+
     const thumbnailData = ref(null);
 
     const checkone = () => {
@@ -131,7 +137,6 @@ export default {
       });
       await store.dispatch("post/submitPost", formData);
 
-      emit("close");
     };
 
     const tags = computed(() => store.getters["tags/ALL_TAGS"]);
@@ -151,6 +156,7 @@ export default {
       tag,
       checkedNames,
       checkone,
+      resetinput
     };
   },
 };

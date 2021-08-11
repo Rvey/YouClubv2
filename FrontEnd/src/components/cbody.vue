@@ -11,7 +11,10 @@
       "
       >
         <div class=" text-4xl font-bold ">Community</div>
+   <div v-for="result in results" :key = "result.id">
+          <p> {{ result.id }}</p>
 
+        </div>
         <div class=" p-2 shadow flex my-6 md:my-0 ">
           <span class="w-auto flex justify-end items-center text-gray-500 p-2">
           </span>
@@ -45,6 +48,8 @@
         >
           <PostCard v-for="post in posts" :post="post" :key="post.id" />
         </div>
+
+     
       </div>
     </div>
   </div>
@@ -76,31 +81,30 @@ export default {
 
     watch (() => {
       search.keyword = () => {
-        
         console.log(searchPost());
+
       }
       
     })
 
-
-
     onMounted(() => {
       store.dispatch("post/getPosts");
+      store.dispatch("post/search");
       console.log("userid", userId.value);
       console.log(posts.value);
       console.log("admin ", Admin.value);
       console.log("username", userName.value);
     });
 
-
     const userId = computed(() => store.getters["auth/userId"]);
     const posts = computed(() => store.getters["post/ALL_POSTS"]);
     const Admin = computed(() => store.getters["auth/Admin"]);
     const userName = computed(() => store.getters["auth/userName"]);
     const Auth = computed(() => store.getters["auth/authenticated"]);
+    const results = computed(() => store.getters["post/SEARCH_RESULTS"]);
 
-    const searchPost =  (searchData) => {
-      // await store.dispatch("post/search" , searchData)
+    const searchPost = async (searchData) => {
+      await store.dispatch("post/search" , searchData)
       console.log(searchData);
     }
 
@@ -111,8 +115,6 @@ export default {
     const handleClose = () => {
       modalOpen.value = false;
     };
-
-
 
     return {
       modalOpen,
@@ -126,6 +128,7 @@ export default {
       Auth,
       searchPost,
       search,
+      results
 
     };
   },

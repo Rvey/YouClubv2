@@ -6,6 +6,7 @@ export default {
     allPosts: [],
     loading_newpost: false,
     error_newpost: null,
+    results:[]
   },
   getters: {
     ALL_POSTS(state) {
@@ -20,6 +21,9 @@ export default {
     CURRENT_POST(state) {
       return state.current_post;
     },
+    SEARCH_RESULTS(state) {
+      return state.results;
+    }
   },
   actions: {
     async getPosts({ commit }) {
@@ -40,14 +44,14 @@ export default {
 
         return commit("SET_CURRENT_POST", res.data);
       } catch (err) {
-        commit("SET_ERROR_NEWPOST", err.message);
+        commit("SET_ERROR", err.message);
       }
     },
 
     async submitPost({ commit, dispatch }, postData) {
       try {
         commit("SET_LOADING_NEWPOST", false);
-        commit("SET_ERROR_NEWPOST", null);
+        commit("SET_ERROR", null);
 
         const res = await axios.post("/api/post", postData);
         
@@ -56,7 +60,7 @@ export default {
         
       } catch (err) {
         commit("SET_LOADING_NEWPOST", false);
-        commit("SET_ERROR_NEWPOST", err.message);
+        commit("SET_ERROR", err.message);
       }
     },
     async editPost({ commit  }, post) {
@@ -86,13 +90,15 @@ export default {
       }
     },
 
-    async search({ commit } , searchData ) {
+    async search({ commit }, title) {
       try {
-        const res = await axios.get(`/posts/search/` , searchData)
-        console.log(res);
+        const res = await axios.get(`/api/search/${title}`)
+        commit("GET_RESULT", res.data);
+        console.log(res.data);
       }catch(err){
         console.log(err);
       }
+      
     }
   },
   mutations: {
@@ -111,5 +117,8 @@ export default {
     SET_CURRENT_POST(state, value) {
       state.current_post = value;
     },
+    GET_RESULT(state, value) {
+      state.results = value;
+    }
   },
 };

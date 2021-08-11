@@ -12,4 +12,9 @@ class AssetController extends Controller
 
         return response()->file($path);
     }
+    public function userImage($image_name) {
+        $path = storage_path('/app/public/images/user_image/' . DIRECTORY_SEPARATOR . $image_name);
+
+        return response()->file($path);
+    }
 }

@@ -84,12 +84,20 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
 // Route::get('/comment/user/{id}', [CommentController::class, 'userComments']);
 
+Route::get('/post/image/{image_name}', [AssetController::class, 'postImage']);
+
+Route::get('/user/image/{image_name}', [AssetController::class, 'userImage']);
+
+
+
+
+Route::get('/user/{id}', [UserController::class, 'show']);
 
 Route::get('/users', [UserController::class, 'index']);
 
-Route::get('/post/image/{image_name}', [AssetController::class, 'postImage']);
-
 Route::get('/posts', [PostController::class, 'index']);
+
+
 
 //* Public Routes Auth
 
@@ -104,7 +112,7 @@ Route::post('/admin/signup', [AdminController::class, 'register']);
 
 //** Public Post Api */
 
-Route::get('/posts/search/{name}', [PostController::class, 'search']);
+Route::get('/search/{title}', [PostController::class, 'search']);
 
 Route::get('/post/{id}', [PostController::class, 'show']);
 

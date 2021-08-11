@@ -4,24 +4,26 @@
     <div class="header bg-black bg-opacity-40">
 
           <div class="flex align-middle items-center gap-2">
-          <img src="@/assets/logo.svg" class="w-10 h-10 " alt="" srcset="" />
-          <div class="font-bold text-3xl"> <span class="text-white">You</span><span class="text-blue-500">Club</span></div>
+          <img src="@/assets/logo.svg" class="w-7 h-7 " alt="" srcset="" />
+          <div class="font-bold text-2xl"> <span class="text-white">You</span><span class="text-blue-500">Club</span></div>
         </div>
      
   
       <div>
         <ul>
-          <div class="nav">
-            <li><a href="#" class="active">Home</a></li>
+          <div class="nav  h-16 items-center ">
+            <li><router-link  to="/" class="active">Home</router-link></li>
             <li><router-link to="/Community">Community</router-link></li>
             <li v-if="Admin"><router-link to="/Dashboard">Dashboard</router-link></li>
           </div>
-          <div  class="conn">
+          <div>
             <li v-if="!Auth" >
-              <router-link class="conn" to="/login">Log in</router-link>
+              <router-link class="" to="/login">
+              <i class='bx bx-log-in-circle text-white text-2xl hover:text-blue-400 cursor-pointer'></i>
+              </router-link>
             </li>
-            <li  v-if="Auth" >
-              <i  class="fas fa-sign-out-alt conn" @click.prevent="logout()"></i>
+            <li v-if="Auth" >
+             <i class='bx bx-log-in-circle text-white text-2xl hover:text-red-400 cursor-pointer' @click.prevent="logout()"></i>
             </li>
           </div>
         </ul>

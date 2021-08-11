@@ -18,6 +18,9 @@ export default {
     ERR_NEWUSER(state) {
       return state.error_newusers;
     },
+    CURRENT_USER(state) {
+      return state.current_user;
+    },
   },
 
   actions: {
@@ -28,6 +31,17 @@ export default {
         commit("GET_USERS", res.data);
       } catch (err) {
         console.log(err);
+      }
+    },
+
+    async single({ commit }, id) {
+      try {
+        const res = await axios.get(`/api/user/${id}`);
+        console.log(res.data);
+
+        return commit("SET_CURRENT_USER", res.data);
+      } catch (err) {
+        commit("SET_ERROR_NEWUSER", err.message);
       }
     },
 
@@ -59,6 +73,9 @@ export default {
 
     SET_LOADING_NEWCOMMENT(state, value) {
       state.loading_newusers = value;
+    },
+    SET_CURRENT_USER(state, value) {
+      state.current_user = value;
     },
   },
 };
