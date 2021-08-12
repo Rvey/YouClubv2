@@ -1,24 +1,15 @@
 <template>
     <div class="hero">
       <div class="content">
-        <div class="textbox">
-          <h2>It's not just a Club<br />It's <span>YouClub</span></h2>
-          <!-- <p>
-         Forum qui vise à améliorer la communication entre les étudiants , actualités  facilement .
-          </p> -->
-           <button type="submit" class="btn-more">Learn More</button>
+        <div class="textbox space-y-6">
+          <h3 class="text-7xl">Meet</h3>
+          <h2 > <span>You</span>Club </h2>
+          <p class="text-gray-700 text-lg">A platform for sharing content and engage with others</p>
+            <div class=" hover:translate-x-5">
+            <div class="bg-black"></div>
+           <button type="submit" class=" hover:bg-blue-600 hover:text-white transition-all ease-linear  px-6 py-4 bg-white m-7 rounded-lg hover:drop-shadow-xl  font-semibold  leading-tight">Learn More</button>
+            </div>
         </div>
-       
-        <!-- <div class="imgBox">
-          <img src="../assets/hero.svg" alt="" />
-        </div> -->
-        <!-- <ul class="navg">
-          <li><i class="far fa-lightbulb"></i></li>
-          <li><i class="far fa-lightbulb"></i></li>
-          <li><i class="far fa-lightbulb"></i></li>
-        </ul>-->
-
-      
 
     </div>
  
@@ -33,7 +24,7 @@
           </p>
         </div>
         <div class="flex flex-wrap -m-4">
-          <div class="xl:w-1/3 md:w-1/2 p-4">
+          <div class="w-full p-4">
             <div class="border border-gray-300 p-6 rounded-lg">
               <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
              <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" style="width: 2em; height: 2em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1"><path d="M298.667 213.333v85.334H896v-85.334M298.667 554.667H896v-85.334H298.667m0 341.334H896v-85.334H298.667m-128-14.08c-31.574 0-56.747 25.6-56.747 56.747s25.6 56.747 56.747 56.747c31.146 0 56.746-25.6 56.746-56.747s-25.173-56.747-56.746-56.747m0-519.253c-35.414 0-64 28.587-64 64s28.586 64 64 64c35.413 0 64-28.587 64-64s-28.587-64-64-64m0 256c-35.414 0-64 28.587-64 64s28.586 64 64 64c35.413 0 64-28.587 64-64s-28.587-64-64-64z"/></svg>
@@ -46,23 +37,25 @@
             </div>
           </div>
 
-          <div class="xl:w-1/3 md:w-1/2 p-4">
-            <div class="border border-gray-300 p-6 rounded-lg">
-              <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4 italic">
+          <div class="w-full p-4">
+            <div class="border border-gray-300 p-6 rounded-lg ">
+              <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4 italic ">
                 <span class="font-bold text-sm ">
-                  Php
+                Svg
                 </span>
               </div>
               <h2 class="text-lg text-gray-100 font-medium title-font mb-2">all in one place</h2>
-              <p class="leading-relaxed text-base">Discover topics and people and interact with them all in one place no more wasted posts and time</p>
+              <p class="leading-relaxed text-base w-full">Discover topics and people and interact with them all in one place no more wasted posts and time</p>
 
           
             </div>
           </div>
-          <div class="xl:w-1/3 md:w-1/2 p-4">
+          <div class="w-full p-4">
             <div class="border border-gray-300 p-6 rounded-lg">
               <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-             
+                 <span class="font-bold text-sm ">
+                Svg
+                </span>
               </div>
               <h2 class="text-lg text-gray-100 font-medium title-font mb-2">by people like you</h2>                                                
               <p class="leading-relaxed text-base">a variety of articles by YouCoders all in one place </p>

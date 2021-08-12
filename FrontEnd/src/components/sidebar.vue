@@ -1,13 +1,16 @@
 <template>
-  <div class="sidebar hidden md:flex" :class="toggle ? 'active' : 'not-active' ">
+  <div class="sidebar hidden md:flex items-center" :class="toggle ? 'active' : 'not-active' ">
     <div class="logo_content">
-      <div class="logo">
-        <i class="bx bxl-c-plus-plus icon"></i>
+      <div class="logo space-x-7 justify-center">
+        <img src="@/assets/logo.svg" @click.prevent="e" class="w-8 h-8 cursor-pointer" alt="">
         <div class="logo_name">YouClub</div>
       </div>
-      <i class="bx bx-menu" id="btn" @click.prevent="e"></i>
     </div>
     <ul class="nav_list">
+      <li>
+
+      <!-- <i class="bx bx-menu" id="btn" ></i> -->
+      </li>
       <li>
         <router-link to="/">
           <i class="bx bx-home-alt"></i>

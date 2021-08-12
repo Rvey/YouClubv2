@@ -6,103 +6,136 @@
     @close="handleClose()"
   />
   <div class="w-full md:mx-2 mb-4 md:mb-0">
-    <div class="bg-black rounded-lg">
-    <div
-      class="bg-white rounded-lg overflow-hidden shadow relative  z-1 transform hover:translate-y-2 hover:translate-x-2 transition-all"
-    >
-      <img
-        class="h-32 w-full object-cover object-center"
-        :src="`http://127.0.0.1:8000/api/post/image/${post.image}`"
-        alt=""
-      />
-      <div class="m-4">
-        <a
-          class="inline bg-gray-300 py-1 px-2 rounded-full text-xs lowercase text-gray-700"
-          href="#"
-          >#{{ post?.tags }}</a
-        >
-      </div>
-      <div class="p-4 h-auto md:h-40 lg:h-48">
-        <a
-          href="#"
-          class="block text-gray-900  font-bold text-4xl mb-2  lg:text-lg"
-        >
-          {{post?.title}}
-        </a>
-        <div
-          class="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm break-all"
-        >
-          {{ trim(strip(post?.content)) }}
+    <div class="bg-black rounded-xl">
+      <div
+        class="bg-white shadow-xl border-2 border-black rounded-lg overflow-hidden  relative  z-1 transform hover:translate-y-2 hover:translate-x-2 transition-all"
+      >
+        <img
+          class="h-32 w-full object-cover object-center"
+          :src="`http://127.0.0.1:8000/api/post/image/${post.image}`"
+          alt=""
+        />
+        <div class="m-4">
+          <router-link
+            class="inline bg-blue-300 py-1 px-2 rounded-full text-xs lowercase text-gray-700 font-bold"
+            :to="{ name: 'BlogPage', params: { id } }"
+            >#{{ post?.tags }}</router-link
+          >
         </div>
-      </div>
-      <div class="flex align-bottom p-2  bg-blue-100">
-        <div class="flex justify-between w-full align-middle">
-          <div class="flex gap-4 align-middle  ">
-            <div>
-              <img
+        <div class="p-4 h-auto md:h-40 lg:h-48">
+          <router-link
+            :to="{ name: 'BlogPage', params: { id } }"
+            @click="single"
+            class="block text-gray-900 font-medium text-4xl mb-2  lg:text-lg"
+          >
+            {{ post?.title }}
+          </router-link>
+          <div
+            class="text-black text-md leading-relaxed block md:text-md lg:text-md break-all"
+          >
+            {{ trim(strip(post?.content)) }}
+          </div>
+        </div>
+        <div
+          class="flex align-bottom p-2  bg-blue-100 rounded-lg bg-opacity-25"
+        >
+          <div class="flex justify-between w-full align-middle">
+            <div class="flex gap-4 align-middle  ">
+              <div>
+                <!-- <img
                 class="bg-red-300 w-10 h-10 rounded-full"
                 src="#"
                 alt="img"
-              />
-            </div>
-            <div class="flex flex-col  ">
-              <div class="font-bold text-md uppercase">
-                {{ post.user?.username }}
+              /> -->
               </div>
-              <div class="font-semibold text-gray-400 text-xs">
-                {{ time(post?.created_at) }}
+              <div class="flex flex-col  ">
+                <div class="font-bold text-md uppercase">
+                  {{ post.user?.username }}
+                </div>
+                <div class="font-semibold text-gray-400 text-xs">
+                  {{ time(post?.created_at) }}
+                </div>
               </div>
             </div>
-          </div>
-          <div class="flex align-middle gap-2">
-            <div
-              class="px-2 py-2 bg-blue-500 rounded-md text-white font-semibold text-sm cursor-pointer hover:bg-blue-600 "
-            >
-              <router-link
-                @click="single"
-                :to="{ name: 'BlogPage', params: { id } }"
+            <div class="flex align-middle items-center gap-2">
+              <div
+                class="px-2 py-2 bg-blue-500 rounded-md text-white font-semibold text-sm cursor-pointer hover:bg-blue-600 "
               >
-                ReadMore
-              </router-link>
-            </div>
+                <router-link
+                  @click="single"
+                  :to="{ name: 'BlogPage', params: { id } }"
+                >
+                  ReadMore
+                </router-link>
+              </div>
 
-            <!-- bookmark -->
-            <div class="relative">
+              <!-- bookmark -->
+              <div class="relative">
                 <!-- <i
                 v-if="mark"
                 @click="removeSaved(post)"
                 class="bx bxs-bookmark text-2xl cursor-pointer "
               ></i> -->
-          <div v-if="post.user_id == userId || Admin">
-            <i
+                <div v-if="post.user_id == userId || Admin">
+                  <svg
+                    @click.prevent="deletePost(post)"
+                    class="w-6 h-6 transition duration-500 ease-in-out hover:text-red-600  text-red-500 text-2xl  cursor-pointer"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                    ></path>
+                  </svg>
+                  <!-- <i
               @click.prevent="deletePost(post)"
-              class="bx bxs-trash-alt transition duration-500 ease-in-out hover:text-red-600  text-red-500 text-2xl ; cursor-pointer"
-            ></i>
-          </div>
+              class="bx bxs-trash-alt transition duration-500 ease-in-out hover:text-red-600  text-red-500 text-2xl  cursor-pointer"
+            ></i> -->
+                </div>
 
-              <!-- <i
+                <!-- <i
                 v-if="!mark"
                 @click=" savepost(post)"
                 class="bx bx-bookmark text-2xl cursor-pointer "
               ></i> -->
-            </div>
-    <div v-if="post.user_id == userId || Admin" class="like">
-            <i
+              </div>
+              <div v-if="post.user_id == userId || Admin" class="like">
+                <svg
+                  @click="openModal('editPostModal')"
+                  class="w-6 h-6 transition duration-500 ease-in-out hover:text-blue-600  text-gray-500 text-2xl  cursor-pointer"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                  ></path>
+                </svg>
+                <!-- <i
               @click="openModal('editPostModal')"
               class="bx bxs-edit-alt transition duration-500 ease-in-out hover:text-blue-600  text-gray-500 text-2xl ; cursor-pointer"
-            ></i>
-          </div>
-            <!-- <div>
+            ></i> -->
+              </div>
+              <!-- <div>
               <i
                 class="bx bx-dots-vertical-rounded font-semibold text-2xl cursor-pointer hover:text-gray-600"
                 @click="show()"
               ></i>
             </div> -->
+            </div>
           </div>
         </div>
       </div>
     </div>
-</div>
     <transition name="fade">
       <div
         v-if="!isOpen"
@@ -165,12 +198,12 @@ export default {
     };
 
     const strip = (data) => {
-      return (data.replace(/(<([^>]+)>)/gi, ""))
-    }
+      return data.replace(/(<([^>]+)>)/gi, "");
+    };
 
     const trim = (text) => {
-      return (text.substring(0,200 ) +  "...")
-    }
+      return text.substring(0, 200) + "...";
+    };
 
     const show = () => {
       isOpen.value = !isOpen.value;
@@ -194,24 +227,20 @@ export default {
       modalOpen.value = false;
     };
 
+    const removeSaved = async ({ id }) => {
+      store.dispatch("bookmark/deleteMarked", id);
+      booktoggle();
+    };
 
-
-  const removeSaved = async( {id } ) => {
-    store.dispatch("bookmark/deleteMarked" , id)
-    booktoggle()
-  }
-
-    const savepost = async(postData) => {
-     store.dispatch("bookmark/submitMarked" , postData)
-     booktoggle()
-    }
+    const savepost = async (postData) => {
+      store.dispatch("bookmark/submitMarked", postData);
+      booktoggle();
+    };
 
     const deletePost = async ({ id }) => {
       await store.dispatch("post/deletePost", id);
       store.dispatch("post/getPosts");
     };
-
-
 
     return {
       modalOpen,
@@ -238,7 +267,7 @@ export default {
       savepost,
       removeSaved,
       strip,
-      trim
+      trim,
     };
   },
 };

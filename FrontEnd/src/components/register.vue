@@ -1,11 +1,11 @@
 <template>
 <div class="login-back">
-  <div class="lg:overflow-hidden h-screen login-front">
+  <div class="lg:overflow-hidden h-screen login-front mt-16 ">
     <div
-      class="text-center flex align-middle justify-center h-16 pt-4 md:h-40 lg:h-56 font-bold text-4xl"
+      class="text-center flex items-center justify-center h-16 pt-4 md:h-40 lg:h-56 font-bold text-4xl"
     >
-         <div class="flex align-middle gap-2">
-          <img src="@/assets/logo.svg" class="w-20 h-20 " alt="" srcset="" />
+       <div class="flex items-center gap-2">
+          <img src="@/assets/logo.svg" class="w-10 h-10 " alt="" srcset="" />
           <div>You<span class="text-blue-500">Club</span></div>
         </div>
     </div>
@@ -13,7 +13,7 @@
       <div
         class="login sm:w-full md:w-2/3 m-auto h-screen align-middle lg:w-1/2 overflow-hidden"
       >
-        <div class="card-login">
+        <div class="card-login items-center">
           <div class="pb-6 text-gray-700 font-extrabold text-3xl">Register</div>
 
           <form class="space-y-4" action="">

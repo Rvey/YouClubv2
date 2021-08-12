@@ -89,8 +89,6 @@ Route::get('/post/image/{image_name}', [AssetController::class, 'postImage']);
 Route::get('/user/image/{image_name}', [AssetController::class, 'userImage']);
 
 
-
-
 Route::get('/user/{id}', [UserController::class, 'show']);
 
 Route::get('/users', [UserController::class, 'index']);

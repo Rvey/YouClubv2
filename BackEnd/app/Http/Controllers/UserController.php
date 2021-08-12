@@ -55,14 +55,14 @@ class UserController extends Controller
         return response(["error" => 'Unauthorized'], 401);
 
 
-        $imageFullName = uniqid('u_img_', false);
-        $path = "public/images/user_image";
-        $request->file('image')->storeAs($path, $imageFullName);
+        // $imageFullName = uniqid('u_img_', false);
+        // $path = "public/images/user_image";
+        // $request->file('image')->storeAs($path, $imageFullName);
 
         $request->validate([
             "username" => ['max:255'],
             "email" => ['max:255'],
-            "image" => ['max:99999999999999']
+            // "image" => ['max:99999999999999']
         ]);
 
         $user = User::find($id);

@@ -155,7 +155,7 @@ class PostController extends Controller
      */
     public function search(Request $request , $title )
     {
-        $result =  Post::where('title', 'LIKE', '%' . $title . '%')->get();
+        $result =  Post::with('user')->where('title', 'LIKE', '%' . $title . '%')->get();
 
         return $result;
 
