@@ -6,6 +6,7 @@ import router from "./router";
 import store from "./store";
 import scss from "./styles/main.scss";
 import "./../dist/tailwind.css"
+// import './index.css'
 
 require("./store/subscriber");
 

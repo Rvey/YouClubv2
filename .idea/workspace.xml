@@ -2,54 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2428bc3-9d62-4239-a25b-7a09c5b5810c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/entities/entities.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/entities/entities.dat.len" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/entities/entities.dat.values" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/entities/entities.dat.values.at" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/entities/entities.dat.values.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/entities/entities.dat_i" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/entities/entities.dat_i.len" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45d65a23-8d63-4cb4-b011-649f27e34091/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3/entities/entities.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3/entities/entities.dat.values" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3/entities/entities.dat.values" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3/entities/entities.dat.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3/entities/entities.dat.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3/entities/entities.dat.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3/entities/entities.dat.values.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3/entities/entities.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d32dcaa-bfed-4874-9821-a5fd50b4e8f3/entities/entities.dat_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/entities/entities.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/entities/entities.dat.len" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/entities/entities.dat.values" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/entities/entities.dat.values.at" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/entities/entities.dat.values.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/entities/entities.dat_i" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/entities/entities.dat_i.len" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0e64db4-b128-43ab-894e-6db4e4591f03/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/app/Models/CategoriesController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/app/Models/likesController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/database/migrations/2021_07_14_090426_create_categories_controllers_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/database/migrations/2021_07_14_090510_create_likes_controllers_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/database/migrations/2021_07_27_152020_create_todos_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/Cards/postCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/Cards/postCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/Misc/like.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/Misc/like.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/dashbody.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/dashbody.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/components/navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/components/navbar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b29c5fa6-4288-4cb3-8f16-677ad409cd24/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b29c5fa6-4288-4cb3-8f16-677ad409cd24/entities/entities.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b29c5fa6-4288-4cb3-8f16-677ad409cd24/entities/entities.dat.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b29c5fa6-4288-4cb3-8f16-677ad409cd24/entities/entities.dat.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b29c5fa6-4288-4cb3-8f16-677ad409cd24/entities/entities.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b29c5fa6-4288-4cb3-8f16-677ad409cd24/entities/entities.dat_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,6 +219,7 @@
       <workItem from="1628377614673" duration="16000" />
       <workItem from="1628377720955" duration="15000" />
       <workItem from="1628381936145" duration="1000" />
+      <workItem from="1628864628036" duration="64000" />
     </task>
     <servers />
   </component>
