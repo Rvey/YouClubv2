@@ -5,6 +5,7 @@ import Register from "../views/Register.vue";
 import Community from "../views/Community.vue";
 import Dashboard from "../views/Dashboard.vue";
 import BlogPage from "../views/BlogPage.vue";
+import Profile from "../views/Profile.vue";
 const routes = [
   {
     path: "/",
@@ -36,7 +37,11 @@ const routes = [
     name: "BlogPage",
     component: BlogPage,
   },
-
+  {
+    path: "/Profile",
+    name: "Profile",
+    component: Profile,
+  },
 
 ];
 

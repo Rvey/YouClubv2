@@ -25,6 +25,13 @@
         </router-link>
         <span class="tooltip">Community</span>
       </li>
+         <li>
+        <router-link to="/Profile">
+          <i class="bx bx-user"></i>
+          <span class="links_name">Profile</span>
+        </router-link>
+        <span class="tooltip">Profile</span>
+      </li>
 
       <li  v-if=" Admin ">
         <router-link to="/Dashboard">

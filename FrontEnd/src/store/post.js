@@ -21,6 +21,9 @@ export default {
     CURRENT_POST(state) {
       return state.current_post;
     },
+    CURRENT_USERPOST(state) {
+      return state.current_userpost;
+    },
     SEARCH_RESULTS(state) {
       return state.results;
     }
@@ -43,6 +46,17 @@ export default {
         commit("SET_LOADING_NEWPOST", false);
 
         return commit("SET_CURRENT_POST", res.data);
+      } catch (err) {
+        commit("SET_ERROR", err.message);
+      }
+    },
+    async userPosts({ commit }, id) {
+      try {
+        const res = await axios.get(`/api/postUser/${id}`);
+        console.log(res.data);
+        commit("SET_LOADING_NEWPOST", false);
+
+        return commit("SET_CURRENT_USERPOST", res.data);
       } catch (err) {
         commit("SET_ERROR", err.message);
       }
@@ -116,6 +130,9 @@ export default {
 
     SET_CURRENT_POST(state, value) {
       state.current_post = value;
+    },
+    SET_CURRENT_USERPOST(state, value) {
+      state.current_userpost = value;
     },
     GET_RESULT(state, value) {
       state.results = value;

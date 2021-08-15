@@ -38,7 +38,6 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
 
 
-
     //** Comments Api */
 
     Route::post('/comment', [CommentController::class, 'store']);
@@ -54,7 +53,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     /**
      *
-     *     !  likes api
+     *     ! TODO  likes api
      */
 
     Route::post('/like', [LikeController::class, 'store']);
@@ -82,7 +81,8 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 });
 
 
-// Route::get('/comment/user/{id}', [CommentController::class, 'userComments']);
+
+
 
 Route::get('/post/image/{image_name}', [AssetController::class, 'postImage']);
 
@@ -114,6 +114,7 @@ Route::get('/search/{title}', [PostController::class, 'search']);
 
 Route::get('/post/{id}', [PostController::class, 'show']);
 
+Route::get('/postUser/{id}', [PostController::class, 'getUserPost']);
 
 
 
@@ -121,11 +122,3 @@ Route::get('/post/{id}', [PostController::class, 'show']);
 
 
 
-// Route::resource('posts', PostController::class);
-
-// Route::group(['middleware' => ['auth:user']], function () {
-// });
-
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });

@@ -49,10 +49,12 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // !$this->check_perm($request->user()) ||
-        if (!$request->user()->is_admin())
 
-        return response(["error" => 'Unauthorized'], 401);
+        // if (!$request->user()->is_admin() &&
+        //     !$request->user()->where(["id" => $id])->first()
+        // )
+
+        // return response(["error" => 'Unauthorized'], 401);
 
 
         // $imageFullName = uniqid('u_img_', false);
@@ -62,7 +64,6 @@ class UserController extends Controller
         $request->validate([
             "username" => ['max:255'],
             "email" => ['max:255'],
-            // "image" => ['max:99999999999999']
         ]);
 
         $user = User::find($id);

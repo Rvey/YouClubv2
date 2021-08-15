@@ -73,6 +73,18 @@ class PostController extends Controller
         return $post;
     }
 
+     /**
+     * Display the specified resource.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function getUserPost(Request $request, $id)
+    {
+        $post = Post::where(['user_id' => $id])->get();
+        return $post;
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -86,7 +98,6 @@ class PostController extends Controller
         // check autorization
         if (
             !$request->user()->is_Admin() &&
-            // !$this->check_perm($request->user()) ||
             !$request->user()->posts()->where(["id" => $id])->first()
         )
             return response(["error" => 'Unauthorized'], 401);

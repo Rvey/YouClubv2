@@ -47,7 +47,7 @@
               </div>
               <transition name="fade">
                 <div v-if="error?.password" class="text-red-500 font-semibold">
-                  {{ error.password[0] }}
+                  {{ error.email[0] }}
                 </div>
               </transition>
             </form>

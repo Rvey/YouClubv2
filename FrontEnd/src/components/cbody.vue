@@ -6,31 +6,33 @@
       @close="handleClose()"
     />
     <div class="body m-0 md:ml-16">
-          <form @submit.prevent="searchPost(search.keyword)">
-      <div
-        class="flex items-center justify-between lg:flex-wrap p-4 mx-0 lg:mx-24
+      <form @submit.prevent="searchPost(search.keyword)">
+        <div
+          class="flex items-center justify-between lg:flex-wrap p-4 mx-0 lg:mx-24
       "
-      >
-        <div class=" text-4xl font-bold  ">Community</div>
+        >
+          <div class=" text-4xl font-bold  ">Community</div>
 
-        <div class=" p-2 shadow flex my-6 md:my-0 w-60 lg:w-auto">
-          <span class="w-auto flex justify-end items-center text-gray-500 p-2">
-          </span>
-          <input
-            class="w-full rounded p-2 outline-none "
-            type="text"
-            placeholder="Seach anything"
-            v-model="search.keyword"
-          />
-          <button
-            class="bg-blue-400 hover:bg-blue-300 rounded text-white p-2 pl-4 pr-4 "
-            type="submit"
-          >
-            <p class="font-semibold text-xs">Search</p>
-          </button>
+          <div class=" p-2 shadow flex my-6 md:my-0 w-60 lg:w-auto">
+            <span
+              class="w-auto flex justify-end items-center text-gray-500 p-2"
+            >
+            </span>
+            <input
+              class="w-full rounded p-2 outline-none "
+              type="text"
+              placeholder="Seach anything"
+              v-model="search.keyword"
+            />
+            <button
+              class="bg-blue-400 hover:bg-blue-300 rounded text-white p-2 pl-4 pr-4 "
+              type="submit"
+            >
+              <p class="font-semibold text-xs">Search</p>
+            </button>
+          </div>
         </div>
-      </div>
-          </form>
+      </form>
 
       <!-- <div class="ds-title">Trending</div> -->
 
@@ -45,10 +47,18 @@
         <div
           class="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3  2xl:grid-cols-4 md:grid-cols-2 gap-5 p-5"
         >
+          <!-- search results -->
           <div v-if="s" v-for="result in results" :key="result.id">
-            <PostCard  v-for="post in results" :post="result" :key="result.id" />
+            <PostCard v-for="post in results" :post="result" :key="result.id" />
           </div>
-          <PostCard v-if="!s" v-for="post in posts" :post="post" :key="post.id" />
+
+          <!-- posts -->
+          <PostCard
+            v-if="!s"
+            v-for="post in posts"
+            :post="post"
+            :key="post.id"
+          />
         </div>
       </div>
     </div>
@@ -81,11 +91,11 @@ export default {
 
     const s = ref(false);
 
-    watch(() => {
-      search.keyword = () => {
-        console.log(searchPost());
-      };
-    });
+    // watch(() => {
+    //   search.keyword = () => {
+    //     console.log(searchPost());
+    //   };
+    // });
 
     onMounted(() => {
       store.dispatch("post/getPosts");
@@ -106,12 +116,12 @@ export default {
     const searchPost = async (searchData) => {
       await store.dispatch("post/search", searchData);
       console.log(searchData);
-      toggle()
+      toggle();
     };
 
     const toggle = () => {
-      s.value = !s.value
-    }
+      s.value = !s.value;
+    };
 
     const openModal = (modal) => {
       modalContent.value = modal;
@@ -135,7 +145,7 @@ export default {
       search,
       results,
       toggle,
-      s
+      s,
     };
   },
 };

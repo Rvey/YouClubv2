@@ -16,7 +16,7 @@
             </router-link>
           </li>
           <li>
-            <router-link to="/Login"><i class='bx bx-user-circle text-gray-700' ></i></router-link>
+            <router-link to="/Profile"><i class='bx bx-user-circle text-gray-700' ></i></router-link>
           </li>
 
           <li>
